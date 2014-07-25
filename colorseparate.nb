@@ -1,0 +1,4 @@
+SetDirectory@NotebookDirectory[]; (*设置相对路径*)
+
+src = Import["bluearea.jpg"]
+
