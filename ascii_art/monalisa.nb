@@ -10,17 +10,111 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[       768,         33]
-NotebookOptionsPosition[       560,         21]
-NotebookOutlinePosition[       907,         36]
-CellTagsIndexPosition[       864,         33]
+NotebookDataLength[      4675,        133]
+NotebookOptionsPosition[      4206,        115]
+NotebookOutlinePosition[      4550,        130]
+CellTagsIndexPosition[      4507,        127]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[{
+ RowBox[{"src", " ", "=", " ", 
+  RowBox[{"Import", "/@", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<*.jpg\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}], "]"}], "}"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ASCIIrange", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\< \>\"", ",", " ", "\"\<, \>\"", ",", " ", "\"\<. \>\"", ",", " ", 
+      "\"\<..\>\"", ",", " ", "\"\<.:\>\"", ",", " ", "\"\<::\>\"", ",", " ", 
+      "\"\<:i\>\"", ",", " ", "\"\<io\>\"", ",", " ", "\"\<ex\>\"", ",", " ", 
+      "\"\<pq\>\"", ",", " ", "\"\<Xq\>\"", ",", " ", "\"\<AG\>\"", ",", " ", 
+      "\"\<ZY\>\"", ",", " ", "\"\<VB\>\""}], "  ", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ASCIIart", "[", 
+    RowBox[{"image_", ",", " ", 
+     RowBox[{"resolution_:", "200"}], ",", " ", 
+     RowBox[{"threshold_:", "maxthreshold"}]}], "]"}], " ", ":=", 
+   "\[IndentingNewLine]", "  ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Round", " ", "/@", " ", 
+      RowBox[{"(", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"threshold", " ", "*", " ", 
+            RowBox[{"Rescale", " ", "/@", "  ", 
+             RowBox[{"Mean", "[", "#", "]"}]}]}], " ", "&"}], " ", "/@", " ", 
+          "#"}], " ", "&"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"ImageData", "[", 
+         RowBox[{"ImageResize", "[", 
+          RowBox[{
+           RowBox[{"ImageAdjust", "[", 
+            RowBox[{"image", ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"0.2", ",", " ", "0.5"}], "}"}]}], "]"}], ",", " ", 
+           "resolution"}], "]"}], "]"}], ",", " ", "\"\<Byte\>\""}], "  ", 
+       ")"}]}], ")"}], " ", "/.", "\[IndentingNewLine]", "\t", 
+    RowBox[{"MapThread", " ", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#1", " ", "\[Rule]", " ", "#2"}], " ", "&"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Reverse", "[", 
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", " ", 
+           RowBox[{"threshold", " ", "+", " ", "1"}]}], "]"}], "]"}], ",", 
+        " ", 
+        RowBox[{"Take", "[", 
+         RowBox[{"ASCIIrange", ",", " ", 
+          RowBox[{"threshold", " ", "+", "2"}]}], "]"}]}], "}"}]}], "]"}]}]}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ASCIIimage", "[", "image_", "]"}], " ", ":=", " ", 
+   RowBox[{"Rasterize", "[", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+      RowBox[{"ASCIIart", "[", "image", "]"}], ",", " ", "Bold", ",", " ", 
+      RowBox[{"FontFamily", "\[Rule]", "\"\<Courier\>\""}], ",", " ", 
+      RowBox[{"FontSize", "\[Rule]", "5"}]}], "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.615705512575389*^9, 3.6157059357945957`*^9}, {
+   3.61570598971068*^9, 3.615706019207367*^9}, {3.615706115333865*^9, 
+   3.6157061467566624`*^9}, {3.6157061905351667`*^9, 3.6157062540437984`*^9}, 
+   3.615706451065068*^9}],
+
+Cell[BoxData[
+ RowBox[{"ASCIIimage", "[", "src", "]"}]], "Input",
+ CellChangeTimes->{{3.6157062803183017`*^9, 3.6157062817483835`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6157064740833845`*^9, 3.615706474113386*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.6157063624589996`*^9, 3.6157064040663795`*^9, 
+  3.6157064722862816`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6157064589925213`*^9, 3.6157064590355234`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.615706374570692*^9, 3.615706374613695*^9}}]
 },
-WindowSize->{716, 653},
-WindowMargins->{{Automatic, 241}, {-19, Automatic}},
+WindowSize->{1432, 784},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
 ]
@@ -35,9 +129,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[557, 20, 3092, 76, 192, "Input"],
+Cell[3652, 98, 135, 2, 31, "Input"],
+Cell[3790, 102, 94, 1, 31, InheritFromParent],
+Cell[3887, 105, 121, 2, 31, InheritFromParent],
+Cell[4011, 109, 96, 1, 31, InheritFromParent],
+Cell[4110, 112, 92, 1, 31, InheritFromParent]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
