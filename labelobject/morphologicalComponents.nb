@@ -1,0 +1,127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3734,        118]
+NotebookOptionsPosition[      3272,         99]
+NotebookOutlinePosition[      3616,        114]
+CellTagsIndexPosition[      3573,        111]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"src", " ", "=", " ", 
+  RowBox[{"Import", " ", "@", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<i.png\>\""}], 
+     "}"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6157611559503593`*^9, 3.61576120054491*^9}, {
+   3.615761305287901*^9, 3.615761309319132*^9}, 3.61576574485283*^9}],
+
+Cell[BoxData[
+ RowBox[{"Image", " ", "@", " ", 
+  RowBox[{"MorphologicalComponents", "[", 
+   RowBox[{"src", ",", " ", ".80"}], "]"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"identifies", " ", "objects", " ", "in", " ", "an", " ", "image"}],
+    "*)"}]}]], "Input",
+ CellChangeTimes->{{3.6157612608183575`*^9, 3.615761344643152*^9}, {
+  3.615762082327345*^9, 3.6157620869696107`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Erosion", "[", 
+   RowBox[{"%", ",", " ", "9"}], "]"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"expand", " ", "the", " ", "dark", " ", "area"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.615762041416005*^9, 3.61576205077054*^9}, {
+  3.615762114722198*^9, 3.6157621192574577`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MorphologicalPerimeter", "[", 
+   RowBox[{"%", ",", " ", ".5"}], "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"take", " ", "the", " ", "perimeter", " ", 
+    RowBox[{"(", "outline", ")"}], " ", "of", " ", "the", " ", "areas"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.6157621491051645`*^9, 3.615762188768433*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dilation", "[", 
+   RowBox[{"%", ",", " ", "3"}], "]"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"thicken", " ", "the", " ", "outline"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.615762241613456*^9, 3.61576226214163*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Image", "[", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ImageData", "[", "%", "]"}], " ", "/.", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0.", ",", "0.", ",", "1.", ",", ".5"}], "}"}]}], ",", " ", 
+       RowBox[{"0", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"1.", ",", "1.", ",", "1.", ",", "0."}], "}"}]}]}], "}"}]}], 
+    ",", " ", 
+    RowBox[{"ColorSpace", "\[Rule]", "\"\<RGB\>\""}]}], "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "turn", " ", "the", " ", "outline", " ", "into", " ", "a", " ", "semi"}], 
+    "-", 
+    RowBox[{"transparent", " ", "blue"}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.6157622766814613`*^9, 3.6157624044217677`*^9}, {
+  3.6157635407057595`*^9, 3.6157635591638155`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ImageCompose", "[", 
+  RowBox[{"src", ",", " ", "%"}], "]"}]], "Input",
+ CellChangeTimes->{{3.615763882358301*^9, 3.6157638942929835`*^9}}]
+},
+WindowSize->{1432, 784},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 394, 9, 31, "Input"],
+Cell[954, 31, 380, 8, 31, "Input"],
+Cell[1337, 41, 315, 8, 31, "Input"],
+Cell[1655, 51, 350, 8, 31, "Input"],
+Cell[2008, 61, 252, 6, 31, "Input"],
+Cell[2263, 69, 839, 23, 31, "Input"],
+Cell[3105, 94, 163, 3, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

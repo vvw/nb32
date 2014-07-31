@@ -1,0 +1,67 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1633,         58]
+NotebookOptionsPosition[      1367,         44]
+NotebookOutlinePosition[      1735,         60]
+CellTagsIndexPosition[      1692,         57]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"src", "=", 
+   RowBox[{"Import", "@", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<i.png\>\""}], "}"}],
+      "]"}]}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ImageMeasurements", "[", 
+   RowBox[{"src", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<DataType\>\"", ",", "\"\<DataRange\>\"", ",", 
+      "\"\<Transparency\>\""}], "}"}]}], "]"}], "  ", 
+  RowBox[{"(*", 
+   RowBox[{"Has", " ", "transparency", " ", 
+    RowBox[{"channel", "?"}]}], "*)"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"Binarize", "[", 
+  RowBox[{"src", ",", 
+   RowBox[{"FindThreshold", "[", "src", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6157673891428776`*^9, 3.6157673891448774`*^9}}]
+},
+WindowSize->{1432, 784},
+WindowMargins->{{-76, Automatic}, {Automatic, 21}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 806, 22, 112, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
