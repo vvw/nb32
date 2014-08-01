@@ -1,0 +1,163 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4856,        154]
+NotebookOptionsPosition[      4266,        132]
+NotebookOutlinePosition[      4610,        147]
+CellTagsIndexPosition[      4567,        144]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"i", " ", "=", " ", 
+  RowBox[{"Import", " ", "@", " ", 
+   RowBox[{"FileNameJoin", "@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<eYXlo.jpg\>\""}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.615846976061205*^9, 3.615847079420117*^9}, {
+  3.615847113949092*^9, 3.6158471280488987`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"imgClean", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"i", "//", 
+      RowBox[{
+       RowBox[{"Blur", "[", 
+        RowBox[{"#", ",", "2"}], "]"}], "&"}]}], "//", "Binarize"}], "//", 
+    "ColorNegate"}], "//", 
+   RowBox[{
+    RowBox[{"Erosion", "[", 
+     RowBox[{"#", ",", "2"}], "]"}], "&"}]}]}]], "Input",
+ CellChangeTimes->{{3.615847146164934*^9, 3.6158471716543922`*^9}, {
+   3.615847434785443*^9, 3.6158474979290543`*^9}, 3.6158475367772765`*^9, {
+   3.615847568474089*^9, 3.6158476019050016`*^9}, {3.6158476474956093`*^9, 
+   3.615847649179705*^9}, 3.6158479188601303`*^9, {3.615847994375449*^9, 
+   3.615847999320732*^9}, 3.6158487508517175`*^9, 3.6158487988464622`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"EdgeDetect", "[", 
+     RowBox[{"imgClean", ",", "r", ",", "t"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"r", ",", "2", ",", "\"\<radius\>\""}], "}"}], ",", "1", ",", 
+      "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0.1", ",", "\"\<threshold\>\""}], "}"}], ",", "0", 
+      ",", "0.5"}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6158487562070236`*^9, 3.615848788168852*^9}}],
+
+Cell[BoxData[
+ RowBox[{"EdgeDetect", "[", 
+  RowBox[{"imgClean", ",", "2.19", ",", "0.087"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6158475790416937`*^9, 3.6158475790566945`*^9}, {
+  3.6158479030062237`*^9, 3.61584791272878*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MorphologicalTransform", "[", 
+  RowBox[{"%", ",", "\"\<BoundingBoxes\>\"", ",", "\[Infinity]"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Fit", " ", "the", " ", "boundingbox", " ", "and", " ", "extract", " ", 
+    "the", " ", 
+    RowBox[{"corners", ":"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"cornerCoords", "=", 
+   RowBox[{
+    RowBox[{"MorphologicalTransform", "[", 
+     RowBox[{"%", ",", "\"\<BoundingBoxes\>\"", ",", "\[Infinity]"}], "]"}], "//", 
+    RowBox[{
+     RowBox[{"ImageCorners", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"MaxFeatures", "\[Rule]", "4"}]}], "]"}], "&"}]}]}]}]], "Input",
+ CellChangeTimes->{3.6158486077035294`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"66.5`", ",", "57.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"66.5`", ",", "155.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"196.5`", ",", "57.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"196.5`", ",", "155.5`"}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.615850285321484*^9, 3.6158502947230215`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"HighlightImage", "[", 
+  RowBox[{"%%", ",", "cornerCoords"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6158489658510146`*^9, 3.615848987242238*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"the", " ", "size", " ", "of", " ", "the", " ", "rectangle"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.615849045214554*^9, 3.6158490501848383`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"-", "1"}], ",", "1"}], "}"}], ".", 
+  RowBox[{"cornerCoords", "[", 
+   RowBox[{"[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6158490241023464`*^9, 3.6158490241043463`*^9}}]
+},
+WindowSize->{1432, 784},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 371, 9, 31, "Input"],
+Cell[931, 31, 718, 17, 31, "Input"],
+Cell[1652, 50, 565, 16, 31, "Input"],
+Cell[2220, 68, 230, 4, 31, "Input"],
+Cell[2453, 74, 141, 3, 31, "Input"],
+Cell[2597, 79, 578, 15, 52, "Input"],
+Cell[3178, 96, 392, 11, 31, InheritFromParent],
+Cell[3573, 109, 170, 3, 31, "Input"],
+Cell[3746, 114, 191, 4, 31, "Input"],
+Cell[3940, 120, 322, 10, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

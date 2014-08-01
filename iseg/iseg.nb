@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      1633,         58]
-NotebookOptionsPosition[      1367,         44]
-NotebookOutlinePosition[      1735,         60]
-CellTagsIndexPosition[      1692,         57]
+NotebookDataLength[      3488,        113]
+NotebookOptionsPosition[      2892,         90]
+NotebookOutlinePosition[      3260,        106]
+CellTagsIndexPosition[      3217,        103]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[{
      RowBox[{"{", 
       RowBox[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<i.png\>\""}], "}"}],
-      "]"}]}]}], "\n"}], "\[IndentingNewLine]", 
+      "]"}]}]}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"ImageMeasurements", "[", 
    RowBox[{"src", ",", 
@@ -36,14 +36,60 @@ Cell[BoxData[{
       "\"\<Transparency\>\""}], "}"}]}], "]"}], "  ", 
   RowBox[{"(*", 
    RowBox[{"Has", " ", "transparency", " ", 
-    RowBox[{"channel", "?"}]}], "*)"}], "\n"}], "\[IndentingNewLine]", 
+    RowBox[{"channel", "?"}]}], "*)"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{"Binarize", "[", 
   RowBox[{"src", ",", 
    RowBox[{"FindThreshold", "[", "src", "]"}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.6157673891428776`*^9, 3.6157673891448774`*^9}}]
+ CellChangeTimes->{{3.6157673891428776`*^9, 3.6157673891448774`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Options", "[", "%", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tuples", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b", ",", " ", "c"}], "}"}], ",", " ", "2"}], "]"}], 
+   " ", "//", " ", "MatrixForm"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6158427454072256`*^9, 3.6158427803622246`*^9}, {
+  3.615842830660102*^9, 3.615842901880175*^9}, {3.615843381660617*^9, 
+  3.615843429158334*^9}, {3.615843462889263*^9, 3.6158434663944635`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Image", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.615842925007498*^9, 3.615842930430808*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ArrayComponents", "@", "%12"}], " ", "//", " ", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.6158433080094047`*^9, 3.6158433457955656`*^9}, {
+  3.6158434396939363`*^9, 3.6158434414780383`*^9}, {3.6158434752749715`*^9, 
+  3.615843475491984*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.6158433469806337`*^9, 3.615843843502033*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.615843891552781*^9, 3.6158439016743603`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.6158459660954385`*^9}],
+
+Cell[BoxData[
+ RowBox[{"ComponentMeasurements", "[", 
+  RowBox[{"%5", ",", "\"\<Label\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6158459637713056`*^9, 3.615845995027093*^9}}],
+
+Cell[BoxData[
+ RowBox[{"?", "."}]], "Input",
+ CellChangeTimes->{{3.615846472693414*^9, 3.6158464736794705`*^9}}]
 },
-WindowSize->{1432, 784},
-WindowMargins->{{-76, Automatic}, {Automatic, 21}},
+WindowSize->{1432, 709},
+WindowMargins->{{512, Automatic}, {Automatic, 14}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
@@ -59,7 +105,16 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 806, 22, 112, "Input"]
+Cell[557, 20, 806, 22, 112, "Input"],
+Cell[1366, 44, 60, 1, 31, "Input"],
+Cell[1429, 47, 483, 11, 72, "Input"],
+Cell[1915, 60, 124, 2, 31, "Input"],
+Cell[2042, 64, 285, 6, 31, "Input"],
+Cell[2330, 72, 92, 1, 31, "Input"],
+Cell[2425, 75, 94, 1, 31, "Input"],
+Cell[2522, 78, 70, 1, 31, "Input"],
+Cell[2595, 81, 178, 3, 31, "Input"],
+Cell[2776, 86, 112, 2, 31, "Input"]
 }
 ]
 *)
