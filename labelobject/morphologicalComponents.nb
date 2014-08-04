@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3734,        118]
-NotebookOptionsPosition[      3272,         99]
-NotebookOutlinePosition[      3616,        114]
-CellTagsIndexPosition[      3573,        111]
+NotebookDataLength[      3794,        119]
+NotebookOptionsPosition[      3327,        100]
+NotebookOutlinePosition[      3674,        115]
+CellTagsIndexPosition[      3631,        112]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,10 +24,11 @@ Cell[BoxData[
    RowBox[{"FileNameJoin", "[", 
     RowBox[{"{", 
      RowBox[{
-      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<i.png\>\""}], 
-     "}"}], "]"}]}]}]], "Input",
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<goose.png\>\""}], "}"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.6157611559503593`*^9, 3.61576120054491*^9}, {
-   3.615761305287901*^9, 3.615761309319132*^9}, 3.61576574485283*^9}],
+   3.615761305287901*^9, 3.615761309319132*^9}, 3.61576574485283*^9, {
+   3.615862062958126*^9, 3.615862065174253*^9}}],
 
 Cell[BoxData[
  RowBox[{"Image", " ", "@", " ", 
@@ -98,7 +99,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.615763882358301*^9, 3.6157638942929835`*^9}}]
 },
 WindowSize->{1432, 784},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{51, Automatic}, {Automatic, 279}},
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
 ]
@@ -113,13 +114,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 394, 9, 31, "Input"],
-Cell[954, 31, 380, 8, 31, "Input"],
-Cell[1337, 41, 315, 8, 31, "Input"],
-Cell[1655, 51, 350, 8, 31, "Input"],
-Cell[2008, 61, 252, 6, 31, "Input"],
-Cell[2263, 69, 839, 23, 31, "Input"],
-Cell[3105, 94, 163, 3, 31, "Input"]
+Cell[557, 20, 449, 10, 31, "Input"],
+Cell[1009, 32, 380, 8, 31, "Input"],
+Cell[1392, 42, 315, 8, 31, "Input"],
+Cell[1710, 52, 350, 8, 31, "Input"],
+Cell[2063, 62, 252, 6, 31, "Input"],
+Cell[2318, 70, 839, 23, 31, "Input"],
+Cell[3160, 95, 163, 3, 31, "Input"]
 }
 ]
 *)
