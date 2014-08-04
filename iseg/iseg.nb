@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2776,         93]
-NotebookOptionsPosition[      2290,         73]
-NotebookOutlinePosition[      2659,         89]
-CellTagsIndexPosition[      2616,         86]
+NotebookDataLength[      2951,         97]
+NotebookOptionsPosition[      2467,         77]
+NotebookOutlinePosition[      2834,         93]
+CellTagsIndexPosition[      2791,         90]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,11 +37,14 @@ Cell[BoxData[
  CellChangeTimes->{{3.616110406836712*^9, 3.6161104086688166`*^9}}],
 
 Cell[BoxData[
- RowBox[{"b", " ", "=", " ", 
-  RowBox[{"Opening", "[", 
-   RowBox[{"b", ",", 
-    RowBox[{"DiskMatrix", "[", "0.5", "]"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.6161266244193044`*^9, 3.616126625495366*^9}}],
+ RowBox[{"(*", 
+  RowBox[{"b", " ", "=", " ", 
+   RowBox[{"Opening", "[", 
+    RowBox[{"b", ",", 
+     RowBox[{"DiskMatrix", "[", "0.4", "]"}]}], "]"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6161266244193044`*^9, 3.616126625495366*^9}, {
+  3.616127144918075*^9, 3.616127145662118*^9}, {3.6161271768739033`*^9, 
+  3.616127183305271*^9}}],
 
 Cell[BoxData[
  RowBox[{"i", "=", 
@@ -51,9 +54,10 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{"DeleteSmallComponents", "[", 
-  RowBox[{"i", ",", "30", ",", 
+  RowBox[{"i", ",", "7", ",", 
    RowBox[{"CornerNeighbors", "\[Rule]", "False"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.616126761984173*^9, 3.6161267619851727`*^9}}],
+ CellChangeTimes->{{3.616126761984173*^9, 3.6161267619851727`*^9}, {
+  3.6161272167571845`*^9, 3.61612725706549*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -72,7 +76,7 @@ Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.6161103714056854`*^9, 3.616110399443289*^9}}]
 },
 WindowSize->{1432, 709},
-WindowMargins->{{-173, Automatic}, {24, Automatic}},
+WindowMargins->{{5, Automatic}, {-11, Automatic}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
@@ -90,11 +94,11 @@ CellTagsIndex->{}
 Notebook[{
 Cell[557, 20, 349, 9, 31, "Input"],
 Cell[909, 31, 232, 5, 31, "Input"],
-Cell[1144, 38, 226, 5, 31, "Input"],
-Cell[1373, 45, 204, 4, 31, "Input"],
-Cell[1580, 51, 224, 4, 31, "Input"],
-Cell[1807, 57, 382, 11, 31, "Input"],
-Cell[2192, 70, 94, 1, 31, "Input"]
+Cell[1144, 38, 354, 8, 31, "Input"],
+Cell[1501, 48, 204, 4, 31, "Input"],
+Cell[1708, 54, 273, 5, 31, "Input"],
+Cell[1984, 61, 382, 11, 31, "Input"],
+Cell[2369, 74, 94, 1, 31, "Input"]
 }
 ]
 *)
