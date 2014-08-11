@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      3333,        106]
-NotebookOptionsPosition[      2808,         85]
-NotebookOutlinePosition[      3178,        101]
-CellTagsIndexPosition[      3135,         98]
+NotebookDataLength[      5046,        149]
+NotebookOptionsPosition[      4411,        125]
+NotebookOutlinePosition[      4776,        141]
+CellTagsIndexPosition[      4733,        138]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -80,11 +80,51 @@ Cell[BoxData[
   3.6167103006419973`*^9, 3.6167103079124126`*^9}}],
 
 Cell[BoxData[
- RowBox[{"ImageCrop", " ", "@", " ", "iClean"}]], "Input",
- CellChangeTimes->{{3.6167105203925657`*^9, 3.6167105233627357`*^9}}]
+ RowBox[{"iLines", "=", 
+  RowBox[{"ImageCrop", " ", "@", " ", "iClean"}]}]], "Input",
+ CellChangeTimes->{{3.6167105203925657`*^9, 3.6167105233627357`*^9}, {
+  3.6167123066287327`*^9, 3.616712312990097*^9}, {3.616712612085204*^9, 
+  3.6167126136512938`*^9}, {3.616712677068921*^9, 3.6167127046114964`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"first", " ", "=", " ", 
+  RowBox[{"ImageTake", "[", 
+   RowBox[{"iLines", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", " ", "50"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", " ", "27"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6167125048250694`*^9, 3.6167125069811926`*^9}, 
+   3.616712621339733*^9, {3.6167127130579796`*^9, 3.6167127410325794`*^9}, {
+   3.6167137310872073`*^9, 3.6167137816060967`*^9}, {3.6167282998404922`*^9, 
+   3.6167283591698856`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MorphologicalComponents", " ", "@", " ", "first", "  ", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Connected", " ", "component", " ", 
+     RowBox[{"labels", ".", " ", "default"}], " ", "8"}], "-", 
+    RowBox[{"connected", " ", "objects"}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.616728402091341*^9, 3.616728403712434*^9}, {
+  3.616728666638472*^9, 3.616728703981608*^9}, {3.6167287360284405`*^9, 
+  3.6167287385555854`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Tally", "[", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"MorphologicalComponents", "[", "first", "]"}], "]"}], "]"}], 
+  "  ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Count", " ", "the", " ", "number", " ", "of", " ", "pixels", " ", "in", 
+    " ", "each", " ", "connected", " ", "component", " ", "of", " ", "an", 
+    " ", "image"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.6167285232542706`*^9, 3.616728562786532*^9}}]
 },
-WindowSize->{1432, 709},
-WindowMargins->{{-191, Automatic}, {-66, Automatic}},
+WindowSize->{1432, 784},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
@@ -107,7 +147,10 @@ Cell[1501, 48, 204, 4, 31, "Input"],
 Cell[1708, 54, 364, 7, 31, "Input"],
 Cell[2075, 63, 382, 11, 31, "Input"],
 Cell[2460, 76, 199, 3, 31, "Input"],
-Cell[2662, 81, 142, 2, 31, "Input"]
+Cell[2662, 81, 320, 5, 31, "Input"],
+Cell[2985, 88, 511, 11, 31, "Input"],
+Cell[3499, 101, 455, 9, 31, "Input"],
+Cell[3957, 112, 450, 11, 31, "Input"]
 }
 ]
 *)
