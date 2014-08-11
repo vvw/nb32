@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5046,        149]
-NotebookOptionsPosition[      4411,        125]
-NotebookOutlinePosition[      4776,        141]
-CellTagsIndexPosition[      4733,        138]
+NotebookDataLength[      8727,        258]
+NotebookOptionsPosition[      7483,        218]
+NotebookOutlinePosition[      7850,        234]
+CellTagsIndexPosition[      7807,        231]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -121,10 +121,103 @@ Cell[BoxData[
    "Count", " ", "the", " ", "number", " ", "of", " ", "pixels", " ", "in", 
     " ", "each", " ", "connected", " ", "component", " ", "of", " ", "an", 
     " ", "image"}], "*)"}]}]], "Input",
- CellChangeTimes->{{3.6167285232542706`*^9, 3.616728562786532*^9}}]
+ CellChangeTimes->{{3.6167285232542706`*^9, 3.616728562786532*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"w", ",", " ", "h"}], "}"}], " ", "=", " ", 
+  RowBox[{"ImageDimensions", " ", "@", " ", "iLines"}]}]], "Input",
+ CellChangeTimes->{{3.616729889449413*^9, 3.616729898676941*^9}}],
+
+Cell[BoxData[
+ RowBox[{"For", " ", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "0"}], ",", " ", 
+   RowBox[{"i", "<", " ", "5"}], ",", " ", 
+   RowBox[{"i", "++"}], ",", " ", 
+   RowBox[{"Print", "[", "i", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6167299218242645`*^9, 3.616729963266635*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mx", " ", "=", " ", 
+  RowBox[{"ImageData", "@", "iLines"}]}]], "Input",
+ CellChangeTimes->{{3.6167310755922565`*^9, 3.6167310874129324`*^9}, {
+   3.6167311272562113`*^9, 3.6167311292293243`*^9}, {3.6167311620872035`*^9, 
+   3.616731175275958*^9}, 3.616731210213956*^9, {3.616731758249302*^9, 
+   3.616731769303934*^9}, {3.616731838415887*^9, 3.6167318393639417`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Part", "[", 
+  RowBox[{"mx", ",", " ", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.61673186608947*^9, 3.616731872872858*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mx", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.61673206435081*^9, 3.61673206838004*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mx", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6167320874401307`*^9, 3.6167320907783213`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mx", "[", 
+  RowBox[{"[", "2", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.616732097346697*^9, 3.6167320994018145`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IdentityMatrix", "[", "3", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IdentityMatrix", "[", "3", "]"}], " ", "//", " ", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.6167322376297207`*^9, 3.616732244308103*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.616732255738757*^9, 3.6167322610690613`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"m", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"IdentityMatrix", "[", "3", "]"}], " ", "//", " ", 
+   "MatrixForm"}]}]], "Input",
+ CellChangeTimes->{{3.616732285324449*^9, 3.6167322862355013`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mx", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.616737392467561*^9, 3.6167373949817047`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "%"}]], "Input",
+ CellChangeTimes->{{3.616737399457961*^9, 3.616737406924388*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Dimensions", " ", "@", " ", "mx"}]], "Input",
+ CellChangeTimes->{{3.616737422291267*^9, 3.6167374332188916`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"mx", "[", 
+  RowBox[{"[", "23", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.616737422291267*^9, 3.6167374332188916`*^9}, {
+  3.6167375489685125`*^9, 3.6167375638503637`*^9}, {3.61673765383251*^9, 
+  3.6167376562486486`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Length", " ", "@", " ", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"mx", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
+    RowBox[{
+     RowBox[{"#", "==", "1"}], " ", "&"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.616738369289432*^9, 3.6167383751967697`*^9}}]
 },
-WindowSize->{1432, 784},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{564, 690},
+WindowMargins->{{344, Automatic}, {Automatic, 34}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
@@ -140,17 +233,33 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 349, 9, 31, "Input"],
+Cell[557, 20, 349, 9, 52, "Input"],
 Cell[909, 31, 232, 5, 31, "Input"],
 Cell[1144, 38, 354, 8, 31, "Input"],
 Cell[1501, 48, 204, 4, 31, "Input"],
-Cell[1708, 54, 364, 7, 31, "Input"],
-Cell[2075, 63, 382, 11, 31, "Input"],
+Cell[1708, 54, 364, 7, 52, "Input"],
+Cell[2075, 63, 382, 11, 72, "Input"],
 Cell[2460, 76, 199, 3, 31, "Input"],
 Cell[2662, 81, 320, 5, 31, "Input"],
 Cell[2985, 88, 511, 11, 31, "Input"],
-Cell[3499, 101, 455, 9, 31, "Input"],
-Cell[3957, 112, 450, 11, 31, "Input"]
+Cell[3499, 101, 455, 9, 72, "Input"],
+Cell[3957, 112, 450, 11, 72, "Input"],
+Cell[4410, 125, 229, 5, 31, "Input"],
+Cell[4642, 132, 293, 7, 31, "Input"],
+Cell[4938, 141, 392, 6, 31, "Input"],
+Cell[5333, 149, 151, 3, 31, "Input"],
+Cell[5487, 154, 119, 2, 31, "Input"],
+Cell[5609, 158, 148, 3, 31, "Input"],
+Cell[5760, 163, 146, 3, 31, "Input"],
+Cell[5909, 168, 67, 1, 31, "Input"],
+Cell[5979, 171, 181, 4, 31, "Input"],
+Cell[6163, 177, 126, 2, 31, "Input"],
+Cell[6292, 181, 216, 5, 31, "Input"],
+Cell[6511, 188, 146, 3, 31, "Input"],
+Cell[6660, 193, 120, 2, 31, "Input"],
+Cell[6783, 197, 137, 2, 31, "Input"],
+Cell[6923, 201, 250, 5, 31, "Input"],
+Cell[7176, 208, 303, 8, 31, "Input"]
 }
 ]
 *)
