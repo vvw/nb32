@@ -1,0 +1,199 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5749,        190]
+NotebookOptionsPosition[      5127,        167]
+NotebookOutlinePosition[      5474,        182]
+CellTagsIndexPosition[      5431,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"http", ":"}], "//", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"mathematica", ".", "stackexchange", ".", "com"}], "/", 
+       "questions"}], "/", "27936"}], "/", "how"}], "-", "to", "-", "speed", 
+    "-", "up", "-", "text", "-", "recognition"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.616133037510022*^9, 3.61613304166226*^9}}],
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "@", 
+  RowBox[{"NotebookDirectory", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6161329587355165`*^9, 3.6161329751654563`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"img", "=", 
+  RowBox[{"Import", "[", "\"\<image1.jpg\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.61613291701013*^9, 3.61613295354722*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dims", "=", 
+  RowBox[{"ImageDimensions", "[", "img", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"imgl", "=", 
+   RowBox[{"ImageTake", "[", 
+    RowBox[{"img", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"dims", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"Round", "[", 
+        RowBox[{
+         RowBox[{"dims", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "/", "2"}], "]"}]}], "}"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.616133018131914*^9, 3.6161330199420176`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"itl", "[", "n_", "]"}], ":=", 
+  RowBox[{"ImageTake", "[", 
+   RowBox[{"imgl", ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "n"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.616133100864646*^9, 3.616133100865646*^9}}],
+
+Cell[BoxData[
+ RowBox[{"rowsl", "=", 
+  RowBox[{
+   RowBox[{"Position", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "[", 
+           RowBox[{"Select", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"ImageData", "[", 
+               RowBox[{
+                RowBox[{"itl", "[", "#", "]"}], ",", "\"\<Byte\>\""}], "]"}], 
+              "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ",", ";;", ",", "1"}], "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"#", "<", "200"}], "&"}]}], "]"}], "]"}], "<", "10"}], 
+         ",", "blank", ",", 
+         RowBox[{"itl", "[", "#", "]"}]}], "]"}], "&"}], "/@", 
+      RowBox[{"Range", "[", 
+       RowBox[{"dims", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ",", 
+     RowBox[{"Except", "[", "blank", "]"}]}], "]"}], "//", 
+   "Flatten"}]}]], "Input",
+ CellChangeTimes->{{3.6161331146344337`*^9, 3.6161331146354337`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"valsl", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Position", "[", 
+      RowBox[{
+       RowBox[{"Differences", "[", "rowsl", "]"}], ",", 
+       RowBox[{"Except", "[", 
+        RowBox[{"1", "|", "2", "|", "3"}], "]"}]}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"2", ";;"}], "]"}], "]"}], "//", "Flatten"}]}], "\n"}]], "Input",
+ CellChangeTimes->{{3.616133132023428*^9, 3.6161331320254283`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"trythesel", "=", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Riffle", "[", 
+       RowBox[{"valsl", ",", 
+        RowBox[{"valsl", "+", 
+         RowBox[{"Table", "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", 
+             RowBox[{"Length", "[", "valsl", "]"}]}], "}"}]}], "]"}]}]}], 
+       "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"2", ";;"}], "]"}], "]"}], ",", "2"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6161331455652027`*^9, 3.6161331455672026`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"linesl", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"rowsl", "[", 
+         RowBox[{"[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "-", "3"}], ",", 
+       RowBox[{
+        RowBox[{"rowsl", "[", 
+         RowBox[{"[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}], "+", "3"}]}], "}"}], 
+     "&"}], "/@", "trythesel"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.616133154910737*^9, 3.6161331549127374`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"nthline", "=", 
+  RowBox[{"ImageCrop", "[", 
+   RowBox[{"ImageTake", "[", 
+    RowBox[{"imgl", ",", 
+     RowBox[{"linesl", "[", 
+      RowBox[{"[", "n", "]"}], "]"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6161331644392824`*^9, 3.6161331644412823`*^9}}]
+},
+WindowSize->{834, 449},
+WindowMargins->{{Automatic, 241}, {111, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 412, 11, 31, "Input"],
+Cell[972, 33, 169, 3, 31, "Input"],
+Cell[1144, 38, 165, 3, 31, "Input"],
+Cell[1312, 43, 96, 2, 31, "Input"],
+Cell[1411, 47, 523, 16, 31, "Input"],
+Cell[1937, 65, 261, 7, 31, "Input"],
+Cell[2201, 74, 1020, 29, 92, "Input"],
+Cell[3224, 105, 439, 12, 52, "Input"],
+Cell[3666, 119, 582, 17, 31, "Input"],
+Cell[4251, 138, 580, 18, 31, "Input"],
+Cell[4834, 158, 289, 7, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

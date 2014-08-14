@@ -1,0 +1,101 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2864,         92]
+NotebookOptionsPosition[      2583,         78]
+NotebookOutlinePosition[      2965,         94]
+CellTagsIndexPosition[      2922,         91]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", " ", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<tNcYK.jpg\>\""}], 
+      " ", "}"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ImageResize", "[", 
+     RowBox[{"i", ",", 
+      RowBox[{"Scaled", "[", "0.3", "]"}]}], "]"}], "~", "ImageAdjust", "~", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1.5"}], "}"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"circles", "=", 
+   RowBox[{"SelectComponents", "[", 
+    RowBox[{
+     RowBox[{"MorphologicalComponents", "[", 
+      RowBox[{
+       RowBox[{"LaplacianGaussianFilter", "[", 
+        RowBox[{
+         RowBox[{"ColorNegate", "@", 
+          RowBox[{"DeleteSmallComponents", "@", 
+           RowBox[{"Closing", "[", 
+            RowBox[{
+             RowBox[{"EdgeDetect", "[", 
+              RowBox[{"i", ",", "3"}], "]"}], ",", "11"}], "]"}]}]}], ",", 
+         "2"}], "]"}], ",", "0.0056`"}], "]"}], ",", "\"\<Count\>\"", ",", 
+     RowBox[{
+      RowBox[{"#", ">", "600"}], "&"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"cm", "=", 
+  RowBox[{"ComponentMeasurements", "[", 
+   RowBox[{"circles", ",", "\"\<MeanCentroidDistance\>\""}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"ct", "=", 
+   RowBox[{"1", "/.", 
+    RowBox[{"ComponentMeasurements", "[", 
+     RowBox[{
+      RowBox[{"FillingTransform", "@", "i"}], ",", "\"\<Centroid\>\""}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"i", ",", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", "Red", ",", 
+      RowBox[{"Circle", "[", 
+       RowBox[{"ct", ",", 
+        RowBox[{"cm", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "]"}]}], "}"}], "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.616973540656799*^9, 3.6169735468681545`*^9}, 
+   3.6169740670449066`*^9, {3.616974308319707*^9, 3.616974315753132*^9}}]
+},
+WindowSize->{716, 653},
+WindowMargins->{{Automatic, 319}, {Automatic, 59}},
+Magnification->1.1000001430511475`,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2022, 56, 213, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
