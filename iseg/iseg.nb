@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      8727,        258]
-NotebookOptionsPosition[      7483,        218]
-NotebookOutlinePosition[      7850,        234]
-CellTagsIndexPosition[      7807,        231]
+NotebookDataLength[      9659,        284]
+NotebookOptionsPosition[      8301,        241]
+NotebookOutlinePosition[      8668,        257]
+CellTagsIndexPosition[      8625,        254]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -214,10 +214,33 @@ Cell[BoxData[
      RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
     RowBox[{
      RowBox[{"#", "==", "1"}], " ", "&"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.616738369289432*^9, 3.6167383751967697`*^9}}]
+ CellChangeTimes->{{3.616738369289432*^9, 3.6167383751967697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{
+   RowBox[{"mx", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], ",", "  ", 
+   RowBox[{"a_Integer", "/;", " ", 
+    RowBox[{"a", " ", "===", "1"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.617061286975738*^9, 3.6170613041937227`*^9}, {
+  3.61706145993163*^9, 3.617061512578642*^9}, {3.6170615849637823`*^9, 
+  3.6170615877439413`*^9}, {3.617061699079309*^9, 3.6170617021834865`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{"mx", ",", "  ", 
+   RowBox[{"a_Integer", "/;", " ", 
+    RowBox[{"a", " ", "===", "1"}]}], ",", " ", 
+   RowBox[{"{", "2", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.617061833475996*^9, 3.6170618394833393`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"?", "Plot"}]], "Input",
+ CellChangeTimes->{{3.6170613484902563`*^9, 3.617061351091405*^9}}]
 },
 WindowSize->{564, 690},
-WindowMargins->{{344, Automatic}, {Automatic, 34}},
+WindowMargins->{{Automatic, 357}, {45, Automatic}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
 StyleDefinitions->"Default.nb"
@@ -259,7 +282,10 @@ Cell[6511, 188, 146, 3, 31, "Input"],
 Cell[6660, 193, 120, 2, 31, "Input"],
 Cell[6783, 197, 137, 2, 31, "Input"],
 Cell[6923, 201, 250, 5, 31, "Input"],
-Cell[7176, 208, 303, 8, 31, "Input"]
+Cell[7176, 208, 303, 8, 31, "Input"],
+Cell[7482, 218, 429, 9, 31, "Input"],
+Cell[7914, 229, 265, 6, 31, "Input"],
+Cell[8182, 237, 115, 2, 31, "Input"]
 }
 ]
 *)
