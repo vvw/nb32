@@ -1,0 +1,30 @@
+
+
+PE #5 so slow
+
+The problem:
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+You've tried to use Fold, which is good, but the spirit of the algorithm is still very "procedural", in that you're not utilizing the Listable properties of certain functions and you're brute-forcing your way through the set of integers. For instance, Mod can take a list as a second argument, Fold[Times, 1, Range@20] is better written as Times @@ Range@20 and so on. Procedural programming is one of the worst possible styles of programming in Mathematica.
+
+The PE question boils down to "implement a least common multiple function" and Mathematica has one built in ¡ª LCM. To understand why your solution is slow, let's get a feel for how long it would take. The answer to the problem is:
+
+LCM @@ Range@20
+(* 232792560 *)
+Using your code with TimeConstrained, n progresses by about 60000 in one second on my machine. Assuming it takes the same time for all integers, we're talking about roughly little more than 1 hour on my machine to reach the answer.
+
+This is one of the things you'll realize when solving PE problems ¨C brute forcing is almost never useful. As you progress through the problems, you'll encounter situations where the memory and time constraints are astronomical. You'll probably even come across numbers that have more zeros than there are atoms in the known universe!
+
+For this example, you can convert the question requirements directly into functional code:
+
+Fold[#/#2 /. 
+    {
+        Rational[n_, d_] :> # d, (* not evenly divisible, so make it even *)
+        d_Integer :> # (* evenly divisible, so leave it alone *)
+    } &, 
+    1, 
+    Range@20 (* numbers from 1-20 *)
+]
+(* 232792560 *)
+This is almost instantaneous and doesn't use LCM. It uses functional and rule-based programming, rather than procedural. Once you're more familiar with the syntax, defaults and special cases, you'll be able to shorten the above code some more by condensing the pattern, but that's not necessary here.
