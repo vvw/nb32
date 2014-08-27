@@ -1,0 +1,1250 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     66541,       1241]
+NotebookOptionsPosition[     65450,       1202]
+NotebookOutlinePosition[     65828,       1218]
+CellTagsIndexPosition[     65785,       1215]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mt", " ", "=", 
+   RowBox[{"ImageData", "[", 
+    RowBox[{
+     GraphicsBox[
+      TagBox[RasterBox[CompressedData["
+1:eJzVlM0KwjAQhIN68A08+yh69qRPUEGvQhWkT1+jokiTncxso+BCS342s/Nt
+aJf70/Y4CSGc5/G1ba6rtm263SxO1t3lsJ/GwSI+m/jcx+/oHxFyAbYqhqNK
+/4qR+f1HSAZUV//F2BNhnSJLYM/PLTVfqk4yDmRBFUaQ6WTdDvPOi5luwFRQ
+MvNLRgZzkMaYUfuDNa3+8Iy8vlXUF5KH7HGJcYzDYg6e+gAdjA5MoIDXScZs
+WlaKZ+Q9W4Iku8SIFxlG/tZAuBkBbDahWJFUq8VoZRZFBlLp2WwaZuSpyYO+
+1vE61RmD8jVZfqRGFf2MZwTtAv200rLrMmTpj21NJalANNMC+VzxYRZdWVOJ
+gimE8Rkd7ArsWlPLZJqGd4F4EZwhlXpCXlA6fq9U9Mb3jQe0GFMRXD3dBZrY
+Gwko0an9912B5A0DMgq8bYc+uEHJW8X4avUbrZrFqw==
+        "], {{0, 23}, {76, 0}}, {0, 255},
+        ColorFunction->RGBColor],
+       BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+       Selectable->False],
+      BaseStyle->"ImageGraphics",
+      ImageSizeRaw->{76, 23},
+      PlotRange->{{0, 76}, {0, 23}}], "//", "Binarize"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6179271726646786`*^9, 3.6179272117889166`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "\:6807\:8bb0\:8981\:4fdd\:7559\:7684\:7a7a\:767d\:884c", 
+  "*)"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"labelRowsPreserve", "[", "m_", "]"}], " ", ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SplitBy", "[", 
+     RowBox[{
+      RowBox[{"m", "\[Transpose]"}], ",", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ".."}], "}"}]}], "]"}], "&"}]}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ":", 
+        RowBox[{"Repeated", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ".."}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "1"}], "}"}]}], "]"}]}], "}"}], "\[RuleDelayed]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"{", "x", "}"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{"0", "\[Rule]", "2"}], "}"}]}], ")"}]}], "}"}]}], "//", " ", 
+   RowBox[{
+    RowBox[{"Flatten", "[", 
+     RowBox[{"#", ",", "1"}], "]"}], "&"}]}]}]], "Input",
+ CellChangeTimes->{{3.618100633156354*^9, 3.6181007430186377`*^9}, {
+   3.6181007966637063`*^9, 3.6181008343628626`*^9}, 3.6181008754622135`*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", "\:5220\:9664\:7a7a\:767d\:884c", "*)"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"delRowsBlank", "[", "m_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"SplitBy", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{
+        RowBox[{"MatchQ", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ".."}], "}"}]}], "]"}], "&"}]}], "]"}], "/.", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ".."}], "}"}], ".."}], "}"}], "\[Rule]", 
+      RowBox[{"Sequence", "[", "]"}]}]}], "&"}], " ", "@", "m"}]}]], "Input",
+ CellChangeTimes->{{3.618108548802103*^9, 3.6181085795038595`*^9}, 
+   3.6181087820284433`*^9, {3.618108820574648*^9, 3.6181088229107814`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"splitZh", "[", "m_", "]"}], " ", ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"m", "//", "labelRowsPreserve"}], " ", "//", " ", 
+      "delRowsBlank"}], "//", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "/.", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ":", 
+           RowBox[{"2", ".."}]}], "}"}], "\[RuleDelayed]", 
+         RowBox[{"{", "x", "}"}]}]}], "/.", 
+       RowBox[{"{", 
+        RowBox[{"2", "\[Rule]", "0"}], "}"}]}], "&"}]}], "//", 
+    RowBox[{
+     RowBox[{"Transpose", "/@", "#"}], "&"}]}], "//", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ArrayPlot", "[", 
+       RowBox[{"#", ",", " ", 
+        RowBox[{"ColorRules", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"0", "\[Rule]", "Black"}], ",", " ", 
+           RowBox[{"1", "\[Rule]", "White"}], ",", " ", 
+           RowBox[{"2", "\[Rule]", "Red"}]}], "}"}]}], ",", " ", 
+        RowBox[{"Mesh", "\[Rule]", "True"}]}], "]"}], " ", "&"}], "/@", "#"}],
+     "&"}]}]}]], "Input",
+ CellChangeTimes->{{3.6181008446124487`*^9, 3.6181008489706984`*^9}, {
+   3.618108588524375*^9, 3.6181085933886538`*^9}, {3.618108936337269*^9, 
+   3.618108949704034*^9}, {3.618108992583486*^9, 3.618109009811472*^9}, {
+   3.6181090613854218`*^9, 3.6181091164635715`*^9}, 3.6181092221796184`*^9, {
+   3.618109256929606*^9, 3.618109277818801*^9}, {3.6181093117517414`*^9, 
+   3.618109314994927*^9}, {3.618109382767803*^9, 3.618109431155571*^9}, {
+   3.6181094632344055`*^9, 3.618109526413019*^9}, {3.6181095643201876`*^9, 
+   3.6181095823972216`*^9}, {3.6181097209881487`*^9, 3.61810975808127*^9}, {
+   3.618109796766483*^9, 3.6181097975335264`*^9}, {3.618109852733684*^9, 
+   3.6181099036425953`*^9}, {3.6181100314689074`*^9, 3.6181100493849316`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"splitZh", "@", "mt"}]], "Input",
+ CellChangeTimes->{{3.618110065770869*^9, 3.618110066557914*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 2, 7, 15, 24, 33, 43, 56, 67, 77, 95, 112, 123, 131, 140, 155, 
+         174, 188, 193, 198, 203, 210, 217, 221}, {{4}, {5}, {5}, {6}, {7}, {
+         20}, {21}, {6}, {7}, {8}, {9}, {19}, {20}, {21}, {22}, {8}, {9}, {
+         10}, {18}, {19}, {20}, {21}, {22}, {23}, {2}, {3}, {9}, {10}, {11}, {
+         17}, {18}, {19}, {20}, {1}, {2}, {3}, {4}, {10}, {11}, {12}, {16}, {
+         17}, {18}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {11}, {12}, {13}, {
+         15}, {16}, {17}, {4}, {5}, {6}, {7}, {8}, {9}, {12}, {13}, {14}, {
+         15}, {16}, {4}, {5}, {6}, {7}, {8}, {9}, {12}, {13}, {14}, {15}, {
+         4}, {5}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {
+         18}, {19}, {20}, {21}, {22}, {23}, {4}, {5}, {8}, {9}, {10}, {11}, {
+         12}, {13}, {14}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {
+         4}, {5}, {12}, {13}, {14}, {17}, {18}, {19}, {20}, {21}, {22}, {4}, {
+         5}, {12}, {13}, {14}, {17}, {18}, {19}, {4}, {5}, {6}, {12}, {13}, {
+         14}, {17}, {18}, {19}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         12}, {13}, {14}, {17}, {18}, {19}, {1}, {2}, {3}, {4}, {5}, {6}, {
+         7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {4}, {5}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {
+         17}, {18}, {19}, {4}, {5}, {13}, {14}, {18}, {4}, {5}, {6}, {13}, {
+         14}, {4}, {5}, {6}, {13}, {14}, {4}, {5}, {6}, {12}, {13}, {14}, {
+         15}, {4}, {5}, {6}, {12}, {13}, {14}, {15}, {4}, {5}, {13}, {
+         14}}}, CompressedData["
+1:eJxTTMoPSmVkYGC4ywADH+xH6VF6lB6lR+lRejjSAMRxCCo=
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 21}, 0., {
+       1, {{0, 2, 8, 15, 21, 26, 33, 40, 47, 55, 67, 78, 90, 98, 108, 122, 
+         135, 143, 149, 155, 171, 185, 190, 192}, {{19}, {20}, {1}, {2}, {
+         18}, {19}, {20}, {21}, {2}, {3}, {4}, {18}, {19}, {20}, {21}, {3}, {
+         4}, {5}, {6}, {20}, {21}, {5}, {6}, {7}, {20}, {21}, {5}, {6}, {7}, {
+         15}, {16}, {20}, {21}, {6}, {7}, {8}, {15}, {16}, {20}, {21}, {7}, {
+         8}, {9}, {15}, {16}, {20}, {21}, {6}, {7}, {8}, {9}, {15}, {16}, {
+         20}, {21}, {1}, {2}, {5}, {6}, {7}, {8}, {9}, {10}, {15}, {16}, {
+         20}, {21}, {2}, {3}, {5}, {6}, {7}, {9}, {10}, {15}, {16}, {20}, {
+         21}, {2}, {3}, {4}, {5}, {6}, {9}, {10}, {11}, {15}, {16}, {20}, {
+         21}, {3}, {4}, {10}, {11}, {15}, {16}, {20}, {21}, {3}, {4}, {5}, {
+         10}, {11}, {12}, {15}, {16}, {20}, {21}, {4}, {5}, {6}, {7}, {8}, {
+         9}, {10}, {11}, {12}, {13}, {15}, {16}, {20}, {21}, {5}, {6}, {7}, {
+         8}, {9}, {10}, {11}, {12}, {13}, {15}, {16}, {20}, {21}, {5}, {6}, {
+         7}, {11}, {15}, {16}, {20}, {21}, {6}, {7}, {15}, {16}, {20}, {21}, {
+         6}, {7}, {15}, {16}, {20}, {21}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {
+         9}, {10}, {11}, {12}, {13}, {15}, {16}, {20}, {21}, {2}, {3}, {4}, {
+         5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {20}, {21}, {11}, {
+         12}, {13}, {20}, {21}, {20}, {21}}}, CompressedData["
+1:eJxTTMoPSmVkYGA4wAADH+xH6VF6lB6lR+mRRQMAicrlqw==
+        "]}], {{0, 0}, {21, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {21, 23}}, {{0, 22}, {21, 22}}, {{0, 21}, {21, 
+         21}}, {{0, 20}, {21, 20}}, {{0, 19}, {21, 19}}, {{0, 18}, {21, 
+         18}}, {{0, 17}, {21, 17}}, {{0, 16}, {21, 16}}, {{0, 15}, {21, 
+         15}}, {{0, 14}, {21, 14}}, {{0, 13}, {21, 13}}, {{0, 12}, {21, 
+         12}}, {{0, 11}, {21, 11}}, {{0, 10}, {21, 10}}, {{0, 9}, {21, 9}}, {{
+         0, 8}, {21, 8}}, {{0, 7}, {21, 7}}, {{0, 6}, {21, 6}}, {{0, 5}, {21, 
+         5}}, {{0, 4}, {21, 4}}, {{0, 3}, {21, 3}}, {{0, 2}, {21, 2}}, {{0, 
+         1}, {21, 1}}, {{0, 0}, {21, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 0, 4, 14, 30, 43, 55, 62, 69, 79, 89, 97, 119, 142, 147, 163, 
+         180, 186, 200, 221, 240, 244, 247, 250}, {{7}, {8}, {20}, {21}, {
+         7}, {8}, {9}, {10}, {18}, {19}, {20}, {21}, {22}, {23}, {1}, {2}, {
+         3}, {7}, {8}, {9}, {10}, {11}, {12}, {17}, {18}, {19}, {20}, {21}, {
+         22}, {23}, {2}, {3}, {4}, {7}, {8}, {11}, {12}, {13}, {14}, {16}, {
+         17}, {18}, {19}, {3}, {4}, {5}, {6}, {7}, {8}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {5}, {6}, {7}, {8}, {15}, {16}, {17}, {6}, {7}, {
+         8}, {15}, {16}, {17}, {18}, {7}, {8}, {9}, {14}, {15}, {16}, {17}, {
+         18}, {19}, {20}, {8}, {9}, {10}, {11}, {13}, {14}, {15}, {18}, {
+         19}, {20}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {2}, {3}, {
+         4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {1}, {2}, {3}, {4}, {
+         5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {
+         17}, {18}, {19}, {20}, {21}, {22}, {23}, {11}, {12}, {13}, {21}, {
+         22}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {19}, {20}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {
+         11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {11}, {
+         12}, {13}, {18}, {19}, {20}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         10}, {11}, {12}, {13}, {16}, {17}, {18}, {2}, {3}, {4}, {5}, {6}, {
+         7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {22}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {
+         11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {
+         11}, {12}, {13}, {20}, {11}, {12}, {13}, {11}, {12}, {
+         13}}}, CompressedData["
+1:eJxTTMoPSmVkYGD4xQADH+xH6VF6lB6lR+lRepQeujQAUMAqmg==
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.618112058976874*^9, 3.618112447183078*^9, 3.6181149730245476`*^9, 
+   3.6181156248948326`*^9, 3.6181169302564955`*^9, 3.6181169735039687`*^9, 
+   3.618117012544202*^9, {3.6181172623554897`*^9, 3.6181172739191513`*^9}, {
+   3.6181176414101706`*^9, 3.6181176485615797`*^9}, 3.618117871006303*^9, 
+   3.618117971810068*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mt2", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"ImageCrop", "[", 
+       GraphicsBox[
+        TagBox[RasterBox[CompressedData["
+1:eJztXEuuJDUQNAwLLsGCxZzjCY4wnGBGgi3SgIRm5aP10YpmrE5FZWSG0+6n
+BxKV0qB6rnQ48mdnV1fz46ffP/z2bWvtj+/v//nw8a+fPn/++OWX7+5//Pzl
+z18/vbtf/HD/9/6b1v65Pi655JJLLrnkkksuueSSSy65ZCa999vtVlS+a7av
+cp+VoS0BilVeXl72cO6zBo2M3hLaXT+011lahBX+eRXXTWWEb2nK8MD2c4ap
+XXuG94fg4Aj9SJ4NqqG87gOWJU+a57Mp+u7qKquloTnswWZoCFWHzTSfNDlE
+C6Hevtx0Smwb3mayQZULfwOtUiB1PkM/259X6YV7UbaKOLZQxlze3zT5VbR/
+vdym+RZGYSMVRbkVTyVh2pPl1iPZLjf2Wxb9KUg2ZYnbHQT1Mfmx1uoMw8TI
+PFb0ZKYzyK+2GZgM2EubmeaT+8U0ecTd1SThBBsEUBg2W8W2MhYzMBufUuUo
+Gz1zqZEvmi+W3ihexMS5OppFEL5bBAmFV6nvMCG3Z8pN6Gy47kjsqsgULby1
+xK0y193KNJdMc5K51JV8O6dKO/cGx2KA6ibXhQksUTqi9BtOsB6g1TZ8dK9t
+RGNvP2CPMv3iURKas1du02RYTZjw4DC/DQPHyNCpt1WhprtVDzE7n2GzPxFE
+n24WaBsXlIrFix7W9DK7Mqn3MBhWTgaRHkuGYxIWuaFnkECHDsrFCMdDzNCc
+Z8oNOSB4h6cHI2duXyXzpwjlmDsAUdlghQ+Rv+OJ+PU+7SAfDhrhivxnRcKd
+s1J0FXF7hW3gUwmjNr0VKhsBToYwPSpJOP7s9OECA62JcWKEg5lU6LmFMgIC
+igf7o2MJQzA1PAtBJmKVDRHEpuD93KpV7K1Hs8IQ0RxPsSEUJZvF+BWcUeMZ
+N9zKQhMyfc7Ydv6ML77tsonWRyF+KKagMd2Glu3tq+WG3DIO01iLEDiZRoHF
+DHemaUtRuItw+cDhFrBhS+nwOcSZiOLFzyMOPEyJuktFFASOS+bj/FGin5/q
+tEeHw95zq4flxnc5Io5Jg54H1djMMVGX26oIqAx8tI4ZvRDQOaSfO3zU4WBl
+kunslVuHDjlbgsM9ha2sYiLavw79NtMLixEfrmpWLSnJMdfyLQx6yOfIs9Hd
+zaA6bbm63MIpdVbMJ0PLVs9I6nFkyCPtnMOhXSHgkfTP2vZKcMVCFUs1mhvU
+f2ZmbkhmlKbnltb2bsg0KKgwtVEHd+w8aDUb5UDCpwer4TBY/dAskyzZBlo2
+a0wxk7FLEaZpeqHD7cIJ9tgacGoyr5JNsS/+xn7OW4pbUTgWBb9PzMR9zZcx
+DBeyEbeK9tszopF70p9UEFCZL5ost3DRrNwOyhO75gvhQzcu9vYKmpPQexXA
+fu4k3UVGoF5umUunVjgopMTc6vYK8wWNVYSQD4+zZFDTJbSgXWzjGKl/U2bX
+dsxxcbmR6QPt0GNji7NbfJHh8N1pSotbPKK7R0HPPYU4Hp9MdZTr5TY9PgQs
+Hhwuq11u1O3NzDfbkUblKLcpCBXyMakQOyiyFc9XoBiniOxKBiPi6miDJ3oG
+O7S9cuPV904QnhIqY0KKXtdShUGwd3JoU0+ir/BB02rKYRBdK8jx5fSe4luB
+uPd18SH2NHOs+c8Civ5fst35isncHj8qmaLhXMapmClg2aINtBYJ3govMpw3
+LrfKQrxvZCB8K/Ozu+tg7c961hVtcYMVfGECMy9Chdmi2+BMpkdk6GHNMCy3
+cLNFGhXDw/GJhckrEDzivFd5v+g/WG7YG3A4iuLQsHUcZ0RIo0c/kZhKhxfq
+tFt0uN1ByQpLr7twbrgEtpZ46ZEac0CvOpm+WcfxdSd4i1JIsxUNQMXMrKYc
+4fBQEPiZLc+UG7paKONCOrenJKer6K9HmYMFXbAKmVS+x88ce4MfZvbkG9Wi
+V3GtYUWYGJnCkMx8dKbp1CmFJFu0nYbnnZulMcP0qPB0ThYRZK8KYpktz5Sb
+sHQJbapj49pG1K9bWiG/ZIVTzsbtlp07x3ljqXNDHWcm4rglcHoIi8Q42Soe
+yAwP7QqRxVns3ld33QIfvijOzBv8iKDNyi30c2apW/fl/AsyFOFYNFP4itEq
+LxUzCM7tcC4IKCeCgAtThqwdIsxhHLeEe2raz+9pMLfQP9kralMFrCmGtbUc
+ST4Q7Z20zIGiw0d3uTxEt7jlOKD8nWYooplBz4RoxyOrdauf2WIjDR4jF8vN
+Dfakecs8lsGamk3P3vNEJ2RSKRPXNTkr7G695yxyc8r6BS10IzK0AnRq4y5/
+iYDm8PsJOOuFfpjA6ceSWTFNAw0baoY4U7TpLGEvIwu0JXH7W8aqAlJUxnDo
+6BRNXvKJ3ucrCG5KcenXUnOLCs9PM1CsNS06wX/ak7gTrT12fv7CZenjNkpF
+eVzf4P8fwnPF+6t7Mv0K/tXFfCsKDZWb7E7DSL2ZVII7ZLzR/YrrYtcdIt/O
+P0ZgnSLzSy655JJLLvm/yd92i+IJ
+          "], {{0, 29}, {293, 0}}, {0, 255},
+          ColorFunction->RGBColor],
+         BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+         Selectable->False],
+        BaseStyle->"ImageGraphics",
+        ImageSize->{287.25, Automatic},
+        ImageSizeRaw->{293, 29},
+        PlotRange->{{0, 293}, {0, 29}}], "]"}], "//", "Binarize"}], " ", "//",
+      "ColorNegate"}], "//", "ImageData"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.618112709521083*^9, 3.6181127289621944`*^9}, {
+   3.6181127943019323`*^9, 3.6181128026424093`*^9}, 3.6181129152508497`*^9, {
+   3.6181130874657*^9, 3.6181130881907415`*^9}, {3.618113174763693*^9, 
+   3.6181131777728653`*^9}, {3.618113345316448*^9, 3.6181133642435308`*^9}, {
+   3.618115088432149*^9, 3.618115092986409*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"splitZh", "@", "mt2"}], ";"}]], "Input",
+ CellChangeTimes->{{3.618113366240645*^9, 3.618113371064921*^9}, 
+   3.618114251354271*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"i", "=", 
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJztnFuu2zYQQNXHR7fRlVy0S0gXUCRACvSrQFqgyBeX5qWpbggT43lxKF84
+1845QAJdiRzOi0PKlvzzh7/e/fH9tm1//3T+7937f3/59On9599+PP/x6+d/
+Pn744Xzw5/nf799t2//HOwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAADA3eEH8wHApbX2tVUAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAD4hmitnU6nYuNzy+0L0bvh7Qt1gckoLy8vx+Sce3U1
+IvWWpJ3bu/YqS4tiE/+8iuum9PAtdekeOPxTIVO7jhneLsiTPfQ9eQ6o+gS8
+7i+6LMV95EnUJb+6Osqxn6eIdDgmNpImRdXFRi1vNNmV5oq6f3HIU+Kw4duM
+Y9o+ELaoHrC9Mp3r+vT20dq3qp5b56NRki2BpPe1a0eu/Kq0r14cprPDjcKB
+iZMUh+KKn5h2Y3FoHt9IcbBRjnJ1KiTqsuTJsxDZXk5VWRnqGrppHMW3GPeo
+TVd+dcMpU1feVQ0zh0/OB9NUT66uprSdDl0BiRUbjTIKr2UYGJ2fqmqjPNQb
+Lh3KF81Phj5Qah4Rm0t57hWF2KtFIS52lHr1dnW7pTgkbQ64bg/sqjCV5l5a
+0q3SV12KWi6ZpohcqgrUdp0q2/W+a18MUN3kZ8W6a8mBuzdZesjGbnCrLaYy
+GUaR7+vmLur/aF9cpl1zjhWHaequpre7KA+/dQP7md6mvsF2W6pL9RBb51ux
+0Z9SSL5zGIEe5xOViqVGejhXL7Ir4lk/kJRJaFM3SeZIWj4d6p6UcZQKNLGX
+Vhklz7syXXNuKQ5SBym8ic/oeoafvhD5M0m83rcLlI2H2MSHUn+lp5Rf37Hv
+xoddDXdE+2cFt85XSkQFVdnGcjPFjdr00qMzkmQvF4fKlOl/NnNTLNMyV8ym
+sXsyoqKeGihSIBFlT7bL3tVNmKnhUQgiklEOkCg2Fd6uN+0Ve+vRrGgopSk9
+k/JVJOpl5T8T3bpePyNPymXCdXjU3s6v7fqTtOTpgtFx7KilfJfRIJepFoto
+3VwtDlK3SIdpZiYhUEyjYBmGK9NySyV2h6bywYY7EeveXCj5NsQRSamRd6ZK
+uJsSdZcmUXgCbGTbZWOsMlBVBpv8dtvsFgd71eaP0mQTu1/ZzAald8yLwyqJ
+qEh4v4mI1HMFKoe063s92cYGKyJqc6w4NHGvFA1hwz0VWxllkNwINHHnZdVz
+S4f8wiXXagsKSO878s0N+uMigxvNDnU1EtXMcpYXB7dLXSurTyQtGj1SMj8v
+NbRntusZ59rlCtyDO6nc9kpxSAaqWJpLUyfzPyMzDxAZlaunhs7tPUAlKA+E
+NGcakdzqXtVljGwIlBD3M7rV5Bli8w/SI6Kp0aVFvXqXYbLcryam5eq5Dh8H
+Cnm3lQucmmxHibqMBy36WmkLoBoxcaxEPr8RoR6riDR0Bxpn1Ci5324hkvxY
+dFtasFNdsncTNUF2V23yfekeF4fdZPU4tgeRpfZqsm5WpClc71UEtut7CnUQ
+KVAvDpFLp1YoUVIlq1vd3sT8RI1VCa4+9rwlEjUd4pmQUbAR6WfqTyaM47GF
+sKVAnZl+JefGty8f45I9iOTYq9MJmFyyZ/L7iEQ99VnffvlEJc/JenGYLs2J
+WLkoqzmocqNub2T+sF2qUdkmjS5SlKvPoKLYbiJb8fxzIC21Vhf9oCa4zB81
+6w94VcZR7tWPFQc7+rHV2XZxG8vpk9z1jMS2QuQuWkmbelL6Sn6cuzpBZBDV
+TYGNr52MU/ljOqv3euQXW9PMGbeBUUCl/5dsV76yypwuL/ZWBD4Q0lJrdSUo
+iVjr/wPSNg95yT2I5Ny5OFQGslUuEmIvRX5WV5XY8Wd9jhRtUScr8hMTrOZF
+UW625DdEEdPth+vh50AapQx0F7JBZUM7TZ6IdkF53r2vHGIrT/a+weIg9102
+HEWUNHkT0ddfV43mvaY6pYlH2XO35OFWmxDbYOnRTZsbKoHHzdHSB9dWB+lV
+xdIbuG8fm41qL7d5CZ/7NtkKVoISVQClsLvgJvIjW24pDjIxksZyoHwmTpWc
+jpI/jmJ1GEFPtHI1qTzlFTn2JH4mpQVPsBS9KsfqVriJETXoROZLZ442dZUe
+HeU9lX6RH5I5uHtLXhMb2qlXVUok+WZzIFEssuWW4pBYuiRt2macz22U7euW
+VpRfskI1js6PS2NN36/LYF032UaZKeWoIWR3V6xUzCZbxQMPTZ7erh+SXZl6
+Z1DtG+02TCLltOsXObdZcXCzIrJUjfty/QsJkiQNpJmJr6y0yqtSVojs28Sa
+m4hSJAqoMEWSc4ck5lg5agj1TUq7fubQ6ub6J3o4fNpAVgArdoyllLSbjfE0
++Gpo3ibJnWnHnTUyiLLxyXub2D7x4pJsa2UcXWn7ZQ7mt6iRLePMJr4IKxYH
+dbIF2/jIY5HY0Wx0j94HkU6IqExqtX9WVoyr9buPom6qcf5otHSj1HCUC9Ws
+X7Vfg0pz7NNrsteLeTnUpp/lOb62mCZt7gS3ZWW4XJTbqx+70bGSl5yQoNaO
+SKuKkGJjGY48OkWTl3ySr6EVCapLcejXaqYGTTw/zcBkrGmJmBryEGyF3ana
+LWyXVdV+wb30oZak0rgfn8TvOtq+yVs5x5g+oPXqDN8mZUE23tL7FDdSd6MS
+3E5/T+0Vx5X3X67k0/ULobZNUXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAOi8wVd0o7eY669CQ+f+r95DQvIzKcmlr0XlxxPuz/SHSu6v0oOy9Hs7
+9+HA7+cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAvC7/AR1zwIk=
+     "], {{0, 105}, {351, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   BaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{351, 105},
+   PlotRange->{{0, 351}, {0, 105}}]}]], "Input",
+ CellChangeTimes->{{3.6181161150098658`*^9, 3.6181161188210835`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnFuu2zYQQNXHR7fRlVy0S0gXUCRACvSrQFqgyBeX5qWpbggT43lxKF84
+1845QAJdiRzOi0PKlvzzh7/e/fH9tm1//3T+7937f3/59On9599+PP/x6+d/
+Pn744Xzw5/nf799t2//HOwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAADA3eEH8wHApbX2tVUAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAD4hmitnU6nYuNzy+0L0bvh7Qt1gckoLy8vx+Sce3U1
+IvWWpJ3bu/YqS4tiE/+8iuum9PAtdekeOPxTIVO7jhneLsiTPfQ9eQ6o+gS8
+7i+6LMV95EnUJb+6Osqxn6eIdDgmNpImRdXFRi1vNNmV5oq6f3HIU+Kw4duM
+Y9o+ELaoHrC9Mp3r+vT20dq3qp5b56NRki2BpPe1a0eu/Kq0r14cprPDjcKB
+iZMUh+KKn5h2Y3FoHt9IcbBRjnJ1KiTqsuTJsxDZXk5VWRnqGrppHMW3GPeo
+TVd+dcMpU1feVQ0zh0/OB9NUT66uprSdDl0BiRUbjTIKr2UYGJ2fqmqjPNQb
+Lh3KF81Phj5Qah4Rm0t57hWF2KtFIS52lHr1dnW7pTgkbQ64bg/sqjCV5l5a
+0q3SV12KWi6ZpohcqgrUdp0q2/W+a18MUN3kZ8W6a8mBuzdZesjGbnCrLaYy
+GUaR7+vmLur/aF9cpl1zjhWHaequpre7KA+/dQP7md6mvsF2W6pL9RBb51ux
+0Z9SSL5zGIEe5xOViqVGejhXL7Ir4lk/kJRJaFM3SeZIWj4d6p6UcZQKNLGX
+Vhklz7syXXNuKQ5SBym8ic/oeoafvhD5M0m83rcLlI2H2MSHUn+lp5Rf37Hv
+xoddDXdE+2cFt85XSkQFVdnGcjPFjdr00qMzkmQvF4fKlOl/NnNTLNMyV8ym
+sXsyoqKeGihSIBFlT7bL3tVNmKnhUQgiklEOkCg2Fd6uN+0Ve+vRrGgopSk9
+k/JVJOpl5T8T3bpePyNPymXCdXjU3s6v7fqTtOTpgtFx7KilfJfRIJepFoto
+3VwtDlK3SIdpZiYhUEyjYBmGK9NySyV2h6bywYY7EeveXCj5NsQRSamRd6ZK
+uJsSdZcmUXgCbGTbZWOsMlBVBpv8dtvsFgd71eaP0mQTu1/ZzAald8yLwyqJ
+qEh4v4mI1HMFKoe063s92cYGKyJqc6w4NHGvFA1hwz0VWxllkNwINHHnZdVz
+S4f8wiXXagsKSO878s0N+uMigxvNDnU1EtXMcpYXB7dLXSurTyQtGj1SMj8v
+NbRntusZ59rlCtyDO6nc9kpxSAaqWJpLUyfzPyMzDxAZlaunhs7tPUAlKA+E
+NGcakdzqXtVljGwIlBD3M7rV5Bli8w/SI6Kp0aVFvXqXYbLcryam5eq5Dh8H
+Cnm3lQucmmxHibqMBy36WmkLoBoxcaxEPr8RoR6riDR0Bxpn1Ci5324hkvxY
+dFtasFNdsncTNUF2V23yfekeF4fdZPU4tgeRpfZqsm5WpClc71UEtut7CnUQ
+KVAvDpFLp1YoUVIlq1vd3sT8RI1VCa4+9rwlEjUd4pmQUbAR6WfqTyaM47GF
+sKVAnZl+JefGty8f45I9iOTYq9MJmFyyZ/L7iEQ99VnffvlEJc/JenGYLs2J
+WLkoqzmocqNub2T+sF2qUdkmjS5SlKvPoKLYbiJb8fxzIC21Vhf9oCa4zB81
+6w94VcZR7tWPFQc7+rHV2XZxG8vpk9z1jMS2QuQuWkmbelL6Sn6cuzpBZBDV
+TYGNr52MU/ljOqv3euQXW9PMGbeBUUCl/5dsV76yypwuL/ZWBD4Q0lJrdSUo
+iVjr/wPSNg95yT2I5Ny5OFQGslUuEmIvRX5WV5XY8Wd9jhRtUScr8hMTrOZF
+UW625DdEEdPth+vh50AapQx0F7JBZUM7TZ6IdkF53r2vHGIrT/a+weIg9102
+HEWUNHkT0ddfV43mvaY6pYlH2XO35OFWmxDbYOnRTZsbKoHHzdHSB9dWB+lV
+xdIbuG8fm41qL7d5CZ/7NtkKVoISVQClsLvgJvIjW24pDjIxksZyoHwmTpWc
+jpI/jmJ1GEFPtHI1qTzlFTn2JH4mpQVPsBS9KsfqVriJETXoROZLZ442dZUe
+HeU9lX6RH5I5uHtLXhMb2qlXVUok+WZzIFEssuWW4pBYuiRt2macz22U7euW
+VpRfskI1js6PS2NN36/LYF032UaZKeWoIWR3V6xUzCZbxQMPTZ7erh+SXZl6
+Z1DtG+02TCLltOsXObdZcXCzIrJUjfty/QsJkiQNpJmJr6y0yqtSVojs28Sa
+m4hSJAqoMEWSc4ck5lg5agj1TUq7fubQ6ub6J3o4fNpAVgArdoyllLSbjfE0
++Gpo3ibJnWnHnTUyiLLxyXub2D7x4pJsa2UcXWn7ZQ7mt6iRLePMJr4IKxYH
+dbIF2/jIY5HY0Wx0j94HkU6IqExqtX9WVoyr9buPom6qcf5otHSj1HCUC9Ws
+X7Vfg0pz7NNrsteLeTnUpp/lOb62mCZt7gS3ZWW4XJTbqx+70bGSl5yQoNaO
+SKuKkGJjGY48OkWTl3ySr6EVCapLcejXaqYGTTw/zcBkrGmJmBryEGyF3ana
+LWyXVdV+wb30oZak0rgfn8TvOtq+yVs5x5g+oPXqDN8mZUE23tL7FDdSd6MS
+3E5/T+0Vx5X3X67k0/ULobZNUXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAOi8wVd0o7eY669CQ+f+r95DQvIzKcmlr0XlxxPuz/SHSu6v0oOy9Hs7
+9+HA7+cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAvC7/AR1zwIk=
+    "], {{0, 105}, {351, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSizeRaw->{351, 105},
+  PlotRange->{{0, 351}, {0, 105}}]], "Output",
+ CellChangeTimes->{
+  3.6181161194301186`*^9, 3.618116930397503*^9, 3.6181169736429768`*^9, 
+   3.6181170126782093`*^9, {3.6181172624904976`*^9, 3.618117274053159*^9}, {
+   3.6181176415481787`*^9, 3.6181176487005873`*^9}, 3.6181178711423106`*^9, 
+   3.618117971938076*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"i", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"i", "//", "Binarize"}], "//", "ColorNegate"}], "//", 
+   RowBox[{
+    RowBox[{"DeleteSmallComponents", "[", 
+     RowBox[{"#", ",", " ", "7", ",", " ", 
+      RowBox[{"CornerNeighbors", "\[Rule]", "False"}]}], "]"}], 
+    "&"}]}]}]], "Input",
+ CellChangeTimes->{{3.618116141013353*^9, 3.6181161481717625`*^9}, {
+   3.6181161941333914`*^9, 3.618116207019128*^9}, {3.618116685099473*^9, 
+   3.618116775892666*^9}, {3.618116901308839*^9, 3.6181169021168857`*^9}, 
+   3.618117645055379*^9, {3.6181178502961187`*^9, 3.6181178626528254`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztm1tuUzEQhj2IB7bBUmAJZQGolUDiCakgoe6eQGLP/eRyUiSk71Mvicce
+//N7jqM+9P3T94evb8YYP94dfjw8/vrw/Pz48unt4c3Hl59fnv6Evh2+P8sA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID7E/97S0TWq2ZFNT4HU3Dm+/tL
+qiXtRhtbSrXGjOWw6niF/1frU4bdxNpbrpJq3IiXNhIy9mvijIvtNdKLFZN6
+s5s4JmuLruztJErIZcN9b9xgryQrenulHv139sq42t7jd1QS7BVvb8wbEmbL
++t50c0/6i1A2S9bkbOMVV9EVXGev0dx2W2WvbNtbG9L35ohu2K7s/J1656Gk
+5qgK3kttrx7zhr1xXWuvPxRXtL5ZnWjy2Rfp/F2w6N50wNH09OwV/b4HlVDY
+24oYEtWa2Ni295jRX6srdGywJK+sWpbluQcKLU3pccS/2MsqWNVYdWJ+miWS
+nua6JImCTXumeyNlS93W9Fq0t1+lwkflYX993Uq01xXnCzcivL2+Mqsv2utP
+YvhVvb1OjFnU2Jv8bQPhyJpz3IFYs1yfOntNxDbAWD3Z6l+BGW4W6SMuyfjK
+XnuQm5eDDaX7KNrrxJ7z7gKWWSK+MtM1U74W5MUlF7e6N99CxW1TFJzt1V/W
+3rJBw4WkD8sZZ3YT6grX1LBOqJdugcRPeystt7VJlGLn7TVG5ePvsl1g79ai
+PYi9e93Vdvxq7V2PpbVXlv74+bVhb/bA22s21FnrTjN2hboKh4KKS67rfTh7
+3bgRMEtyUX2mN+3111llxylNezlUlftmbuzNV0pv71J3P2tnytLeKXHJ96vG
+3ew19c6IkzeLzlV7faE7RJfbfE7Rhr13Mrmz14os79ZZ9i32xqliEvhp1t7S
+X10lkgPpWMQoz38h+s+WtN0N2GdoSqrlR4VTxE57xyrVp9WdRjyDnCLYK3n/
+qF2flZDuru76ylSrivFDoea12ims7Q2qxdthJrmtTDyWbLe1IuP5uCXrpPSp
+9dvdy1jVuGxSrUanZHu1nle1d4RsyavQfGZ4PY/xvE7hoU7aMyofkj24ZnQy
+p4eWcZLj7E1XZV4TLodso0aDh2Ok9Po6TDOzYwe7/O5lOJWNDW7A5IuO5GHb
+errWBs7ZOyTu6ksrgs2bbG7s7OqumGIb66tu2kVpTZSft9OT9vZW+XVFMaxv
+fduUd4hJk3ZM9tZvpmJbmJ9zT3dLFyv9qd3GqRmKuX7hZSqCkOrl+RyXzYuf
+LmsYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOB/5TfyLBKJ
+    "], {{0, 105}, {351, 0}}, {0, 1},
+    ColorFunction->GrayLevel],
+   BoxForm`ImageTag["Bit", ColorSpace -> Automatic, Interleaving -> None],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSizeRaw->{351, 105},
+  PlotRange->{{0, 351}, {0, 105}}]], "Output",
+ CellChangeTimes->{
+  3.6181161489168053`*^9, 3.618116214179538*^9, 3.618116692720909*^9, {
+   3.6181167235386715`*^9, 3.6181167814239826`*^9}, {3.6181169064841356`*^9, 
+   3.618116930428505*^9}, 3.6181169736779785`*^9, 3.618117012711211*^9, {
+   3.6181172625214996`*^9, 3.618117274084161*^9}, {3.6181176380709796`*^9, 
+   3.618117648727589*^9}, {3.6181178674300985`*^9, 3.6181178711723127`*^9}, 
+   3.618117971971078*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mt3", "=", 
+   RowBox[{
+    RowBox[{"ImageCrop", "[", "i", "]"}], "//", "ImageData"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.618115108579301*^9, 3.6181151145476427`*^9}, {
+   3.6181151468094873`*^9, 3.6181151478785486`*^9}, {3.618115181683482*^9, 
+   3.6181151959202967`*^9}, {3.618116856998305*^9, 3.6181168631076546`*^9}, 
+   3.6181168956985188`*^9, 3.6181169378819313`*^9, {3.6181176676156693`*^9, 
+   3.6181176991554737`*^9}, {3.618117730175248*^9, 3.618117735545555*^9}, {
+   3.6181177854664106`*^9, 3.618117812171938*^9}, {3.618117847459956*^9, 
+   3.6181178640599055`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mt3", "//", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"#", ",", " ", 
+      RowBox[{"ColorRules", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"0", "\[Rule]", "Black"}], ",", " ", 
+         RowBox[{"1", "\[Rule]", "White"}], ",", " ", 
+         RowBox[{"2", "\[Rule]", "Red"}]}], "}"}]}], ",", " ", 
+      RowBox[{"Mesh", "\[Rule]", "True"}]}], "]"}], " ", "&"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6181152728646975`*^9, 3.6181152840303364`*^9}, 
+   3.618115339086485*^9, 3.6181168693310103`*^9, 3.618116992482054*^9, 
+   3.6181172648436327`*^9, 3.6181175500699463`*^9, {3.6181177049418044`*^9, 
+   3.618117712850257*^9}, {3.6181178154401245`*^9, 3.6181178217634864`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"splitZh", "@", "mt3"}]], "Input",
+ CellChangeTimes->{{3.618117824257629*^9, 3.6181178269077806`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 22}, 0., {
+       1, {{0, 11, 25, 42, 54, 67, 81, 92, 101, 110, 119, 129, 144, 159, 174, 
+         187, 198, 206, 212, 218, 224, 229, 230, 230}, {{1}, {2}, {3}, {13}, {
+         14}, {15}, {16}, {17}, {18}, {19}, {20}, {1}, {2}, {3}, {4}, {12}, {
+         13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {1}, {2}, {3}, {
+         4}, {5}, {6}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {
+         21}, {22}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {12}, {13}, {14}, {
+         20}, {21}, {2}, {3}, {4}, {6}, {7}, {8}, {9}, {10}, {12}, {13}, {
+         14}, {20}, {21}, {2}, {3}, {4}, {6}, {7}, {8}, {9}, {10}, {11}, {
+         12}, {13}, {14}, {20}, {21}, {2}, {3}, {4}, {6}, {7}, {8}, {11}, {
+         12}, {13}, {14}, {21}, {2}, {3}, {4}, {6}, {7}, {8}, {12}, {13}, {
+         14}, {2}, {3}, {4}, {6}, {7}, {8}, {12}, {13}, {14}, {2}, {3}, {4}, {
+         6}, {7}, {8}, {12}, {13}, {14}, {2}, {3}, {4}, {6}, {7}, {8}, {12}, {
+         13}, {14}, {15}, {2}, {3}, {4}, {6}, {7}, {8}, {9}, {10}, {11}, {
+         12}, {13}, {14}, {15}, {16}, {17}, {2}, {3}, {4}, {6}, {7}, {8}, {
+         9}, {10}, {11}, {12}, {13}, {14}, {16}, {17}, {18}, {2}, {3}, {4}, {
+         6}, {7}, {8}, {10}, {11}, {12}, {13}, {14}, {17}, {18}, {19}, {20}, {
+         2}, {3}, {4}, {6}, {7}, {8}, {12}, {13}, {14}, {18}, {19}, {20}, {
+         21}, {2}, {3}, {4}, {6}, {7}, {8}, {12}, {13}, {14}, {19}, {20}, {
+         2}, {3}, {6}, {7}, {8}, {12}, {13}, {14}, {6}, {7}, {8}, {12}, {
+         13}, {14}, {6}, {7}, {8}, {12}, {13}, {14}, {6}, {7}, {8}, {12}, {
+         13}, {14}, {6}, {7}, {12}, {13}, {14}, {13}}}, CompressedData["
+1:eJxTTMoPSmVkYGB4xgADH+xH6VF6lB6lR+lRepTGTQMAuUgS2g==
+        "]}], {{0, 0}, {22, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {22, 23}}, {{0, 22}, {22, 22}}, {{0, 21}, {22, 
+         21}}, {{0, 20}, {22, 20}}, {{0, 19}, {22, 19}}, {{0, 18}, {22, 
+         18}}, {{0, 17}, {22, 17}}, {{0, 16}, {22, 16}}, {{0, 15}, {22, 
+         15}}, {{0, 14}, {22, 14}}, {{0, 13}, {22, 13}}, {{0, 12}, {22, 
+         12}}, {{0, 11}, {22, 11}}, {{0, 10}, {22, 10}}, {{0, 9}, {22, 9}}, {{
+         0, 8}, {22, 8}}, {{0, 7}, {22, 7}}, {{0, 6}, {22, 6}}, {{0, 5}, {22, 
+         5}}, {{0, 4}, {22, 4}}, {{0, 3}, {22, 3}}, {{0, 2}, {22, 2}}, {{0, 
+         1}, {22, 1}}, {{0, 0}, {22, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 22}, 0., {
+       1, {{0, 7, 19, 34, 50, 59, 66, 71, 76, 83, 93, 102, 113, 126, 138, 150,
+          161, 172, 179, 184, 189, 194, 196, 197}, {{1}, {2}, {16}, {17}, {
+         18}, {19}, {20}, {1}, {2}, {3}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {3}, {4}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {19}, {20}, {21}, {22}, {4}, {5}, {9}, {10}, {11}, {
+         12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {
+         5}, {6}, {7}, {8}, {9}, {10}, {11}, {14}, {15}, {5}, {6}, {7}, {8}, {
+         9}, {14}, {15}, {6}, {7}, {8}, {14}, {15}, {6}, {7}, {8}, {14}, {
+         15}, {1}, {5}, {6}, {7}, {8}, {14}, {15}, {1}, {2}, {5}, {6}, {7}, {
+         8}, {9}, {14}, {15}, {21}, {2}, {5}, {8}, {9}, {14}, {15}, {20}, {
+         21}, {22}, {2}, {3}, {4}, {5}, {8}, {9}, {14}, {15}, {20}, {21}, {
+         22}, {2}, {3}, {4}, {5}, {8}, {9}, {10}, {14}, {15}, {19}, {20}, {
+         21}, {22}, {3}, {4}, {5}, {8}, {9}, {10}, {14}, {15}, {18}, {19}, {
+         20}, {21}, {3}, {4}, {5}, {8}, {9}, {10}, {14}, {15}, {16}, {17}, {
+         18}, {19}, {3}, {4}, {5}, {8}, {9}, {10}, {11}, {14}, {15}, {16}, {
+         17}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {14}, {15}, {
+         3}, {4}, {5}, {9}, {10}, {14}, {15}, {4}, {5}, {6}, {14}, {15}, {
+         4}, {5}, {6}, {14}, {15}, {4}, {5}, {6}, {14}, {15}, {14}, {15}, {
+         14}}}, CompressedData["
+1:eJxTTMoPSmVkYGA4ygADH+xH6VF6lB6lR+lRGhsNAPbF65s=
+        "]}], {{0, 0}, {22, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {22, 23}}, {{0, 22}, {22, 22}}, {{0, 21}, {22, 
+         21}}, {{0, 20}, {22, 20}}, {{0, 19}, {22, 19}}, {{0, 18}, {22, 
+         18}}, {{0, 17}, {22, 17}}, {{0, 16}, {22, 16}}, {{0, 15}, {22, 
+         15}}, {{0, 14}, {22, 14}}, {{0, 13}, {22, 13}}, {{0, 12}, {22, 
+         12}}, {{0, 11}, {22, 11}}, {{0, 10}, {22, 10}}, {{0, 9}, {22, 9}}, {{
+         0, 8}, {22, 8}}, {{0, 7}, {22, 7}}, {{0, 6}, {22, 6}}, {{0, 5}, {22, 
+         5}}, {{0, 4}, {22, 4}}, {{0, 3}, {22, 3}}, {{0, 2}, {22, 2}}, {{0, 
+         1}, {22, 1}}, {{0, 0}, {22, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 8, 22, 35, 46, 61, 79, 98, 111, 123, 135, 152, 172, 190, 201, 
+         218, 238, 255, 269, 284, 295, 302, 309, 314}, CompressedData["
+1:eJxtjdENgzAMRJ1QCBRIWiD0u2t0DEZgAfb/42wZFySkKL53Pp2/67asnoh+
+jgiPqtB2MU25Cs+262N6DeOUZ3YNPBM0pPPFQ2lULK9ZMerGyrhL8IDz4q+1
+qbagu2mS4+bg2udwUp5F6erNaStUh/PwwsWwK32EcaKEAEAkwpA8eY0h/w7X
+4BDY
+         "]}, CompressedData["
+1:eJxTTMoPSmVkYGCwAhFg8MF+lB6lR+lRepQepUfpUXqUHpo0AFFKdZs=
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 20}, 0., {
+       1, {{0, 1, 4, 24, 44, 53, 62, 71, 80, 89, 98, 106, 110, 118, 136, 145, 
+         154, 163, 172, 181, 190, 198, 202, 204}, {{19}, {18}, {19}, {20}, {
+         1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {
+         14}, {15}, {16}, {17}, {18}, {19}, {20}, {1}, {2}, {3}, {4}, {5}, {
+         6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {
+         18}, {19}, {20}, {1}, {2}, {3}, {9}, {10}, {11}, {18}, {19}, {20}, {
+         1}, {2}, {3}, {9}, {10}, {11}, {18}, {19}, {20}, {1}, {2}, {3}, {
+         9}, {10}, {11}, {18}, {19}, {20}, {1}, {2}, {3}, {9}, {10}, {11}, {
+         18}, {19}, {20}, {1}, {2}, {3}, {9}, {10}, {11}, {18}, {19}, {20}, {
+         1}, {2}, {3}, {9}, {10}, {11}, {18}, {19}, {20}, {1}, {2}, {3}, {
+         9}, {10}, {11}, {18}, {19}, {9}, {10}, {11}, {18}, {2}, {3}, {9}, {
+         10}, {11}, {17}, {18}, {19}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {
+         9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {
+         2}, {3}, {4}, {9}, {10}, {11}, {17}, {18}, {19}, {2}, {3}, {4}, {
+         9}, {10}, {11}, {17}, {18}, {19}, {2}, {3}, {4}, {9}, {10}, {11}, {
+         17}, {18}, {19}, {2}, {3}, {4}, {9}, {10}, {11}, {17}, {18}, {19}, {
+         2}, {3}, {4}, {9}, {10}, {11}, {17}, {18}, {19}, {2}, {3}, {4}, {
+         9}, {10}, {11}, {17}, {18}, {19}, {2}, {3}, {4}, {9}, {10}, {11}, {
+         18}, {19}, {9}, {10}, {11}, {12}, {10}, {11}}}, CompressedData["
+1:eJxTTMoPSmVkYGA4wwADH+xH6VF6lB6lR+lRmpo0AIY18+s=
+        "]}], {{0, 0}, {20, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {20, 23}}, {{0, 22}, {20, 22}}, {{0, 21}, {20, 
+         21}}, {{0, 20}, {20, 20}}, {{0, 19}, {20, 19}}, {{0, 18}, {20, 
+         18}}, {{0, 17}, {20, 17}}, {{0, 16}, {20, 16}}, {{0, 15}, {20, 
+         15}}, {{0, 14}, {20, 14}}, {{0, 13}, {20, 13}}, {{0, 12}, {20, 
+         12}}, {{0, 11}, {20, 11}}, {{0, 10}, {20, 10}}, {{0, 9}, {20, 9}}, {{
+         0, 8}, {20, 8}}, {{0, 7}, {20, 7}}, {{0, 6}, {20, 6}}, {{0, 5}, {20, 
+         5}}, {{0, 4}, {20, 4}}, {{0, 3}, {20, 3}}, {{0, 2}, {20, 2}}, {{0, 
+         1}, {20, 1}}, {{0, 0}, {20, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 21}, 0., {
+       1, {{0, 0, 5, 14, 25, 37, 49, 57, 65, 74, 83, 97, 111, 121, 130, 139, 
+         147, 163, 182, 188, 193, 199, 206, 210}, {{1}, {2}, {15}, {16}, {
+         17}, {1}, {2}, {8}, {14}, {15}, {16}, {17}, {18}, {19}, {1}, {2}, {
+         7}, {8}, {9}, {14}, {15}, {16}, {17}, {18}, {19}, {1}, {2}, {3}, {
+         4}, {5}, {6}, {7}, {8}, {9}, {18}, {19}, {20}, {1}, {2}, {3}, {4}, {
+         5}, {6}, {7}, {8}, {9}, {18}, {19}, {20}, {1}, {2}, {7}, {8}, {9}, {
+         18}, {19}, {20}, {1}, {2}, {7}, {8}, {9}, {18}, {19}, {20}, {1}, {
+         2}, {7}, {8}, {9}, {14}, {15}, {19}, {20}, {1}, {2}, {7}, {8}, {9}, {
+         14}, {15}, {19}, {20}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         13}, {14}, {15}, {19}, {20}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {
+         8}, {9}, {13}, {14}, {15}, {19}, {20}, {1}, {2}, {7}, {8}, {9}, {
+         12}, {13}, {14}, {19}, {20}, {1}, {2}, {7}, {8}, {9}, {10}, {13}, {
+         19}, {20}, {1}, {2}, {7}, {8}, {9}, {10}, {11}, {19}, {20}, {1}, {
+         2}, {8}, {9}, {11}, {12}, {19}, {20}, {1}, {2}, {3}, {4}, {5}, {6}, {
+         7}, {8}, {9}, {11}, {12}, {13}, {16}, {19}, {20}, {21}, {1}, {2}, {
+         3}, {4}, {5}, {6}, {7}, {8}, {9}, {12}, {13}, {14}, {15}, {16}, {
+         17}, {18}, {19}, {20}, {21}, {3}, {4}, {5}, {12}, {13}, {14}, {4}, {
+         5}, {12}, {13}, {14}, {4}, {5}, {6}, {12}, {13}, {14}, {4}, {5}, {
+         6}, {12}, {13}, {14}, {15}, {5}, {6}, {13}, {14}}}, CompressedData["
+1:eJxTTMoPSmVkYGC4xAADH+xH6VF6lB6lR+lReiBpAAdA+ws=
+        "]}], {{0, 0}, {21, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {21, 23}}, {{0, 22}, {21, 22}}, {{0, 21}, {21, 
+         21}}, {{0, 20}, {21, 20}}, {{0, 19}, {21, 19}}, {{0, 18}, {21, 
+         18}}, {{0, 17}, {21, 17}}, {{0, 16}, {21, 16}}, {{0, 15}, {21, 
+         15}}, {{0, 14}, {21, 14}}, {{0, 13}, {21, 13}}, {{0, 12}, {21, 
+         12}}, {{0, 11}, {21, 11}}, {{0, 10}, {21, 10}}, {{0, 9}, {21, 9}}, {{
+         0, 8}, {21, 8}}, {{0, 7}, {21, 7}}, {{0, 6}, {21, 6}}, {{0, 5}, {21, 
+         5}}, {{0, 4}, {21, 4}}, {{0, 3}, {21, 3}}, {{0, 2}, {21, 2}}, {{0, 
+         1}, {21, 1}}, {{0, 0}, {21, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 7, 19, 32, 42, 51, 60, 79, 90, 101, 118, 131, 149, 166, 178, 
+         192, 206, 221, 233, 251, 268, 277, 286, 292}, {{5}, {6}, {8}, {9}, {
+         10}, {20}, {21}, {5}, {6}, {7}, {9}, {10}, {11}, {12}, {19}, {20}, {
+         21}, {22}, {23}, {5}, {6}, {7}, {10}, {11}, {12}, {13}, {18}, {19}, {
+         20}, {21}, {22}, {23}, {5}, {6}, {7}, {12}, {13}, {14}, {17}, {18}, {
+         19}, {20}, {5}, {6}, {7}, {13}, {14}, {15}, {16}, {17}, {18}, {5}, {
+         6}, {7}, {13}, {14}, {15}, {16}, {17}, {18}, {2}, {5}, {6}, {7}, {
+         9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {
+         20}, {21}, {22}, {23}, {1}, {2}, {3}, {5}, {6}, {7}, {15}, {16}, {
+         21}, {22}, {23}, {2}, {3}, {4}, {5}, {6}, {7}, {11}, {12}, {15}, {
+         16}, {20}, {3}, {4}, {5}, {6}, {7}, {9}, {11}, {12}, {13}, {14}, {
+         15}, {16}, {17}, {18}, {19}, {20}, {21}, {3}, {4}, {5}, {6}, {7}, {
+         8}, {9}, {10}, {11}, {12}, {19}, {20}, {21}, {4}, {5}, {6}, {7}, {
+         8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {4}, {5}, {6}, {7}, {8}, {9}, {11}, {12}, {13}, {
+         14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {4}, {5}, {6}, {7}, {
+         8}, {11}, {12}, {16}, {17}, {19}, {20}, {21}, {5}, {6}, {7}, {11}, {
+         12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {5}, {
+         6}, {7}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {
+         20}, {21}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {
+         13}, {14}, {17}, {18}, {20}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         13}, {14}, {15}, {17}, {18}, {5}, {6}, {7}, {9}, {10}, {11}, {12}, {
+         13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {
+         5}, {6}, {7}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {22}, {23}, {5}, {6}, {7}, {13}, {14}, {15}, {17}, {
+         18}, {19}, {5}, {6}, {7}, {13}, {14}, {15}, {17}, {18}, {19}, {5}, {
+         6}, {7}, {13}, {14}, {18}}}, CompressedData["
+1:eJxTTMoPSmVkYGBQARFg8MF+lB6lR+lRepQepUfpUXqUhtAA1klbew==
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 2, 7, 15, 24, 33, 43, 56, 67, 77, 95, 112, 123, 131, 140, 155, 
+         174, 188, 193, 198, 203, 210, 217, 221}, {{4}, {5}, {5}, {6}, {7}, {
+         20}, {21}, {6}, {7}, {8}, {9}, {19}, {20}, {21}, {22}, {8}, {9}, {
+         10}, {18}, {19}, {20}, {21}, {22}, {23}, {2}, {3}, {9}, {10}, {11}, {
+         17}, {18}, {19}, {20}, {1}, {2}, {3}, {4}, {10}, {11}, {12}, {16}, {
+         17}, {18}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {11}, {12}, {13}, {
+         15}, {16}, {17}, {4}, {5}, {6}, {7}, {8}, {9}, {12}, {13}, {14}, {
+         15}, {16}, {4}, {5}, {6}, {7}, {8}, {9}, {12}, {13}, {14}, {15}, {
+         4}, {5}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {
+         18}, {19}, {20}, {21}, {22}, {23}, {4}, {5}, {8}, {9}, {10}, {11}, {
+         12}, {13}, {14}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {
+         4}, {5}, {12}, {13}, {14}, {17}, {18}, {19}, {20}, {21}, {22}, {4}, {
+         5}, {12}, {13}, {14}, {17}, {18}, {19}, {4}, {5}, {6}, {12}, {13}, {
+         14}, {17}, {18}, {19}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         12}, {13}, {14}, {17}, {18}, {19}, {1}, {2}, {3}, {4}, {5}, {6}, {
+         7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {4}, {5}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {
+         17}, {18}, {19}, {4}, {5}, {13}, {14}, {18}, {4}, {5}, {6}, {13}, {
+         14}, {4}, {5}, {6}, {13}, {14}, {4}, {5}, {6}, {12}, {13}, {14}, {
+         15}, {4}, {5}, {6}, {12}, {13}, {14}, {15}, {4}, {5}, {13}, {
+         14}}}, CompressedData["
+1:eJxTTMoPSmVkYGC4ywADH+xH6VF6lB6lR+lRejjSAMRxCCo=
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 21}, 0., {
+       1, {{0, 2, 8, 15, 21, 26, 33, 40, 47, 55, 67, 78, 90, 98, 108, 122, 
+         135, 143, 149, 155, 171, 185, 190, 192}, {{19}, {20}, {1}, {2}, {
+         18}, {19}, {20}, {21}, {2}, {3}, {4}, {18}, {19}, {20}, {21}, {3}, {
+         4}, {5}, {6}, {20}, {21}, {5}, {6}, {7}, {20}, {21}, {5}, {6}, {7}, {
+         15}, {16}, {20}, {21}, {6}, {7}, {8}, {15}, {16}, {20}, {21}, {7}, {
+         8}, {9}, {15}, {16}, {20}, {21}, {6}, {7}, {8}, {9}, {15}, {16}, {
+         20}, {21}, {1}, {2}, {5}, {6}, {7}, {8}, {9}, {10}, {15}, {16}, {
+         20}, {21}, {2}, {3}, {5}, {6}, {7}, {9}, {10}, {15}, {16}, {20}, {
+         21}, {2}, {3}, {4}, {5}, {6}, {9}, {10}, {11}, {15}, {16}, {20}, {
+         21}, {3}, {4}, {10}, {11}, {15}, {16}, {20}, {21}, {3}, {4}, {5}, {
+         10}, {11}, {12}, {15}, {16}, {20}, {21}, {4}, {5}, {6}, {7}, {8}, {
+         9}, {10}, {11}, {12}, {13}, {15}, {16}, {20}, {21}, {5}, {6}, {7}, {
+         8}, {9}, {10}, {11}, {12}, {13}, {15}, {16}, {20}, {21}, {5}, {6}, {
+         7}, {11}, {15}, {16}, {20}, {21}, {6}, {7}, {15}, {16}, {20}, {21}, {
+         6}, {7}, {15}, {16}, {20}, {21}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {
+         9}, {10}, {11}, {12}, {13}, {15}, {16}, {20}, {21}, {2}, {3}, {4}, {
+         5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {20}, {21}, {11}, {
+         12}, {13}, {20}, {21}, {20}, {21}}}, CompressedData["
+1:eJxTTMoPSmVkYGA4wAADH+xH6VF6lB6lR+mRRQMAicrlqw==
+        "]}], {{0, 0}, {21, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {21, 23}}, {{0, 22}, {21, 22}}, {{0, 21}, {21, 
+         21}}, {{0, 20}, {21, 20}}, {{0, 19}, {21, 19}}, {{0, 18}, {21, 
+         18}}, {{0, 17}, {21, 17}}, {{0, 16}, {21, 16}}, {{0, 15}, {21, 
+         15}}, {{0, 14}, {21, 14}}, {{0, 13}, {21, 13}}, {{0, 12}, {21, 
+         12}}, {{0, 11}, {21, 11}}, {{0, 10}, {21, 10}}, {{0, 9}, {21, 9}}, {{
+         0, 8}, {21, 8}}, {{0, 7}, {21, 7}}, {{0, 6}, {21, 6}}, {{0, 5}, {21, 
+         5}}, {{0, 4}, {21, 4}}, {{0, 3}, {21, 3}}, {{0, 2}, {21, 2}}, {{0, 
+         1}, {21, 1}}, {{0, 0}, {21, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 0, 4, 14, 30, 43, 55, 62, 69, 79, 89, 97, 119, 142, 147, 163, 
+         180, 186, 200, 221, 240, 244, 247, 250}, {{7}, {8}, {20}, {21}, {
+         7}, {8}, {9}, {10}, {18}, {19}, {20}, {21}, {22}, {23}, {1}, {2}, {
+         3}, {7}, {8}, {9}, {10}, {11}, {12}, {17}, {18}, {19}, {20}, {21}, {
+         22}, {23}, {2}, {3}, {4}, {7}, {8}, {11}, {12}, {13}, {14}, {16}, {
+         17}, {18}, {19}, {3}, {4}, {5}, {6}, {7}, {8}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {5}, {6}, {7}, {8}, {15}, {16}, {17}, {6}, {7}, {
+         8}, {15}, {16}, {17}, {18}, {7}, {8}, {9}, {14}, {15}, {16}, {17}, {
+         18}, {19}, {20}, {8}, {9}, {10}, {11}, {13}, {14}, {15}, {18}, {
+         19}, {20}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {2}, {3}, {
+         4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {1}, {2}, {3}, {4}, {
+         5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {
+         17}, {18}, {19}, {20}, {21}, {22}, {23}, {11}, {12}, {13}, {21}, {
+         22}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {19}, {20}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {
+         11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {11}, {
+         12}, {13}, {18}, {19}, {20}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         10}, {11}, {12}, {13}, {16}, {17}, {18}, {2}, {3}, {4}, {5}, {6}, {
+         7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {22}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {
+         11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {
+         11}, {12}, {13}, {20}, {11}, {12}, {13}, {11}, {12}, {
+         13}}}, CompressedData["
+1:eJxTTMoPSmVkYGD4xQADH+xH6VF6lB6lR+lRepQeujQAUMAqmg==
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 24}, 0., {
+       1, {{0, 7, 20, 37, 51, 64, 78, 92, 105, 113, 127, 141, 150, 159, 175, 
+         196, 207, 211, 230, 244, 254, 261, 268, 272}, {{6}, {9}, {10}, {
+         19}, {20}, {21}, {22}, {4}, {5}, {6}, {7}, {9}, {10}, {11}, {18}, {
+         19}, {20}, {21}, {22}, {23}, {1}, {2}, {4}, {5}, {6}, {7}, {8}, {
+         11}, {12}, {13}, {18}, {19}, {20}, {21}, {22}, {23}, {24}, {1}, {
+         2}, {3}, {6}, {7}, {8}, {12}, {13}, {14}, {17}, {18}, {19}, {22}, {
+         23}, {2}, {3}, {4}, {6}, {7}, {8}, {11}, {13}, {14}, {17}, {18}, {
+         19}, {23}, {3}, {4}, {6}, {7}, {8}, {10}, {11}, {12}, {14}, {15}, {
+         17}, {18}, {19}, {23}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {
+         11}, {12}, {14}, {15}, {18}, {19}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         10}, {11}, {14}, {15}, {16}, {18}, {19}, {4}, {6}, {7}, {8}, {15}, {
+         16}, {18}, {19}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {
+         15}, {16}, {17}, {18}, {19}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {
+         10}, {11}, {15}, {16}, {17}, {18}, {19}, {3}, {4}, {10}, {11}, {
+         15}, {16}, {17}, {18}, {19}, {3}, {4}, {10}, {11}, {15}, {16}, {
+         17}, {18}, {19}, {3}, {4}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {18}, {19}, {20}, {21}, {22}, {23}, {3}, {4}, {5}, {6}, {
+         7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {22}, {23}, {3}, {4}, {5}, {6}, {8}, {9}, {10}, {
+         11}, {12}, {16}, {17}, {16}, {17}, {20}, {21}, {1}, {2}, {3}, {4}, {
+         5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {
+         17}, {20}, {21}, {3}, {4}, {6}, {7}, {8}, {11}, {12}, {13}, {14}, {
+         16}, {17}, {19}, {20}, {21}, {6}, {7}, {8}, {12}, {13}, {16}, {17}, {
+         18}, {19}, {20}, {6}, {7}, {8}, {15}, {16}, {17}, {18}, {5}, {6}, {
+         7}, {15}, {16}, {17}, {18}, {5}, {6}, {16}, {17}}}, CompressedData["
+1:eJxTTMoPSmVkYGAQABFg8MF+lB6lR+lRepQepUfpUZpeNACWL0O7
+        "]}], {{0, 0}, {24, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {24, 23}}, {{0, 22}, {24, 22}}, {{0, 21}, {24, 
+         21}}, {{0, 20}, {24, 20}}, {{0, 19}, {24, 19}}, {{0, 18}, {24, 
+         18}}, {{0, 17}, {24, 17}}, {{0, 16}, {24, 16}}, {{0, 15}, {24, 
+         15}}, {{0, 14}, {24, 14}}, {{0, 13}, {24, 13}}, {{0, 12}, {24, 
+         12}}, {{0, 11}, {24, 11}}, {{0, 10}, {24, 10}}, {{0, 9}, {24, 9}}, {{
+         0, 8}, {24, 8}}, {{0, 7}, {24, 7}}, {{0, 6}, {24, 6}}, {{0, 5}, {24, 
+         5}}, {{0, 4}, {24, 4}}, {{0, 3}, {24, 3}}, {{0, 2}, {24, 2}}, {{0, 
+         1}, {24, 1}}, {{0, 0}, {24, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}, {{24, 0}, {24, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}], ",", 
+   GraphicsBox[{
+     RasterBox[SparseArray[
+      Automatic, {23, 23}, 0., {
+       1, {{0, 1, 14, 31, 44, 51, 58, 70, 83, 91, 97, 113, 135, 138, 143, 154,
+          159, 163, 174, 178, 182, 193, 204, 210}, {{2}, {2}, {3}, {11}, {
+         12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {2}, {
+         3}, {4}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {
+         19}, {20}, {21}, {22}, {3}, {4}, {5}, {8}, {9}, {10}, {11}, {12}, {
+         13}, {20}, {21}, {22}, {23}, {4}, {5}, {8}, {9}, {11}, {12}, {13}, {
+         5}, {6}, {7}, {8}, {11}, {12}, {13}, {5}, {6}, {7}, {11}, {12}, {
+         13}, {14}, {15}, {16}, {17}, {18}, {19}, {5}, {6}, {7}, {11}, {12}, {
+         13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {6}, {7}, {8}, {11}, {
+         12}, {13}, {18}, {19}, {6}, {7}, {8}, {11}, {12}, {13}, {2}, {3}, {
+         4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {
+         16}, {17}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {
+         12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}, {20}, {21}, {22}, {
+         20}, {21}, {22}, {7}, {8}, {15}, {16}, {21}, {7}, {8}, {9}, {10}, {
+         11}, {12}, {13}, {14}, {15}, {16}, {17}, {7}, {8}, {15}, {16}, {
+         17}, {7}, {8}, {16}, {17}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {
+         14}, {15}, {16}, {17}, {7}, {8}, {16}, {17}, {7}, {8}, {16}, {17}, {
+         7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {7}, {
+         8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {7}, {8}, {
+         9}, {15}, {16}, {17}}}, CompressedData["
+1:eJxTTMoPSmVkYGC4xAADH+xH6VF6lB6lR+lReiBpAAdA+ws=
+        "]}], {{0, 0}, {23, 23}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 23}, {23, 23}}, {{0, 22}, {23, 22}}, {{0, 21}, {23, 
+         21}}, {{0, 20}, {23, 20}}, {{0, 19}, {23, 19}}, {{0, 18}, {23, 
+         18}}, {{0, 17}, {23, 17}}, {{0, 16}, {23, 16}}, {{0, 15}, {23, 
+         15}}, {{0, 14}, {23, 14}}, {{0, 13}, {23, 13}}, {{0, 12}, {23, 
+         12}}, {{0, 11}, {23, 11}}, {{0, 10}, {23, 10}}, {{0, 9}, {23, 9}}, {{
+         0, 8}, {23, 8}}, {{0, 7}, {23, 7}}, {{0, 6}, {23, 6}}, {{0, 5}, {23, 
+         5}}, {{0, 4}, {23, 4}}, {{0, 3}, {23, 3}}, {{0, 2}, {23, 2}}, {{0, 
+         1}, {23, 1}}, {{0, 0}, {23, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 23}}, {{1, 0}, {1, 23}}, {{2, 0}, {2, 23}}, {{3,
+          0}, {3, 23}}, {{4, 0}, {4, 23}}, {{5, 0}, {5, 23}}, {{6, 0}, {6, 
+         23}}, {{7, 0}, {7, 23}}, {{8, 0}, {8, 23}}, {{9, 0}, {9, 23}}, {{10, 
+         0}, {10, 23}}, {{11, 0}, {11, 23}}, {{12, 0}, {12, 23}}, {{13, 0}, {
+         13, 23}}, {{14, 0}, {14, 23}}, {{15, 0}, {15, 23}}, {{16, 0}, {16, 
+         23}}, {{17, 0}, {17, 23}}, {{18, 0}, {18, 23}}, {{19, 0}, {19, 
+         23}}, {{20, 0}, {20, 23}}, {{21, 0}, {21, 23}}, {{22, 0}, {22, 
+         23}}, {{23, 0}, {23, 23}}}],
+        Antialiasing->False]}}},
+    Frame->False,
+    FrameLabel->{None, None},
+    FrameTicks->{{None, None}, {None, None}}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6181178277768307`*^9, 3.618117871360323*^9, 
+  3.6181179721640887`*^9}]
+}, Open  ]]
+},
+WindowSize->{1432, 784},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1.100000023841858,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1025, 23, 43, "Input"],
+Cell[1585, 45, 107, 2, 32, "Input"],
+Cell[1695, 49, 1084, 32, 32, "Input"],
+Cell[2782, 83, 80, 1, 32, "Input"],
+Cell[2865, 86, 694, 20, 32, "Input"],
+Cell[3562, 108, 1826, 43, 53, "Input"],
+Cell[CellGroupData[{
+Cell[5413, 155, 122, 2, 32, "Input"],
+Cell[5538, 159, 10086, 166, 234, "Output"]
+}, Open  ]],
+Cell[15639, 328, 3497, 64, 49, "Input"],
+Cell[19139, 394, 167, 4, 32, "Input"],
+Cell[CellGroupData[{
+Cell[19331, 402, 3421, 61, 47, "Input"],
+Cell[22755, 465, 3569, 63, 132, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26361, 533, 606, 13, 32, "Input"],
+Cell[26970, 548, 2094, 38, 132, "Output"]
+}, Open  ]],
+Cell[29079, 589, 621, 12, 32, "Input"],
+Cell[29703, 603, 753, 17, 32, "Input"],
+Cell[CellGroupData[{
+Cell[30481, 624, 125, 2, 32, "Input"],
+Cell[30609, 628, 34825, 571, 526, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
