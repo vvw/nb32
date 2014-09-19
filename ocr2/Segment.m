@@ -50,7 +50,7 @@ segmentGreenRed[i_]:=With[{grouping:=(#//Transpose//SplitBy[#,MatchQ[#,{2..}]&]&
 
 
 (*\:51fd\:6570\:5de5\:5382*)
-completeQFactory[i_]:=With[{minmax=i//zhWidthThreshold},
+completeQFactory[i_]:=With[{minmax=i//zhWidthThreshold},(*\:56fe\:50cf\:6c49\:5b57\:5bbd\:5ea6\:7684\:9600\:503c*)
 minmax[[1]]<=#<=minmax[[2]]&
 ]
 
