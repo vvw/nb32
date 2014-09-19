@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1510518,      27195]
-NotebookOptionsPosition[   1509612,      27160]
-NotebookOutlinePosition[   1509955,      27175]
-CellTagsIndexPosition[   1509912,      27172]
+NotebookDataLength[   1508300,      27164]
+NotebookOptionsPosition[   1507410,      27130]
+NotebookOutlinePosition[   1507752,      27145]
+CellTagsIndexPosition[   1507709,      27142]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -74,49 +74,49 @@ Cell[BoxData[
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3620135995-5534650", {"completeQFactory", "Segment`"}},
+           "Info3620136949-5181492", {"completeQFactory", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["Segment",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"Segment", "Segment`"}},
+          ButtonData:>{"Info3620136949-5181492", {"Segment", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["segmentByVertical",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3620135995-5534650", {"segmentByVertical", "Segment`"}},
+           "Info3620136949-5181492", {"segmentByVertical", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["segmentZhs",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"segmentZhs", "Segment`"}},
+          ButtonData:>{"Info3620136949-5181492", {"segmentZhs", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["zhWidthThreshold",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3620135995-5534650", {"zhWidthThreshold", "Segment`"}},
+           "Info3620136949-5181492", {"zhWidthThreshold", "Segment`"}},
           ButtonNote->"Segment`"]},
         {
          ButtonBox["labelWhite",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"labelWhite", "Segment`"}},
+          ButtonData:>{"Info3620136949-5181492", {"labelWhite", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["segmentByHorizon",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3620135995-5534650", {"segmentByHorizon", "Segment`"}},
+           "Info3620136949-5181492", {"segmentByHorizon", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["segmentGreenRed",
           BaseStyle->"InformationLink",
           ButtonData:>{
-           "Info3620135995-5534650", {"segmentGreenRed", "Segment`"}},
+           "Info3620136949-5181492", {"segmentGreenRed", "Segment`"}},
           ButtonNote->"Segment`"], 
          ButtonBox["showSegmentByVertical",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3620135995-5534650", {"showSegmentByVertical", "Segment`"}},
+           "Info3620136949-5181492", {"showSegmentByVertical", "Segment`"}},
           ButtonNote->"Segment`"], ""}
        },
        DefaultBaseStyle->"InfoGrid",
@@ -126,7 +126,7 @@ Cell[BoxData[
     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
    Dynamic[Typeset`open$$],
    ImageSize->Automatic]]], "Print", "InfoCell",
- CellChangeTimes->{3.62010719575591*^9}]
+ CellChangeTimes->{3.620108149782477*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -150,27 +150,27 @@ Cell[BoxData[
         {
          ButtonBox["clean",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"clean", "Skew`"}},
+          ButtonData:>{"Info3620136949-5181492", {"clean", "Skew`"}},
           ButtonNote->"Skew`"], 
          ButtonBox["correctSkew",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"correctSkew", "Skew`"}},
+          ButtonData:>{"Info3620136949-5181492", {"correctSkew", "Skew`"}},
           ButtonNote->"Skew`"], 
          ButtonBox["preserveHLine",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"preserveHLine", "Skew`"}},
+          ButtonData:>{"Info3620136949-5181492", {"preserveHLine", "Skew`"}},
           ButtonNote->"Skew`"], 
          ButtonBox["showHLine",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"showHLine", "Skew`"}},
+          ButtonData:>{"Info3620136949-5181492", {"showHLine", "Skew`"}},
           ButtonNote->"Skew`"], 
          ButtonBox["Skew",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"Skew", "Skew`"}},
+          ButtonData:>{"Info3620136949-5181492", {"Skew", "Skew`"}},
           ButtonNote->"Skew`"], 
          ButtonBox["skewAngle",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3620135995-5534650", {"skewAngle", "Skew`"}},
+          ButtonData:>{"Info3620136949-5181492", {"skewAngle", "Skew`"}},
           ButtonNote->"Skew`"]}
        },
        DefaultBaseStyle->"InfoGrid",
@@ -180,7 +180,7 @@ Cell[BoxData[
     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
    Dynamic[Typeset`open$$],
    ImageSize->Automatic]]], "Print", "InfoCell",
- CellChangeTimes->{3.6201071957859116`*^9}]
+ CellChangeTimes->{3.620108149810478*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1691,7 +1691,9 @@ AAAAAAAAAAAAAAAAAOA1fQGp2ge1
   3.620099611308104*^9, 3.620100099444024*^9, 3.6201001766554403`*^9, 
    3.620103273283557*^9, 3.6201068768516693`*^9, {3.620106930837757*^9, 
    3.62010698491685*^9}, 3.6201070541718116`*^9, 3.620107106647813*^9, 
-   3.6201071959229193`*^9, 3.6201072344421225`*^9}]
+   3.6201071959229193`*^9, 3.6201072344421225`*^9, {3.6201073057462006`*^9, 
+   3.6201073316346817`*^9}, 3.620107378165343*^9, 3.6201074104361887`*^9, 
+   3.620108068666837*^9, 3.6201081499494867`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1891,39 +1893,16 @@ Cell[BoxData[
             RowBox[{"n", ",", "8"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
         "]"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
     "]"}]}], "\[IndentingNewLine]"}]], "Input",
- CellChangeTimes->{{3.6201019907311993`*^9, 3.620101993829376*^9}, 
-   3.6201020987423773`*^9, {3.620102136849557*^9, 3.620102146136088*^9}, {
-   3.620102183099202*^9, 3.6201021946968656`*^9}, {3.6201022428846216`*^9, 
-   3.620102286177098*^9}, {3.6201023513678265`*^9, 3.6201024197257366`*^9}, {
-   3.6201024683815193`*^9, 3.620102506810717*^9}, {3.620102587403327*^9, 
-   3.620102595532792*^9}, {3.620102637860213*^9, 3.6201026991007156`*^9}, {
-   3.6201027381099467`*^9, 3.6201027844996004`*^9}, {3.6201029023803425`*^9, 
-   3.6201029408435426`*^9}, {3.6201030022260537`*^9, 3.620103092921241*^9}, {
-   3.620103144673201*^9, 3.620103160766122*^9}, {3.6201033476508107`*^9, 
-   3.620103349601922*^9}, {3.6201035109291496`*^9, 3.6201035720296445`*^9}, {
-   3.6201036336651697`*^9, 3.6201036515781946`*^9}, {3.620103775255268*^9, 
-   3.620103852085663*^9}, {3.62010406445981*^9, 3.6201041029890137`*^9}, {
-   3.6201041434093256`*^9, 3.6201042036637716`*^9}, {3.6201042558437567`*^9, 
-   3.6201042710906286`*^9}, {3.6201043119459653`*^9, 3.6201043243626757`*^9}, 
-   3.6201045952221675`*^9, {3.620104644233971*^9, 3.6201046849573*^9}, {
-   3.6201047154530444`*^9, 3.6201047435316505`*^9}, {3.620104855173036*^9, 
-   3.620104858106204*^9}, {3.6201048899350243`*^9, 3.62010489091208*^9}, {
-   3.6201049376157513`*^9, 3.620104953723673*^9}, {3.620105267132599*^9, 
-   3.6201053867314396`*^9}, {3.62010556245249*^9, 3.6201058237014327`*^9}, {
-   3.6201058557132635`*^9, 3.620105856298297*^9}, {3.6201059583821363`*^9, 
-   3.620105974348049*^9}, {3.620106061941059*^9, 3.620106086813482*^9}, {
-   3.6201062991786284`*^9, 3.6201063017827773`*^9}, {3.6201063699516764`*^9, 
-   3.620106371620772*^9}, {3.6201064028395576`*^9, 3.6201064201085453`*^9}, {
-   3.62010646407906*^9, 3.620106487176381*^9}, 3.620106596706646*^9, {
-   3.620106627493407*^9, 3.620106639451091*^9}, {3.6201066843956614`*^9, 
-   3.6201067056528773`*^9}, {3.6201067882466016`*^9, 
-   3.6201067896306806`*^9}, {3.6201070186977825`*^9, 3.6201070238140755`*^9}}],
+ CellChangeTimes->{{3.620107789728883*^9, 3.620107898465102*^9}, {
+  3.620108122587921*^9, 3.6201081227449303`*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"i", "//", "segmentSmart"}]], "Input",
- CellChangeTimes->{{3.620102253462227*^9, 3.6201022542042694`*^9}}],
+ CellChangeTimes->{{3.620102253462227*^9, 3.6201022542042694`*^9}, {
+  3.6201075029954824`*^9, 3.620107506515684*^9}, {3.6201078122161694`*^9, 
+  3.6201078123281755`*^9}, {3.6201081117713027`*^9, 3.620108112035318*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -27146,20 +27125,11 @@ Xp7RqRfL
        "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
         "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
         "RangePadding" -> Scaled[0.05]}]}], "}"}]}], "}"}]], "Output",
- CellOpen->False,
- CellChangeTimes->{
-  3.6201055688238544`*^9, {3.6201056258681173`*^9, 3.620105633512554*^9}, {
-   3.620105821157287*^9, 3.6201058290557384`*^9}, 3.6201058617646093`*^9, {
-   3.6201059681876965`*^9, 3.6201059813554497`*^9}, 3.620106046082152*^9, 
-   3.6201060939258885`*^9, 3.62010632264097*^9, 3.6201064293660746`*^9, {
-   3.620106479912966*^9, 3.6201064947888165`*^9}, {3.6201065932384477`*^9, 
-   3.620106618700904*^9}, 3.6201066986484766`*^9, {3.620106940910333*^9, 
-   3.6201069890760884`*^9}, {3.6201070419171104`*^9, 3.6201070634843445`*^9}, 
-   3.6201071174244294`*^9, {3.6201072043264*^9, 3.6201072463298025`*^9}}]
+ CellChangeTimes->{3.6201081585909805`*^9}]
 }, Open  ]]
 },
-WindowSize->{1142, 818},
-WindowMargins->{{122, Automatic}, {Automatic, 26}},
+WindowSize->{1440, 818},
+WindowMargins->{{-4, Automatic}, {Automatic, -4}},
 FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->"Default.nb"
 ]
@@ -27180,22 +27150,21 @@ Cell[1032, 35, 267, 7, 31, "Input"],
 Cell[1302, 44, 270, 7, 31, "Input"],
 Cell[CellGroupData[{
 Cell[1597, 55, 52, 1, 31, "Input"],
-Cell[1652, 58, 2600, 70, 77, "Print"]
+Cell[1652, 58, 2601, 70, 77, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4289, 133, 49, 1, 31, "Input"],
-Cell[4341, 136, 1781, 46, 53, "Print"]
+Cell[4290, 133, 49, 1, 31, "Input"],
+Cell[4342, 136, 1779, 46, 53, "Print"]
 }, Open  ]],
-Cell[6137, 185, 450, 12, 31, "Input"],
+Cell[6136, 185, 450, 12, 31, "Input"],
 Cell[CellGroupData[{
-Cell[6612, 201, 95, 2, 31, "Input"],
-Cell[6710, 205, 90508, 1488, 359, "Output"]
+Cell[6611, 201, 95, 2, 31, "Input"],
+Cell[6709, 205, 90658, 1490, 414, "Output"]
 }, Open  ]],
-Cell[97233, 1696, 9670, 223, 647, "Input"],
+Cell[97382, 1698, 7765, 198, 627, "Input"],
 Cell[CellGroupData[{
-Cell[106928, 1923, 129, 2, 31, "Input"],
-Cell[107060, 1927, 1402536, 25230, 19, "Output",
- CellOpen->False]
+Cell[105172, 1900, 281, 4, 31, "Input"],
+Cell[105456, 1906, 1401938, 25221, 11697, "Output"]
 }, Open  ]]
 }
 ]
