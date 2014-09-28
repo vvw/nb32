@@ -1,0 +1,198 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6001,        189]
+NotebookOptionsPosition[      5033,        150]
+NotebookOutlinePosition[      5376,        165]
+CellTagsIndexPosition[      5333,        162]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<Ocr`\>\"", "]"}], "\n", "\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Exported", " ", "symbols", " ", "added", " ", "here", " ", "with", " ", 
+    RowBox[{"SymbolName", "::", "usage"}]}], " ", "*)"}], " "}], "\n", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "::", "usge"}], " ", "=", " ", "\"\<f[],hi,,,\>\""}], 
+   ";"}]}], "\n", 
+ RowBox[{"\t", 
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], "\n", "\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Implementation", " ", "of", " ", "the", " ", "package"}], " ", 
+   "*)"}], "\n", "\n", 
+  RowBox[{
+  "(*", "\:4e2d\:6587\:6ce8\:91ca\:548c\:4e2d\:6587\:5b57\:7b26\:4e32", 
+   "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "]"}], ":=", "\"\<\:4e2d\:6587\>\""}], "\n", 
+ RowBox[{"End", "[", "]"}], "\n", 
+ RowBox[{"EndPackage", "[", "]"}]}], "Code",
+ CellChangeTimes->{{3.620707307826023*^9, 3.620707314599411*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"BeginPackage", "[", "\"\<Oo`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"o", "::", "usge"}], "=", "\"\<pacage in nb files.\>\""}], 
+   ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"o", "[", "]"}], ":=", "\"\<\:8fd9\:4e5f\:662f\:4e2d\:6587\>\""}],
+    ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{"End", "[", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"EndPackage", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.6207080694885883`*^9, 3.620708194250724*^9}}],
+
+Cell[BoxData["\<\"Oo`\"\>"], "Output",
+ CellChangeTimes->{3.6207081977529244`*^9}],
+
+Cell[BoxData["\<\"Oo`Private`\"\>"], "Output",
+ CellChangeTimes->{3.6207081977549243`*^9}],
+
+Cell[BoxData["\<\"Oo`Private`\"\>"], "Output",
+ CellChangeTimes->{3.6207081977569246`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input",
+ CellChangeTimes->{{3.6207082032762403`*^9, 3.6207082090225687`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Oo`\"\>", ",", "\<\"Ocr`\"\>", 
+   ",", "\<\"Utilities`URLTools`\"\>", ",", "\<\"JLink`\"\>", 
+   ",", "\<\"WolframAlphaClient`\"\>", ",", "\<\"TemplatingLoader`\"\>", 
+   ",", "\<\"PacletManager`\"\>", ",", "\<\"System`\"\>", 
+   ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.620708209633604*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"o", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6207082123987617`*^9, 3.6207082129827957`*^9}}],
+
+Cell[BoxData["\<\"\:8fd9\:4e5f\:662f\:4e2d\:6587\"\>"], "Output",
+ CellChangeTimes->{3.620708213742839*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Packages"], "Input",
+ CellChangeTimes->{{3.620707271432942*^9, 3.620707275493174*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Ocr`\"\>", 
+   ",", "\<\"CalculateUtilities`AlgorithmUtilities`\"\>", 
+   ",", "\<\"CalculateUtilities`UserVariableUtilities`\"\>", 
+   ",", "\<\"CalculateScan`Packages`Get3DRange`\"\>", 
+   ",", "\<\"CalculateScan`Packages`Get2DRange`\"\>", 
+   ",", "\<\"CalculateScan`Packages`Get1DPolarPlotRange`\"\>", 
+   ",", "\<\"CalculateUtilities`SuggestPlotRanges`\"\>", 
+   ",", "\<\"DocumentationSearch`\"\>", ",", "\<\"HTTPClient`\"\>", 
+   ",", "\<\"HTTPClient`OAuth`\"\>", ",", "\<\"HTTPClient`CURLInfo`\"\>", 
+   ",", "\<\"HTTPClient`CURLLink`\"\>", ",", "\<\"JLink`\"\>", 
+   ",", "\<\"Utilities`URLTools`\"\>", ",", "\<\"URLUtilities`\"\>", 
+   ",", "\<\"WolframAlphaClient`\"\>", ",", "\<\"GetFEKernelInit`\"\>", 
+   ",", "\<\"TemplatingLoader`\"\>", ",", "\<\"ResourceLocator`\"\>", 
+   ",", "\<\"PacletManager`\"\>", ",", "\<\"System`\"\>", 
+   ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.620707276159212*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6207072795174046`*^9, 3.6207072799244275`*^9}}],
+
+Cell[BoxData["\<\"\:4e2d\:6587\"\>"], "Output",
+ CellChangeTimes->{3.6207072808174787`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Ocr`\"\>", ",", "\<\"Utilities`URLTools`\"\>", 
+   ",", "\<\"JLink`\"\>", ",", "\<\"WolframAlphaClient`\"\>", 
+   ",", "\<\"TemplatingLoader`\"\>", ",", "\<\"PacletManager`\"\>", 
+   ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.620707381665247*^9}]
+}, Open  ]]
+},
+WindowSize->{778, 753},
+WindowMargins->{{Automatic, 245}, {-79, Automatic}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 933, 24, 233, "Code"],
+Cell[CellGroupData[{
+Cell[1516, 48, 673, 17, 132, "Input"],
+Cell[2192, 67, 82, 1, 31, "Output"],
+Cell[2277, 70, 90, 1, 31, "Output"],
+Cell[2370, 73, 90, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2497, 79, 108, 1, 31, "Input"],
+Cell[2608, 82, 360, 7, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3005, 94, 119, 2, 31, "Input"],
+Cell[3127, 98, 107, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3271, 104, 101, 1, 31, "Input"],
+Cell[3375, 107, 978, 17, 152, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4390, 129, 119, 2, 31, "Input"],
+Cell[4512, 133, 91, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4640, 139, 38, 0, 31, "Input"],
+Cell[4681, 141, 336, 6, 52, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
