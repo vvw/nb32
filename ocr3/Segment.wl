@@ -2,7 +2,6 @@
 
 BeginPackage["Segment`",{"Skew`"}];
 
-(*这是中文*)
 Segment::usage = "Segment is a package, intended to be use as Chinese and English Character Segment tools.";
 segmentByHorizon::usage = "segmentByHorizon[img], segment a Image to many lines";
 segmentByVertical::usage = "segmentByVertical[mt], mt is [0,1] matrix";
@@ -11,8 +10,7 @@ segmentZhs::usage = "segmentZhs[i], segment Chinese and English Character or som
 zhWidthThreshold::usage="width threshold of chinese character";
 labelWhite::usage="\:6807\:8bb0\:7a7a\:767d\:5217\:ff0c\:6807\:8bb0\:4e3a2\:7684\:8981\:5c0f\:5fc3\:5904\:7406\:ff0c\:6807\:8bb0\:4e3a3\:7684\:53ef\:4ee5\:653e\:5fc3\:5206\:5272";
 segmentGreenRed::usage="2\:7ea2\:ff0c3\:7eff\:ff0c\:7ea2\:7684\:8981\:7279\:522b\:5904\:7406\:ff0c\:68c0\:67e5\:524d\:540e\:5b57\:7b26\:77e9\:9635\:662f\:5426\:5b8c\:6574\:ff0c\:5b8c\:6574\:5219\:8f6c\:6210\:7eff\:8272\:ff0c\:4e0d\:5b8c\:6574\:5219\:53d6\:6d88\:8fd9\:4e2a\:6807\:8bb0";
-completeQFactory::usage="not you bussines";
-segmentSmart::usage="segmentSmart[i],\:667a\:80fd\:5206\:5272\:4e2d\:6587\:5b57\:7b26";
+segmentSmartt::usage="segmentSmart[i],\:667a\:80fd\:5206\:5272\:4e2d\:6587\:5b57\:7b26";
 
 
 Begin["`Private`"];
@@ -48,6 +46,37 @@ compressLabel[m_]:=m//Transpose//SplitBy[#,MatchQ[#,{3..}]&]&//#/.{x:{3..}..}:>{
 (*2\:7ea2\:ff0c3\:7eff\:ff0c\:7ea2\:7684\:8981\:7279\:522b\:5904\:7406\:ff0c\:68c0\:67e5\:524d\:540e\:5b57\:7b26\:77e9\:9635\:662f\:5426\:5b8c\:6574\:ff0c\:5b8c\:6574\:5219\:8f6c\:6210\:7eff\:8272\:ff0c\:4e0d\:5b8c\:6574\:5219\:53d6\:6d88\:8fd9\:4e2a\:6807\:8bb0*)
 segmentGreenRed[i_]:=With[{grouping:=(#//Transpose//SplitBy[#,MatchQ[#,{2..}]&]&//SplitBy[#,MatchQ[#,{3..}]&]&/@#&//Flatten[#,1]&//Transpose/@#&)&},
 	i//segmentByHorizon//labelWhite/@#&//compressLabel/@#&//grouping/@#&]
+
+
+segmentSmartt[i_]:=With[
+{
+	mtss=i//segmentGreenRed,
+	completeQ=With[{minmax=i//zhWidthThreshold},(*\:56fe\:50cf\:6c49\:5b57\:5bbd\:5ea6\:7684\:9600\:503c*)
+		minmax[[1]]<=#<=minmax[[2]]&
+	]
+},
+(
+	redIndexs=Function[mts,mts//Transpose/@#&//If[MatchQ[#,{{2..}..}],#2,Null]& ~MapIndexed~#&
+		//Flatten//Select[#,#>0&]&];
+	turnGreen=Function[{mt},mt/.x:{2..}:>(x/.{2->3})];
+	turnGreenQ=Function[{redIdx,mts},With[{m1=mts[[redIdx-1]],m2=mts[[redIdx+1]],
+			wd=Part[Dimensions@#,2]&
+			},
+			Module[{w1=wd@m1,w2=wd@m2},!MatrixQ@m1||!MatrixQ@m2||completeQ@w1||completeQ@w2]
+		]
+	];
+	turnGreenIdxsHelp=Function[{idxs,mts},If[turnGreenQ[#,mts],#,Null]&/@idxs//Select[#,#>0&]&];
+	(*\:5e94\:8be5\:53d8\:7eff\:7684\:4e0b\:6807*)
+	turnGreenIdxs=Function[{mtss},With[{idxmts=mtss//{redIndexs[#],#}&/@#&},turnGreenIdxsHelp[#[[1]],#[[2]]]&/@idxmts]];
+	turnGreenAt=Function[{mts,idx},MapAt[turnGreen,mts,idx]];
+	turnGreenAts=Function[{mts,idxs},Fold[turnGreenAt,mts,idxs]];
+	With[{idxss=turnGreenIdxs[mtss]},
+		On[Assert];
+		Assert[Length[mtss]==Length[idxss]];
+        ParallelTable[turnGreenAts[mtss[[n]],idxss[[n]]],{n,Length[mtss]}]
+	]
+)
+]
 
 
 End[ ];
