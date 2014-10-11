@@ -2,7 +2,10 @@
 
 BeginPackage["Segment`",{"Skew`"}];
 
-Segment::usage = "Segment is a package, intended to be use as Chinese and English Character Segment tools.";
+segment::usage = "segment[i], intended to be use as Chinese and English Character Segment tools.";
+splitByGreen::usage = "splitByGreen[mt], segment[i]//splitByGreen, preserve green matrix";
+splitByGreenClean::usage = "splitByGreenClean[mt], segment[i]//splitByGreenClean, remove green matrix";
+mergeSplitBy::usage="mergeSplitBy[mts],\:53cdSplitBy";
 segmentByHorizon::usage = "segmentByHorizon[img], segment a Image to many lines";
 segmentByVertical::usage = "segmentByVertical[mt], mt is [0,1] matrix";
 showSegmentByVertical::usage = "showSegmentByVertical[m_], like segmentByVertical but show more details";
@@ -12,8 +15,8 @@ labelWhite::usage="\:6807\:8bb0\:7a7a\:767d\:5217\:ff0c\:6807\:8bb0\:4e3a2\:7684
 segmentGreenRed::usage="2\:7ea2\:ff0c3\:7eff\:ff0c\:7ea2\:7684\:8981\:7279\:522b\:5904\:7406\:ff0c\:68c0\:67e5\:524d\:540e\:5b57\:7b26\:77e9\:9635\:662f\:5426\:5b8c\:6574\:ff0c\:5b8c\:6574\:5219\:8f6c\:6210\:7eff\:8272\:ff0c\:4e0d\:5b8c\:6574\:5219\:53d6\:6d88\:8fd9\:4e2a\:6807\:8bb0";
 segmentSmartt::usage="segmentSmart[i],\:667a\:80fd\:5206\:5272\:4e2d\:6587\:5b57\:7b26";
 segmentSmart::usage="segmentSmart[i],\:667a\:80fd\:5206\:5272\:4e2d\:6587\:5b57\:7b26";
-mergeSplitBy::usage="mergeSplitBy[mts],\:53cdSplitBy";
 segmentAndPlot::usage="segmentAndPlot[i], \:65b9\:4fbf\:89c2\:89c2\:5bdf\:6700\:7ec8\:7ed3\:679c";
+turnBlack::usage="turnBlack[mt]";
 
 
 Begin["`Private`"];
@@ -128,9 +131,13 @@ ParallelTable[turnGreenAts[mtss[[n]],idxss[[n]]],{n,Length[mtss]}]
 ]
 
 
-mtRedTrunBlack[mt_]:=mt/.{x:2..}:>({x}/.{2->0})
-RedTrunBlack[mt_]:=mt//Transpose//mtRedTrunBlack//Transpose
-segmentAndPlot[i_]:=i//segmentSmart//(RedTrunBlack/@#&)/@#&//mergeSplitBy/@#&//plot/@#&
+mtRedTurnBlack[mt_]:=mt/.{x:2..}:>({x}/.{2->0})
+RedTurnBlack[mt_]:=mt//Transpose//mtRedTurnBlack//Transpose
+segmentAndPlot[i_]:=i//segmentSmart//(RedTurnBlack/@#&)/@#&//mergeSplitBy/@#&//plot/@#&
+segment[i_]:=i//segmentSmart//(RedTurnBlack/@#&)/@#&//mergeSplitBy/@#&
+splitByGreen[mt_]:=mt//Transpose//SplitBy[#,MatchQ[#,{3..}]&]&//Transpose/@#&
+splitByGreenClean[mt_]:=mt//Transpose//SplitBy[#,MatchQ[#,{3..}]&]/.{{3..}..}->Sequence[]&//Transpose/@#&
+turnBlack[mt_]:= mt/.x:{3..}:>(x/.{3->0})
 
 
 End[ ];
