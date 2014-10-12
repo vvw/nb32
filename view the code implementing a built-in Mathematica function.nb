@@ -1,19 +1,12 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 10.0' *)
-
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     27526,        652]
-NotebookOptionsPosition[     26076,        598]
-NotebookOutlinePosition[     26669,        622]
-CellTagsIndexPosition[     26584,        617]
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     53409,       1331]
+NotebookOptionsPosition[     49686,       1204]
+NotebookOutlinePosition[     50923,       1244]
+CellTagsIndexPosition[     50795,       1238]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -235,7 +228,7 @@ q65FN623pCo7M6eiouL0VWMnatCGpH7MSkkL+yY/ivjPiMx/v0af+OZpzL2K
 
 Cell[BoxData["\<\"ImportString[\\\"2 . oe5a74ee+12~, ~csv~]\"\>"], "Output",
  CellChangeTimes->{3.6221042357365627`*^9, 3.6221077981045237`*^9, 
-  3.62210809170444*^9}]
+  3.62210809170444*^9, 3.6221103766986217`*^9, 3.622111119617185*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -249,41 +242,41 @@ Cell[BoxData[{
   RowBox[{"FillingTransform", ",", "ReadProtected"}], "]"}], "\n", 
  RowBox[{
   RowBox[{"Begin", "[", "\"\<Image`MorphologicalOperationsDump`\>\"", "]"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{"Information", "[", "FillingTransform", "]"}]}], "Input",
  CellChangeTimes->{{3.62210492463288*^9, 3.62210492463461*^9}}],
 
 Cell[BoxData["FillingTransform"], "Output",
  CellChangeTimes->{3.622104927809599*^9, 3.6221077981697283`*^9, 
-  3.6221080917549467`*^9}],
+  3.6221080917549467`*^9, 3.62211037673118*^9, 3.622111119669745*^9}],
 
 Cell[BoxData["\<\"Image`MorphologicalOperationsDump`\"\>"], "Output",
  CellChangeTimes->{3.622104927809599*^9, 3.6221077981697283`*^9, 
-  3.6221080917589903`*^9}],
+  3.6221080917549467`*^9, 3.62211037673118*^9, 3.6221111196731443`*^9}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"FillingTransform\\\", \\\"[\\\", \
-StyleBox[\\\"image\\\", \\\"TI\\\"], \\\"]\\\"}]\\) gives a version of \\!\\(\
-\\*StyleBox[\\\"image\\\", \\\"TI\\\"]\\) with all extended minima filled.\\n\
-\\!\\(\\*RowBox[{\\\"FillingTransform\\\", \\\"[\\\", \
+  StyleBox["\<\"\!\(\*RowBox[{\\\"FillingTransform\\\", \\\"[\\\", \
+StyleBox[\\\"image\\\", \\\"TI\\\"], \\\"]\\\"}]\) gives a version of \
+\!\(\*StyleBox[\\\"image\\\", \\\"TI\\\"]\) with all extended minima \
+filled.\\n\!\(\*RowBox[{\\\"FillingTransform\\\", \\\"[\\\", \
 RowBox[{StyleBox[\\\"image\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"marker\\\
-\", \\\"TI\\\"]}], \\\"]\\\"}]\\) fills extended minima in regions where at \
+\", \\\"TI\\\"]}], \\\"]\\\"}]\) fills extended minima in regions where at \
 least one corresponding element of marker is \
-nonzero.\\n\\!\\(\\*RowBox[{\\\"FillingTransform\\\", \\\"[\\\", \
+nonzero.\\n\!\(\*RowBox[{\\\"FillingTransform\\\", \\\"[\\\", \
 RowBox[{StyleBox[\\\"image\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"h\\\", \
-\\\"TI\\\"]}], \\\"]\\\"}]\\) fills only extended minima of depth \
-\\!\\(\\*StyleBox[\\\"h\\\", \\\"TI\\\"]\\) or less.\"\>", "MSG"], 
+\\\"TI\\\"]}], \\\"]\\\"}]\) fills only extended minima of depth \
+\!\(\*StyleBox[\\\"h\\\", \\\"TI\\\"]\) or less.\"\>", "MSG"], 
   "\[NonBreakingSpace]", 
   ButtonBox[
    StyleBox["\[RightSkeleton]", "SR"],
    Active->True,
    BaseStyle->"Link",
    ButtonData->"paclet:ref/FillingTransform"]}]], "Print", "PrintUsage",
- CellChangeTimes->{3.6221080917880373`*^9},
- CellTags->"Info3622136891-7353957"],
+ CellChangeTimes->{3.62211111970545*^9},
+ CellTags->"Info3622139919-7353957"],
 
 Cell[BoxData[
  InterpretationBox[GridBox[{
@@ -354,8 +347,8 @@ Cell[BoxData[
      "RowsIndexed" -> {}}],
   Definition[FillingTransform],
   Editable->False]], "Print",
- CellChangeTimes->{3.622108091803738*^9},
- CellTags->"Info3622136891-7353957"]
+ CellChangeTimes->{3.622111119730404*^9},
+ CellTags->"Info3622139919-7353957"]
 }, Open  ]]
 }, Open  ]],
 
@@ -371,7 +364,7 @@ Cell[BoxData[
    ",", "\<\"PacletManager`\"\>", ",", "\<\"System`\"\>", 
    ",", "\<\"Global`\"\>"}], "}"}]], "Output",
  CellChangeTimes->{3.622105046081978*^9, 3.622107798275185*^9, 
-  3.622108091835815*^9}]
+  3.622108091835815*^9, 3.622110376875396*^9, 3.622111119762801*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -389,7 +382,9 @@ Cell[CellGroupData[{
 Cell["TextRecognize", "Subsubsection",
  GeneratedCell->True,
  CellAutoOverwrite->True,
- CellChangeTimes->{3.622108094114303*^9}],
+ CellChangeTimes->{3.622111128948326*^9}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -422,6 +417,105 @@ Cell[BoxData[
  CellAutoOverwrite->True,
  CellChangeTimes->{3.622108094128808*^9}],
 
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"SetDelayed", "::", "write"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Tag \[NoBreak]\\!\\(TextRecognize\\)\[NoBreak] in \
+\[NoBreak]\\!\\(TextRecognize[s___]\\)\[NoBreak] is Protected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
+ButtonNote -> \\\"SetDelayed::write\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.622110380875835*^9, 3.622111129061409*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TextRecognize", "[", "s___", "]"}], ":=", "\n", "    ", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "r"}], "}"}], ",", "\n", "    ", "    ", 
+    RowBox[{"(", "    ", "    ", "    ", "\n", "    ", "    ", "    ", 
+     RowBox[{
+      RowBox[{"a", "=", "\n", "    ", "    ", "    ", "    ", 
+       RowBox[{"Arguments", "[", "\n", "    ", "    ", "    ", "    ", "    ", 
+        RowBox[{
+         RowBox[{"TextRecognize", "[", "s", "]"}], ",", "1", ",", "List", ",",
+          "TextRecognizeHiddenOptions"}], "\n", "    ", "    ", "    ", 
+        "    ", "]"}]}], ";", "\n", "    ", "    ", "    ", 
+      RowBox[{"r", "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"a", "=!=", 
+           RowBox[{"{", "}"}]}], ")"}], "&&", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"r", "=", 
+            RowBox[{"iTextRecognize", "@@", "a"}]}], "=!=", "$Failed"}], 
+          ")"}]}], ")"}]}]}], "\n", "    ", "    ", ")"}]}], "\n", "    ", 
+   "]"}]}]], "Input",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.622110380809417*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"SetDelayed", "::", "write"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Tag \[NoBreak]\\!\\(TextRecognize\\)\[NoBreak] in \
+\[NoBreak]\\!\\(TextRecognize[s___]\\)\[NoBreak] is Protected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
+ButtonNote -> \\\"SetDelayed::write\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6221111291111727`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TextRecognize", "[", "s___", "]"}], ":=", "\n", "    ", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "r"}], "}"}], ",", "\n", "    ", "    ", 
+    RowBox[{"(", "    ", "    ", "    ", "\n", "    ", "    ", "    ", 
+     RowBox[{
+      RowBox[{"a", "=", "\n", "    ", "    ", "    ", "    ", 
+       RowBox[{"Arguments", "[", "\n", "    ", "    ", "    ", "    ", "    ", 
+        RowBox[{
+         RowBox[{"TextRecognize", "[", "s", "]"}], ",", "1", ",", "List", ",",
+          "TextRecognizeHiddenOptions"}], "\n", "    ", "    ", "    ", 
+        "    ", "]"}]}], ";", "\n", "    ", "    ", "    ", 
+      RowBox[{"r", "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"a", "=!=", 
+           RowBox[{"{", "}"}]}], ")"}], "&&", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"r", "=", 
+            RowBox[{"iTextRecognize", "@@", "a"}]}], "=!=", "$Failed"}], 
+          ")"}]}], ")"}]}]}], "\n", "    ", "    ", ")"}]}], "\n", "    ", 
+   "]"}]}]], "Input",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.62211112898376*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.622111129065715*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.622110380879958*^9, 3.622111129114697*^9}]
+}, Open  ]],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
@@ -445,7 +539,7 @@ Cell[BoxData[{
         {
          ButtonBox["TextRecognize",
           BaseStyle->"InformationLinkLF",
-          ButtonData:>{"Info3622137684-7353957", {"TextRecognize", "System`"}},
+          ButtonData:>{"Info3622139929-7353957", {"TextRecognize", "System`"}},
           ButtonNote->"System`"]}
        },
        DefaultBaseStyle->"InfoGrid",
@@ -472,14 +566,14 @@ Cell[BoxData[{
           BaseStyle->"InformationLinkLF",
           
           ButtonData:>{
-           "Info3622137684-7353957", {
+           "Info3622139929-7353957", {
             "InternalTextRecognize", "Image`ExternalOCRDump`"}},
           ButtonNote->"Image`ExternalOCRDump`"], 
          ButtonBox["TextRecognizeHiddenOptions",
           BaseStyle->"InformationLinkLF",
           
           ButtonData:>{
-           "Info3622137684-7353957", {
+           "Info3622139929-7353957", {
             "TextRecognizeHiddenOptions", "Image`ExternalOCRDump`"}},
           ButtonNote->"Image`ExternalOCRDump`"]},
         {
@@ -487,14 +581,14 @@ Cell[BoxData[{
           BaseStyle->"InformationLinkLF",
           
           ButtonData:>{
-           "Info3622137684-7353957", {
+           "Info3622139929-7353957", {
             "iTextRecognize", "Image`ExternalOCRDump`"}},
           ButtonNote->"Image`ExternalOCRDump`"], 
          ButtonBox["$TextRecognizeSegmentationModes",
           BaseStyle->"InformationLinkLF",
           
           ButtonData:>{
-           "Info3622137684-7353957", {
+           "Info3622139929-7353957", {
             "$TextRecognizeSegmentationModes", "Image`ExternalOCRDump`"}},
           ButtonNote->"Image`ExternalOCRDump`"]}
        },
@@ -523,17 +617,26 @@ Cell[BoxData[{
           BaseStyle->"InformationLinkLF",
           
           ButtonData:>{
-           "Info3622137684-7353957", {
+           "Info3622139929-7353957", {
             "iTextRecognize", "Image`MorphologicalOperationsDump`"}},
           ButtonNote->"Image`MorphologicalOperationsDump`"], 
+         ButtonBox["$TextRecognizeSegmentationModes",
+          BaseStyle->"InformationLinkLF",
+          
+          ButtonData:>{
+           "Info3622139929-7353957", {
+            "$TextRecognizeSegmentationModes", 
+             "Image`MorphologicalOperationsDump`"}},
+          ButtonNote->"Image`MorphologicalOperationsDump`"]},
+        {
          ButtonBox["TextRecognizeHiddenOptions",
           BaseStyle->"InformationLinkLF",
           
           ButtonData:>{
-           "Info3622137684-7353957", {
+           "Info3622139929-7353957", {
             "TextRecognizeHiddenOptions", 
              "Image`MorphologicalOperationsDump`"}},
-          ButtonNote->"Image`MorphologicalOperationsDump`"]}
+          ButtonNote->"Image`MorphologicalOperationsDump`"], ""}
        },
        DefaultBaseStyle->"InfoGrid",
        GridBoxItemSize->{"Columns" -> {{
@@ -542,7 +645,7 @@ Cell[BoxData[{
     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
    Dynamic[Typeset`open$$],
    ImageSize->Automatic]]}], "Print", "InfoCell",
- CellChangeTimes->{3.622108884218811*^9}]
+ CellChangeTimes->{3.622111129162795*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -592,7 +695,510 @@ Cell[BoxData[
     RowBox[{"{", 
      RowBox[{"10", ",", "\<\"Treat the image as a single character\"\>"}], 
      "}"}]}]}], "}"}]], "Output",
- CellChangeTimes->{{3.622109158642642*^9, 3.622109168823957*^9}}]
+ CellChangeTimes->{{3.622109158642642*^9, 3.622109168823957*^9}, 
+   3.622110380964139*^9, 3.622111131553216*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "V8", " ", "introduced", " ", "the", " ", "undocumented", " ", "flag", " ", 
+    RowBox[{"Debug`$ExamineCode", ".", "When"}], " ", "it", " ", "is", " ", 
+    "set", " ", "to", " ", "true"}], ",", 
+   RowBox[{
+   "the", " ", "information", " ", "functions", " ", "will", " ", "display", 
+    " ", "the", " ", "definitions", " ", "of", " ", "ReadProtected", " ", 
+    RowBox[{"symbols", ":"}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.622110286469658*^9, 3.62211028647094*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Debug`$ExamineCode", "=", "True"}], "\n", 
+ RowBox[{"??", "BinLists"}]}], "Input",
+ CellChangeTimes->{{3.622110227831305*^9, 3.622110227832806*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.622110232624708*^9, 3.622110380995105*^9, 
+  3.622111131591527*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"BinLists\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\"]\\\"}]\) gives lists of the elements \
+\!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\) whose values lie in successive integer \
+bins.\\n\!\(\*RowBox[{\\\"BinLists\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"dx\\\", \\\"TI\\\"]}], \
+\\\"]\\\"}]\) gives lists of the elements \!\(\*SubscriptBox[StyleBox[\\\"x\\\
+\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\) whose values lie in \
+successive bins of width \!\(\*StyleBox[\\\"dx\\\", \
+\\\"TI\\\"]\).\\n\!\(\*RowBox[{\\\"BinLists\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]], \\\",\\\", StyleBox[\\\"dx\\\", \\\"TI\\\"]}], \\\"}\\\"}]}], \
+\\\"]\\\"}]\) gives lists of the \!\(\*SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\) that lie in successive bins \
+of width \!\(\*StyleBox[\\\"dx\\\", \\\"TI\\\"]\) from \
+\!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]]\) to \!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]\). \\n\!\(\*RowBox[{\\\"BinLists\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"{\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"}\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\) gives lists of the \
+\!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\) that lie in the intervals \!\(\*RowBox[{RowBox[{\\\"[\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]]}]}], \\\")\\\"}]\), \!\(\*RowBox[{RowBox[{\\\
+\"[\\\", RowBox[{SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], StyleBox[\\\"2\
+\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"b\\\", \\\"TI\\\"], \
+StyleBox[\\\"3\\\", \\\"TR\\\"]]}]}], \\\")\\\"}]\), \[Ellipsis]. \
+\\n\!\(\*RowBox[{\\\"BinLists\\\", \\\"[\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"y\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}], \\\
+\",\\\", StyleBox[\\\"xbins\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"ybins\\\
+\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"]\\\"}]\) gives an array of lists where the first index corresponds to \!\
+\(\*StyleBox[\\\"x\\\", \\\"TI\\\"]\) bins, the second to \
+\!\(\*StyleBox[\\\"y\\\", \\\"TI\\\"]\), and so on. \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/BinLists"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.622111131621675*^9},
+ CellTags->"Info3622139931-7353957"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "BinLists", "]"}], "=", 
+      RowBox[{"{", "Protected", "}"}]}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{"BinLists", ":=", 
+         RowBox[{
+          RowBox[{"System`Dump`AutoLoad", "[", 
+           RowBox[{
+            RowBox[{"Hold", "[", "BinLists", "]"}], ",", 
+            RowBox[{"Hold", "[", 
+             RowBox[{
+             "BinCounts", ",", "BinLists", ",", 
+              "BinningUtilities`BinCutOffs"}], "]"}], 
+            ",", "\<\"Statistics`DataOperations`Binning`\"\>"}], "]"}], "/;", 
+          "System`Dump`TestLoad"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[BinLists],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.622111131663884*^9},
+ CellTags->"Info3622139931-7353957"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "TextRecognize"}]], "Input",
+ CellChangeTimes->{{3.622110505820969*^9, 3.622110511669919*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"TextRecognize\\\", \\\"[\\\", \
+StyleBox[\\\"image\\\", \\\"TI\\\"], \\\"]\\\"}]\) recognizes text in \
+\!\(\*StyleBox[\\\"image\\\", \\\"TI\\\"]\) and returns it as a string.\"\>", 
+   "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/TextRecognize"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.6221111317293463`*^9},
+ CellTags->"Info3622139931-7353957"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "TextRecognize", "]"}], "=", 
+      RowBox[{"{", "Protected", "}"}]}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"TextRecognize", "[", "Image`ExternalOCRDump`s___", "]"}], ":=", 
+         RowBox[{"Block", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "Image`ExternalOCRDump`a", ",", "Image`ExternalOCRDump`r"}], 
+            "}"}], ",", 
+           RowBox[{
+            RowBox[{"Image`ExternalOCRDump`a", "=", 
+             RowBox[{"System`Private`Arguments", "[", 
+              RowBox[{
+               RowBox[{"TextRecognize", "[", "Image`ExternalOCRDump`s", "]"}],
+                ",", "1", ",", "List", ",", 
+               "Image`ExternalOCRDump`TextRecognizeHiddenOptions"}], "]"}]}], 
+            ";", 
+            RowBox[{"Image`ExternalOCRDump`r", "/;", 
+             RowBox[{
+              RowBox[{"Image`ExternalOCRDump`a", "=!=", 
+               RowBox[{"{", "}"}]}], "&&", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"Image`ExternalOCRDump`r", "=", 
+                 RowBox[{
+                 "Image`ExternalOCRDump`iTextRecognize", "@@", 
+                  "Image`ExternalOCRDump`a"}]}], ")"}], "=!=", 
+               "$Failed"}]}]}]}]}], "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Options", "[", "TextRecognize", "]"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"Language", "\[Rule]", "\<\"English\"\>"}], "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[TextRecognize],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.622111131744362*^9},
+ CellTags->"Info3622139931-7353957"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Image`ExternalOCRDump`TextRecognizeHiddenOptions"}]], "Input",
+ CellChangeTimes->{{3.622110561255574*^9, 3.6221105692794724`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Image`ExternalOCRDump`TextRecognizeHiddenOptions", "Print", "PrintUsage",
+ CellChangeTimes->{3.622111131794245*^9},
+ CellTags->"Info3622139931-7353957"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"Image`ExternalOCRDump`TextRecognizeHiddenOptions", "=", 
+         RowBox[{"{", 
+          RowBox[{"\<\"SegmentationMode\"\>", "\[Rule]", "Automatic"}], 
+          "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Image`ExternalOCRDump`TextRecognizeHiddenOptions],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.622111131808854*^9},
+ CellTags->"Info3622139931-7353957"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Image`ExternalOCRDump`*"}]], "Input",
+ CellChangeTimes->{{3.622110621039796*^9, 3.622110632554778*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["Image`ExternalOCRDump`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["Image`ExternalOCRDump`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["a",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"a", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["modenum",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"modenum", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["args",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"args", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["modenum$",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"modenum$", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["datafile",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"datafile", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["modestr",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"modestr", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["datafile$",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"datafile$", "Image`ExternalOCRDump`"}},
+          
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["modestr$",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"modestr$", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["datapath",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"datapath", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["opts",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"opts", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["datapath$",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"datapath$", "Image`ExternalOCRDump`"}},
+          
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["path",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"path", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["idp",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"idp", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["r",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"r", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["img",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"img", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["res",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"res", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["img$",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"img$", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["res$",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"res$", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["InternalTextRecognize",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {
+            "InternalTextRecognize", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["s",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"s", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["iTesseract",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"iTesseract", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["Tesseract",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"Tesseract", "Image`ExternalOCRDump`"}},
+          
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["iTextRecognize",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {
+            "iTextRecognize", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["TextRecognizeHiddenOptions",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {
+            "TextRecognizeHiddenOptions", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["lan",
+          BaseStyle->"InformationLink",
+          ButtonData:>{
+           "Info3622139931-7353957", {"lan", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["Transparency",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {
+            "Transparency", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]},
+        {
+         ButtonBox["mode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {"mode", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"], 
+         ButtonBox["$TextRecognizeSegmentationModes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3622139931-7353957", {
+            "$TextRecognizeSegmentationModes", "Image`ExternalOCRDump`"}},
+          ButtonNote->"Image`ExternalOCRDump`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.475]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell",
+ CellChangeTimes->{3.622111131850031*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Image`ExternalOCRDump`Transparency"}]], "Input",
+ CellChangeTimes->{{3.6221108810171633`*^9, 3.622110901717277*^9}}],
+
+Cell["Image`ExternalOCRDump`Transparency", "Print", "PrintUsage",
+ CellChangeTimes->{3.622111131880233*^9},
+ CellTags->"Info3622139931-7353957"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -607,55 +1213,120 @@ StyleDefinitions->"Default.nb"
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Info3622136891-7353957"->{
-  Cell[14186, 265, 1065, 20, 90, "Print",
-   CellTags->"Info3622136891-7353957"],
-  Cell[15254, 287, 2677, 70, 136, "Print",
-   CellTags->"Info3622136891-7353957"]}
+ "Info3622139919-7353957"->{
+  Cell[14162, 258, 1042, 20, 90, "Print",
+   CellTags->"Info3622139919-7353957"],
+  Cell[15207, 280, 2677, 70, 136, "Print",
+   CellTags->"Info3622139919-7353957"]},
+ "Info3622139931-7353957"->{
+  Cell[30996, 727, 4773, 71, 122, "Print",
+   CellTags->"Info3622139931-7353957"],
+  Cell[35772, 800, 1290, 36, 89, "Print",
+   CellTags->"Info3622139931-7353957"],
+  Cell[37259, 848, 517, 12, 42, "Print",
+   CellTags->"Info3622139931-7353957"],
+  Cell[37779, 862, 2537, 67, 169, "Print",
+   CellTags->"Info3622139931-7353957"],
+  Cell[40549, 941, 158, 2, 40, "Print",
+   CellTags->"Info3622139931-7353957"],
+  Cell[40710, 945, 932, 24, 22, "Print",
+   CellTags->"Info3622139931-7353957"],
+  Cell[49514, 1198, 144, 2, 40, "Print",
+   CellTags->"Info3622139931-7353957"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3622136891-7353957", 26395, 609}
+ {"Info3622139919-7353957", 50005, 1215},
+ {"Info3622139931-7353957", 50200, 1220}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 12566, 211, 47, "Input"],
-Cell[13149, 235, 168, 2, 28, "Output"]
+Cell[422, 15, 12566, 211, 47, "Input"],
+Cell[12991, 228, 214, 2, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13354, 242, 503, 11, 97, "Input"],
-Cell[13860, 255, 136, 2, 28, "Output"],
-Cell[13999, 259, 162, 2, 28, "Output"],
+Cell[13242, 235, 503, 11, 97, "Input"],
+Cell[13748, 248, 179, 2, 28, "Output"],
+Cell[13930, 252, 207, 2, 28, "Output"],
 Cell[CellGroupData[{
-Cell[14186, 265, 1065, 20, 90, "Print",
- CellTags->"Info3622136891-7353957"],
-Cell[15254, 287, 2677, 70, 136, "Print",
- CellTags->"Info3622136891-7353957"]
+Cell[14162, 258, 1042, 20, 90, "Print",
+ CellTags->"Info3622139919-7353957"],
+Cell[15207, 280, 2677, 70, 136, "Print",
+ CellTags->"Info3622139919-7353957"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17980, 363, 104, 1, 28, "Input"],
-Cell[18087, 366, 357, 7, 46, "Output"]
+Cell[17933, 356, 104, 1, 28, "Input"],
+Cell[18040, 359, 401, 7, 46, "Output"]
 }, Open  ]],
-Cell[18459, 376, 205, 4, 28, "Input"],
-Cell[18667, 382, 151, 2, 28, "Input"],
+Cell[18456, 369, 205, 4, 28, "Input"],
+Cell[18664, 375, 151, 2, 28, "Input"],
 Cell[CellGroupData[{
-Cell[18843, 388, 128, 3, 35, "Subsubsection"],
-Cell[18974, 393, 1169, 29, 182, "Input"],
+Cell[18840, 381, 128, 3, 35, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[20168, 426, 189, 3, 28, "Input"],
-Cell[20360, 431, 3976, 113, 191, "Print"]
+Cell[18993, 388, 1169, 29, 182, "Input"],
+Cell[20165, 419, 525, 10, 24, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24373, 549, 145, 1, 28, "Input"],
-Cell[24521, 552, 1527, 42, 131, "Output"]
+Cell[20727, 434, 1169, 29, 182, "Input"],
+Cell[21899, 465, 505, 10, 24, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22441, 480, 1168, 29, 182, "Input"],
+Cell[23612, 511, 76, 1, 28, "Output"],
+Cell[23691, 514, 98, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23826, 520, 189, 3, 28, "Input"],
+Cell[24018, 525, 4323, 122, 215, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28378, 652, 145, 1, 28, "Input"],
+Cell[28526, 655, 1575, 43, 131, "Output"]
+}, Open  ]],
+Cell[30116, 701, 534, 11, 63, "Input"],
+Cell[CellGroupData[{
+Cell[30675, 716, 173, 3, 46, "Input"],
+Cell[30851, 721, 120, 2, 28, "Output"],
+Cell[CellGroupData[{
+Cell[30996, 727, 4773, 71, 122, "Print",
+ CellTags->"Info3622139931-7353957"],
+Cell[35772, 800, 1290, 36, 89, "Print",
+ CellTags->"Info3622139931-7353957"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37111, 842, 123, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[37259, 848, 517, 12, 42, "Print",
+ CellTags->"Info3622139931-7353957"],
+Cell[37779, 862, 2537, 67, 169, "Print",
+ CellTags->"Info3622139931-7353957"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40365, 935, 159, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[40549, 941, 158, 2, 40, "Print",
+ CellTags->"Info3622139931-7353957"],
+Cell[40710, 945, 932, 24, 22, "Print",
+ CellTags->"Info3622139931-7353957"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41691, 975, 132, 2, 28, "Input"],
+Cell[41826, 979, 7503, 210, 327, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49366, 1194, 145, 2, 28, "Input"],
+Cell[49514, 1198, 144, 2, 40, "Print",
+ CellTags->"Info3622139931-7353957"]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)
