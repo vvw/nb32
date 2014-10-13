@@ -16,7 +16,7 @@ segmentGreenRed::usage="2\:7ea2\:ff0c3\:7eff\:ff0c\:7ea2\:7684\:8981\:7279\:522b
 segmentSmartt::usage="segmentSmart[i],\:667a\:80fd\:5206\:5272\:4e2d\:6587\:5b57\:7b26";
 segmentSmart::usage="segmentSmart[i],\:667a\:80fd\:5206\:5272\:4e2d\:6587\:5b57\:7b26";
 segmentAndPlot::usage="segmentAndPlot[i], \:65b9\:4fbf\:89c2\:89c2\:5bdf\:6700\:7ec8\:7ed3\:679c";
-turnBlack::usage="turnBlack[mt]";
+turnBlack::usage="turnBlack[mt], turns color green to black";
 
 
 Begin["`Private`"];
@@ -58,8 +58,10 @@ labelWhite[i_]:=i//Binarize//ImageData//Transpose//SplitBy[#,MatchQ[#,{0..}]&]&/
 (*\:538b\:7f29\:6807\:8bb0\:4e3a3\:7684\:5217*)
 compressLabel[m_]:=m//Transpose//SplitBy[#,MatchQ[#,{3..}]&]&//#/.{x:{3..}..}:>{First[{x}]}&//Flatten[#,1]&//Transpose
 (*2\:7ea2\:ff0c3\:7eff\:ff0c\:7ea2\:7684\:8981\:7279\:522b\:5904\:7406\:ff0c\:68c0\:67e5\:524d\:540e\:5b57\:7b26\:77e9\:9635\:662f\:5426\:5b8c\:6574\:ff0c\:5b8c\:6574\:5219\:8f6c\:6210\:7eff\:8272\:ff0c\:4e0d\:5b8c\:6574\:5219\:53d6\:6d88\:8fd9\:4e2a\:6807\:8bb0*)
+(*segmentGreenRed[i_]:=With[{grouping:=(#//Transpose//SplitBy[#,MatchQ[#,{2..}]&]&//SplitBy[#,MatchQ[#,{3..}]&]&/@#&//Flatten[#,1]&//Transpose/@#&)&},
+	i//segmentByHorizon//labelWhite/@#&//compressLabel/@#&//grouping/@#&]*)
 segmentGreenRed[i_]:=With[{grouping:=(#//Transpose//SplitBy[#,MatchQ[#,{2..}]&]&//SplitBy[#,MatchQ[#,{3..}]&]&/@#&//Flatten[#,1]&//Transpose/@#&)&},
-	i//segmentByHorizon//labelWhite/@#&//compressLabel/@#&//grouping/@#&]
+	i//segmentByHorizon//labelWhite/@#&//grouping/@#&]
 
 
 (*segmentSmartt[i_]:=With[
