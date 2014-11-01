@@ -9,7 +9,9 @@ Get@FileNameJoin[{ParentDirectory[],"std.wl"}];
 bomFreeQ::usage="bomFreeQ[s], utf8 detect only";
 unixStypeQ::usage="unixStypeQ[s],unix newline stype is \n and windows stype is \r\n";
 unixStype::usage="unixStype[s], convert to unix newline style";
-compressNewline::usage="successive \n compress to single \n";
+checkString::usage="checkString[s], ensure a string is BOM-free, and newline is unix style";
+compressNewline::usage="compressNewline[s],successive \n compress to single \n";
+dropLeft::usage="dropLeft[ls,fQ], drop a element from list repeatly, when fQ return false.";
 
 
 Begin["`Private`"]
@@ -27,6 +29,17 @@ unixStype[s_]:=StringReplace[s,"\r\n"..->"\n"]
 
 
 compressNewline[s_]:=StringReplace[s,"\n"..->"\n"]
+
+
+checkString[s_]:=Module[{r},
+	On[Assert];
+	r=And[bomFreeQ[s],unixStypeQ];
+	Assert[r,"### bom or unix newline test fail!"];
+	r
+]
+
+
+dropLeft[ls_,fQ_]:=If[fQ[First[ls]],dropLeft[Rest[ls],fQ],ls]
 
 
 End[ ];
