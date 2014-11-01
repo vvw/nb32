@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[     13926,        318]
-NotebookOptionsPosition[     13031,        281]
-NotebookOutlinePosition[     13419,        298]
-CellTagsIndexPosition[     13376,        295]
+NotebookDataLength[     22666,        497]
+NotebookOptionsPosition[     21462,        450]
+NotebookOutlinePosition[     21850,        467]
+CellTagsIndexPosition[     21807,        464]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -204,79 +204,248 @@ failure.\"\>"}], "}"}]], "Output",
    3.6238247328364277`*^9}}]
 }, Open  ]],
 
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"linesItem", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"linesCleaned", "/.", 
+      RowBox[{
+       RowBox[{"x_String", "?", 
+        RowBox[{"(", "zb667ExistQ", ")"}]}], "\[RuleDelayed]", 
+       RowBox[{"Sequence", "[", 
+        RowBox[{"3", ",", "x"}], "]"}]}]}], "//", 
+     RowBox[{
+      RowBox[{"SplitBy", "[", 
+       RowBox[{"#", ",", "StringQ"}], "]"}], "&"}]}], "//", 
+    RowBox[{
+     RowBox[{"#", "/.", 
+      RowBox[{
+       RowBox[{"{", "3", "}"}], "\[Rule]", 
+       RowBox[{"Sequence", "[", "]"}]}]}], "&"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.623824798325569*^9, 3.623824883808959*^9}, {
+  3.623825039431015*^9, 3.623825041345293*^9}, {3.623826526502511*^9, 
+  3.623826551241084*^9}, {3.623826592794075*^9, 3.6238266414317627`*^9}, {
+  3.623826678601925*^9, 3.623826693294773*^9}, {3.623826859125186*^9, 
+  3.6238268687446623`*^9}, {3.6238269158379993`*^9, 3.6238269966762953`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"linesItem", "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.623826999979554*^9, 3.623827021597096*^9}, {
+  3.623827104924728*^9, 3.623827124292635*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"\:304d\:3087\:3046\:3055\:3044\:ff14\:3010\:5883\:88c1\:3011 \
+[zB667](ky[hA238]sai)\"\>", "\<\"\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\
+\:3069\:306e\:7e01\:306e\:690d\:3048\:8fbc\:307f\:3015 border planting; \
+bordering.\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 \
+[zB667](ky[hA238]zai)\"\>", "\<\"teaching materials; educational materials; \
+\:3014\:8996\:8074\:899a\:6559\:80b2\:7528\:306e\:3015 teaching aids.\"\>", "\
+\<\"[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\:3066\:4f7f\
+\:3046\:3000use an English paper [zB23D]for teaching [as teaching material, \
+in class].\"\>", "\<\"[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of \
+teaching [zB23D]materials [aids].\"\>", "\<\"\:6559\:6750\:8cbb\:3000\:3014\
+\:6559\:5e2b\:306e\:3015 expenses for [zB23D]teaching [educational] \
+materials; \:3014\:5b66\:751f\:306e\:3015 a fee for [zB23D]teaching \
+[educational] materials.\"\>"},
+    {"\<\"\:304e\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 \
+[zB667](gy[hA238]sai)\"\>", \
+"\<\"[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; interindustrial; \
+cross-industry; multi-industry.\"\>", "\<\"\:696d\:969b\:30d3\:30b8\:30cd\
+\:30b9\:3000(a) [zB23D]cross-industry [multi-industry] business.\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\:884c\:8ca1\:653f\
+\:3011 [zB667](gy[hA238]zaisei)\"\>", "\<\"\:3014\:884c\:653f\:3068\:8ca1\
+\:653f\:3015 administration and finance(s).\"\>", "\<\"[zB66B]\:884c\:8ca1\
+\:653f\:6539\:9769\:3000administrative and financial reforms.\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\:304d\:3087\:3046\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 \
+[zB667](ky[hA238]saku)\"\>", "\<\"a very [zB23D]bad [poor] crop [harvest]; a \
+crop failure.\"\>", "\<\"[zB65E]\:51f6\:4f5c\:306b\:3042\:3046\:3000suffer a \
+very bad crop.\"\>", "\<\"[zB65E]\:51f6\:4f5c\:306e\:5e74\:3000a [zB23D]lean \
+[very bad, very poor] year \:300afor the rice crop\:300b\"\>", "\<\"\:ff65\
+\:51f6\:4f5c\:306e\:305f\:3081\:3000owing to a crop failure.\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+    "\:304d\:3087\:3046\:3055\:3044\:ff14\:3010\:5883\:88c1\:3011 \
+[zB667](ky[hA238]sai)", 
+     "\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\:7e01\:306e\:690d\
+\:3048\:8fbc\:307f\:3015 border planting; bordering."}, {
+    "\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 \
+[zB667](ky[hA238]zai)", 
+     "teaching materials; educational materials; \:3014\:8996\:8074\:899a\
+\:6559\:80b2\:7528\:306e\:3015 teaching aids.", 
+     "[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\:3066\
+\:4f7f\:3046\:3000use an English paper [zB23D]for teaching [as teaching \
+material, in class].", 
+     "[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
+[zB23D]materials [aids].", 
+     "\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\:3015 expenses for \
+[zB23D]teaching [educational] materials; \:3014\:5b66\:751f\:306e\:3015 a fee \
+for [zB23D]teaching [educational] materials."}, {
+    "\:304e\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 \
+[zB667](gy[hA238]sai)", 
+     "[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; interindustrial; \
+cross-industry; multi-industry.", 
+     "\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) [zB23D]cross-industry \
+[multi-industry] business."}, {
+    "\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\:884c\:8ca1\:653f\:3011 \
+[zB667](gy[hA238]zaisei)", 
+     "\:3014\:884c\:653f\:3068\:8ca1\:653f\:3015 administration and \
+finance(s).", 
+     "[zB66B]\:884c\:8ca1\:653f\:6539\:9769\:3000administrative and financial \
+reforms."}, {
+    "\:304d\:3087\:3046\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 \
+[zB667](ky[hA238]saku)", 
+     "a very [zB23D]bad [poor] crop [harvest]; a crop failure.", 
+     "[zB65E]\:51f6\:4f5c\:306b\:3042\:3046\:3000suffer a very bad crop.", 
+     "[zB65E]\:51f6\:4f5c\:306e\:5e74\:3000a [zB23D]lean [very bad, very \
+poor] year \:300afor the rice crop\:300b", 
+     "\:ff65\:51f6\:4f5c\:306e\:305f\:3081\:3000owing to a crop \
+failure."}}]]], "Output",
+ CellChangeTimes->{
+  3.6238270231125183`*^9, {3.623827109809288*^9, 3.6238271252879343`*^9}}]
+}, Open  ]],
+
+Cell[BoxData["StringJoin"], "Input",
+ CellChangeTimes->{{3.623827460525509*^9, 3.6238274667549*^9}}],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"linesCleaned", "/.", 
-   RowBox[{
-    RowBox[{"x_String", "?", 
-     RowBox[{"(", "zb667ExistQ", ")"}]}], "\[RuleDelayed]", 
-    RowBox[{"Sequence", "[", 
-     RowBox[{"3", ",", "x"}], "]"}]}]}], "//", 
   RowBox[{
-   RowBox[{"SplitBy", "[", 
-    RowBox[{"#", ",", "StringQ"}], "]"}], "&"}]}]], "Input",
- CellChangeTimes->{{3.623824798325569*^9, 3.623824883808959*^9}, {
-  3.623825039431015*^9, 3.623825041345293*^9}, {3.623826526502511*^9, 
-  3.623826551241084*^9}, {3.623826592794075*^9, 3.6238266414317627`*^9}, {
-  3.623826678601925*^9, 3.623826693294773*^9}}],
+   RowBox[{"Riffle", "[", 
+    RowBox[{"#", ",", "\"\<\\n\>\""}], "]"}], "&"}], "/@", 
+  "linesItem"}]], "Input",
+ CellChangeTimes->{{3.6238275881088743`*^9, 3.623827632054596*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-   RowBox[{"{", "3", "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"\:304d\:3087\:3046\:3055\:3044\:ff14\:3010\:5883\:88c1\:3011 \
-[zB667](ky[hA238]sai)\"\>", 
+[zB667](ky[hA238]sai)\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\:7e01\
 \:306e\:690d\:3048\:8fbc\:307f\:3015 border planting; bordering.\"\>"}], 
     "}"}], ",", 
-   RowBox[{"{", "3", "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 \
-[zB667](ky[hA238]zai)\"\>", 
+[zB667](ky[hA238]zai)\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"teaching materials; educational materials; \:3014\:8996\:8074\
-\:899a\:6559\:80b2\:7528\:306e\:3015 teaching aids.\"\>", 
+\:899a\:6559\:80b2\:7528\:306e\:3015 teaching aids.\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\
 \:3066\:4f7f\:3046\:3000use an English paper [zB23D]for teaching [as teaching \
-material, in class].\"\>", 
+material, in class].\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
-[zB23D]materials [aids].\"\>", 
+[zB23D]materials [aids].\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\:3015 \
 expenses for [zB23D]teaching [educational] materials; \
 \:3014\:5b66\:751f\:306e\:3015 a fee for [zB23D]teaching [educational] \
 materials.\"\>"}], "}"}], ",", 
-   RowBox[{"{", "3", "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"\:304e\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 \
-[zB667](gy[hA238]sai)\"\>", 
+[zB667](gy[hA238]sai)\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; \
-interindustrial; cross-industry; multi-industry.\"\>", 
+interindustrial; cross-industry; multi-industry.\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) \
 [zB23D]cross-industry [multi-industry] business.\"\>"}], "}"}], ",", 
-   RowBox[{"{", "3", "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\:884c\:8ca1\
-\:653f\:3011 [zB667](gy[hA238]zaisei)\"\>", 
+\:653f\:3011 [zB667](gy[hA238]zaisei)\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"\:3014\:884c\:653f\:3068\:8ca1\:653f\:3015 administration and \
-finance(s).\"\>", 
+finance(s).\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"[zB66B]\:884c\:8ca1\:653f\:6539\:9769\:3000administrative and \
 financial reforms.\"\>"}], "}"}], ",", 
-   RowBox[{"{", "3", "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"\:304d\:3087\:3046\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 \
-[zB667](ky[hA238]saku)\"\>", 
+[zB667](ky[hA238]saku)\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"a very [zB23D]bad [poor] crop [harvest]; a crop failure.\"\>", 
+     ",", "\<\"\\n\"\>", 
      ",", "\<\"[zB65E]\:51f6\:4f5c\:306b\:3042\:3046\:3000suffer a very bad \
-crop.\"\>", 
+crop.\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"[zB65E]\:51f6\:4f5c\:306e\:5e74\:3000a [zB23D]lean [very bad, \
-very poor] year \:300afor the rice crop\:300b\"\>", 
+very poor] year \:300afor the rice crop\:300b\"\>", ",", "\<\"\\n\"\>", 
      ",", "\<\"\:ff65\:51f6\:4f5c\:306e\:305f\:3081\:3000owing to a crop \
 failure.\"\>"}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.6238248856258593`*^9, 3.623824985262528*^9, 
-  3.6238250464825974`*^9, 3.6238265571575003`*^9, 3.623826643498557*^9, 
-  3.623826694960362*^9}]
+ CellChangeTimes->{3.623827633443755*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{"#", ",", "\"\<\\n\>\""}], "]"}], "&"}], "/@", "linesItem"}], "//", 
+   RowBox[{
+    RowBox[{"StringJoin", "/@", "#"}], "&"}]}], "//", "TableForm"}]], "Input",\
+
+ CellChangeTimes->{{3.623827702797905*^9, 3.623827764574959*^9}, {
+  3.6238278294996967`*^9, 3.623827856847168*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"\:304d\:3087\:3046\:3055\:3044\:ff14\:3010\:5883\:88c1\:3011 \
+[zB667](ky[hA238]sai)\\n\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\
+\:7e01\:306e\:690d\:3048\:8fbc\:307f\:3015 border planting; bordering.\"\>"},
+     {"\<\"\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 \
+[zB667](ky[hA238]zai)\\nteaching materials; educational materials; \:3014\
+\:8996\:8074\:899a\:6559\:80b2\:7528\:306e\:3015 teaching aids.\\n[zB65E]\
+\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\:3066\:4f7f\:3046\:3000\
+use an English paper [zB23D]for teaching [as teaching material, in \
+class].\\n[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
+[zB23D]materials [aids].\\n\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\
+\:3015 expenses for [zB23D]teaching [educational] materials; \:3014\:5b66\
+\:751f\:306e\:3015 a fee for [zB23D]teaching [educational] materials.\"\>"},
+     {"\<\"\:304e\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 \
+[zB667](gy[hA238]sai)\\n[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; \
+interindustrial; cross-industry; multi-industry.\\n\:696d\:969b\:30d3\:30b8\
+\:30cd\:30b9\:3000(a) [zB23D]cross-industry [multi-industry] business.\"\>"},
+     {"\<\"\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\:884c\:8ca1\:653f\
+\:3011 [zB667](gy[hA238]zaisei)\\n\:3014\:884c\:653f\:3068\:8ca1\:653f\:3015 \
+administration and \
+finance(s).\\n[zB66B]\:884c\:8ca1\:653f\:6539\:9769\:3000administrative and \
+financial reforms.\"\>"},
+     {"\<\"\:304d\:3087\:3046\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 \
+[zB667](ky[hA238]saku)\\na very [zB23D]bad [poor] crop [harvest]; a crop \
+failure.\\n[zB65E]\:51f6\:4f5c\:306b\:3042\:3046\:3000suffer a very bad crop.\
+\\n[zB65E]\:51f6\:4f5c\:306e\:5e74\:3000a [zB23D]lean [very bad, very poor] \
+year \:300afor the rice crop\:300b\\n\:ff65\:51f6\:4f5c\:306e\:305f\:3081\
+\:3000owing to a crop failure.\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.623827766874166*^9, {3.623827837609939*^9, 3.6238278581825447`*^9}}]
 }, Open  ]]
 },
 WindowSize->{Full, Full},
@@ -309,9 +478,19 @@ Cell[CellGroupData[{
 Cell[7063, 155, 272, 5, 36, "Input"],
 Cell[7338, 162, 2306, 41, 274, "Output"]
 }, Open  ]],
+Cell[9659, 206, 945, 23, 36, "Input"],
 Cell[CellGroupData[{
-Cell[9681, 208, 598, 14, 36, "Input"],
-Cell[10282, 224, 2733, 54, 292, "Output"]
+Cell[10629, 233, 181, 3, 35, "Input"],
+Cell[10813, 238, 4619, 82, 152, "Output"]
+}, Open  ]],
+Cell[15447, 323, 100, 1, 36, "Input"],
+Cell[CellGroupData[{
+Cell[15572, 328, 216, 6, 35, "Input"],
+Cell[15791, 336, 2707, 48, 376, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18535, 389, 381, 11, 36, "Input"],
+Cell[18919, 402, 2527, 45, 450, "Output"]
 }, Open  ]]
 }
 ]
