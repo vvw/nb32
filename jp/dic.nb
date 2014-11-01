@@ -1,0 +1,460 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15848,        451]
+NotebookOptionsPosition[     13981,        386]
+NotebookOutlinePosition[     14337,        402]
+CellTagsIndexPosition[     14294,        399]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Get", "@", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ParentDirectory", "[", "]"}], ",", "\"\<std.wl\>\""}], "}"}], 
+    "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.623753815042117*^9, 3.623753842186067*^9}, {
+  3.623803272231571*^9, 3.6238032810303087`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"orig", "=", 
+   RowBox[{
+   "Import", "@", 
+    "\"\<\:7814\:7a76\:793e\:3000\:65b0\:548c\:82f1\:5927\:8f9e\:5178\:3000\
+\:7b2c\:ff15\:724800 copy2.txt\>\""}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.623753772186912*^9, 3.623753807851564*^9}, {
+  3.6237538549869204`*^9, 3.623753894171702*^9}}],
+
+Cell[BoxData[
+ RowBox[{"StringTake", "[", 
+  RowBox[{"orig", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6237539377430162`*^9, 3.623753947880206*^9}, {
+  3.623754016368985*^9, 3.6237540393972063`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringCount", "[", 
+  RowBox[{"orig", ",", "\"\<\\n\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.623755619875824*^9, 3.623755643767585*^9}, {
+  3.623755726841881*^9, 3.623755763355167*^9}, {3.6237558102318583`*^9, 
+  3.623755881058557*^9}}],
+
+Cell[BoxData["630364"], "Output",
+ CellChangeTimes->{{3.623755836429172*^9, 3.623755850779076*^9}, 
+   3.623755882989139*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lines", "=", 
+   RowBox[{"StringSplit", "[", 
+    RowBox[{"orig", ",", "\"\<\\n\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.623781945174631*^9, 3.623781952878038*^9}, {
+  3.623782033964407*^9, 3.623782068295927*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lines", "[", 
+  RowBox[{"[", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], "]"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.623782076960555*^9, 3.6237821153749104`*^9}, {
+  3.623783456595908*^9, 3.623783460636695*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"[ID=00:\:672c\:6587] start=1A56C(107884), blocks=52128\"\>", 
+   ",", "\<\"\"\>", ",", "\<\"\"\>", 
+   ",", "\<\"\:3053\:306e\:30c7\:30a3\:30b9\:30af\:306b\:3064\:3044\:3066\"\>\
+"}], "}"}]], "Output",
+ CellChangeTimes->{{3.623782087362617*^9, 3.6237821166930313`*^9}, 
+   3.623783462719055*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\<\:4e2d\>\"", ",", "\"\<\:4e2d\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.623783938401338*^9, 3.62378394440602*^9}, {
+  3.623783981185511*^9, 3.623784028274671*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.6237840043557034`*^9, 3.6237840295237923`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.62378476988622*^9, 3.623784782606551*^9}, {
+   3.62378500055086*^9, 3.623785025476782*^9}, 3.623785062024026*^9, 
+   3.623785099718608*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"orig", ",", "\"\<[zB667]\>\""}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"~~", "x___", "~~", "\"\<[zB667]\>\""}], "]"}], "*)"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.623785081499176*^9, 3.623785190378251*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.623785191573399*^9, 3.623785195635024*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\<orig\>\"", ",", "\"\<[zB667]\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.623785229878446*^9, 3.623785256243602*^9}, {
+  3.623785389958721*^9, 3.623785393112831*^9}, {3.623785454614183*^9, 
+  3.6237855376069202`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.62378525740668*^9, 3.623785394359633*^9, {3.623785456411811*^9, 
+   3.623785478122233*^9}, {3.623785508964707*^9, 3.623785525631484*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringFreeQ", "[", 
+  RowBox[{"orig", ",", 
+   RowBox[{"\"\<[zB667]\>\"", "~~", "x___", "~~", "\"\<[zB667]\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.623785399110196*^9, 3.623785406375997*^9}, {
+  3.6237855496782627`*^9, 3.6237856053837748`*^9}, {3.623785829619203*^9, 
+  3.6237858801146393`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.623785584782311*^9, 3.623785616380756*^9}, {
+  3.6237858313624277`*^9, 3.623785887524022*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6237890903062057`*^9, 3.6237891065305443`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringCases", "[", 
+  RowBox[{"orig", ",", 
+   RowBox[{"\"\<[zB667]\>\"", "~~", 
+    RowBox[{"Shortest", "[", "x___", "]"}], "~~", "\"\<[zB667]\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.623786111945437*^9, 3.623786134032597*^9}, {
+   3.6237861979451942`*^9, 3.6237862330605183`*^9}, 3.623786351352083*^9, {
+   3.623787120052055*^9, 3.623787143610835*^9}, 3.623787203795642*^9, 
+   3.623789110497572*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"[zB667](ky[hA238]sai)\\n\:3014\:82b1\:58c7\:ff65\:9053\:8def\
+\:306a\:3069\:306e\:7e01\:306e\:690d\:3048\:8fbc\:307f\:3015 border planting; \
+bordering.\\n\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 [zB667]\"\
+\>", ",", \
+"\<\"[zB667](gy[hA238]sai)\\n[zB66B]\:696d\:969b\:7684\:306a\:3000\
+interindustry; interindustrial; cross-industry; \
+multi-industry.\\n\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) \
+[zB23D]cross-industry [multi-industry] business.\\n\:304e\:3087\:3046\:3056\
+\:3044\:305b\:3044\:3010\:884c\:8ca1\:653f\:3011 [zB667]\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.623786138619402*^9, {3.6237862059421377`*^9, 3.623786234516711*^9}, 
+   3.6237863528619204`*^9, 3.623787144701029*^9, 3.6237872054947653`*^9, 
+   3.623789112629601*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"orig", "=", 
+   RowBox[{"\"\<\\n\>\"", "<>", "orig", "<>", "\"\<\\n\>\""}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6237911595387506`*^9, 3.623791182646578*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "orig", "=", 
+   "\"\<\:6050\:59bb\:4f1a\:3000a Henpecked Husbands Club.\n\
+\:6050\:59bb\:75c5\:3000fear of one's wife.\n\:304d\:3087\:3046\:3055\:3044\
+\:ff14\:3010\:5883\:88c1\:3011 [zB667](ky[hA238]sai)\n\
+\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\:7e01\:306e\:690d\:3048\
+\:8fbc\:307f\:3015 border planting; bordering.\n\
+\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 [zB667](ky[hA238]zai)\n\
+teaching materials; educational materials; \:3014\:8996\:8074\:899a\:6559\
+\:80b2\:7528\:306e\:3015 teaching aids.\n\
+[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\:3066\:4f7f\
+\:3046\:3000use an English paper [zB23D]for teaching [as teaching material, \
+in class].\n[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
+[zB23D]materials [aids].\n\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\
+\:3015 expenses for [zB23D]teaching [educational] materials; \:3014\:5b66\
+\:751f\:306e\:3015 a fee for [zB23D]teaching [educational] materials.\n\:304e\
+\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 [zB667](gy[hA238]sai)\n\
+[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; interindustrial; \
+cross-industry; multi-industry.\n\
+\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) [zB23D]cross-industry \
+[multi-industry] business.\n\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\
+\:884c\:8ca1\:653f\:3011 [zB667](gy[hA238]zaisei)\n\:3014\:884c\:653f\:3068\
+\:8ca1\:653f\:3015 administration and finance(s).\n[zB66B]\:884c\:8ca1\:653f\
+\:6539\:9769\:3000administrative and financial reforms.\n\:304d\:3087\:3046\
+\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 [zB667](ky[hA238]saku)\na very \
+[zB23D]bad [poor] crop [harvest]; a crop failure.\n[zB65E]\:51f6\:4f5c\:306b\
+\:3042\:3046\:3000suffer a very bad crop.\n[zB65E]\:51f6\:4f5c\:306e\:5e74\
+\:3000a [zB23D]lean [very bad, very poor] year \:300afor the rice crop\:300b\n\
+\:ff65\:51f6\:4f5c\:306e\:305f\:3081\:3000owing to a crop failure.\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6237863177341843`*^9, 3.623786340540893*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "*)"}]], "Input",
+ CellChangeTimes->{{3.623791069392004*^9, 3.623791072928301*^9}, {
+  3.623791105165104*^9, 3.623791123436957*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"SetDirectory", "@", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.623803152849094*^9, 3.623803179668984*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "\"\<\\n\\nav\\n\\n\>\"", "*)"}]], "Input",
+ CellChangeTimes->{{3.623791252310584*^9, 3.6237912625236473`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"compressNewline", "[", "s_", "]"}], ":=", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"s", ",", 
+     RowBox[{
+      RowBox[{"\"\<\\n\>\"", ".."}], "\[Rule]", "\"\<\\n\>\""}]}], "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.62379181956045*^9, 3.623791885454803*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"unixStypeQ", "[", "s_", "]"}], ":=", 
+   RowBox[{"FreeQ", "[", 
+    RowBox[{"s", ",", "\"\<\\r\\n\>\""}], "]"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.623791954816905*^9, 3.6237920022526693`*^9}, {
+  3.62379207155407*^9, 3.623792091395734*^9}, {3.6237921412298*^9, 
+  3.6237921505496187`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"unixStype", "[", "s_", "]"}], ":=", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"s", ",", 
+     RowBox[{
+      RowBox[{"\"\<\\r\\n\>\"", ".."}], "\[Rule]", "\"\<\\n\>\""}]}], "]"}]}],
+   "*)"}]], "Input",
+ CellChangeTimes->{{3.623792448255454*^9, 3.6237924699266872`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"compressNewline", "[", "\"\<\\n\\nav\\n\\n\>\"", "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.623792197489994*^9, 3.623792216000386*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"utf8BOM", "[", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"bom", ",", "r"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"bom", "=", 
+       RowBox[{"{", 
+        RowBox[{"\"\<EF\>\"", ",", "\"\<BB\>\"", ",", "\"\<BF\>\""}], "}"}]}],
+       ";", "\[IndentingNewLine]", 
+      RowBox[{"r", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"FromDigits", "[", 
+           RowBox[{"#", ",", "16"}], "]"}], "&"}], "/@", "bom"}], "//", 
+        "FromCharacterCode"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6238002888825808`*^9, 3.623800439141679*^9}, {
+  3.623800512754932*^9, 3.623800592126183*^9}, {3.62380062322371*^9, 
+  3.623800654584881*^9}, {3.6238017215964727`*^9, 3.6238017222443247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"bomFreeQ", "[", "s_", "]"}], ":=", 
+   RowBox[{"Not", "@", 
+    RowBox[{"StringMatchQ", "[", 
+     RowBox[{"orig", ",", 
+      RowBox[{
+       RowBox[{"utf8BOM", "[", "]"}], "~~", "___"}]}], "]"}]}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6238007815842533`*^9, 3.6238008249514627`*^9}, 
+   3.623801648237049*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"bomFreeQ", "[", "orig", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6238008330685*^9, 3.6238008409784317`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Get", "@", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ParentDirectory", "[", "]"}], ",", "\"\<std.wl\>\""}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.623802866024556*^9, 3.6238029256431217`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"unixStypeQ", "::", "shdw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \[NoBreak]\\!\\(\\\"unixStypeQ\\\"\\)\[NoBreak] \
+appears in multiple contexts \[NoBreak]\\!\\({\\\"Std`\\\", \
+\\\"Global`\\\"}\\)\[NoBreak]; definitions in context \
+\[NoBreak]\\!\\(\\\"Std`\\\"\\)\[NoBreak] may shadow or be shadowed by other \
+definitions. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/shdw\\\", ButtonNote -> \
+\\\"Std`unixStypeQ::shdw\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6238044959415407`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"unixStype", "::", "shdw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \[NoBreak]\\!\\(\\\"unixStype\\\"\\)\[NoBreak] \
+appears in multiple contexts \[NoBreak]\\!\\({\\\"Std`\\\", \
+\\\"Global`\\\"}\\)\[NoBreak]; definitions in context \
+\[NoBreak]\\!\\(\\\"Std`\\\"\\)\[NoBreak] may shadow or be shadowed by other \
+definitions. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/shdw\\\", ButtonNote -> \
+\\\"Std`unixStype::shdw\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6238044960125313`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"compressNewline", "::", "shdw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\\"compressNewline\\\"\\)\[NoBreak] appears in multiple \
+contexts \[NoBreak]\\!\\({\\\"Std`\\\", \\\"Global`\\\"}\\)\[NoBreak]; \
+definitions in context \[NoBreak]\\!\\(\\\"Std`\\\"\\)\[NoBreak] may shadow \
+or be shadowed by other definitions. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/shdw\\\", \
+ButtonNote -> \\\"Std`compressNewline::shdw\\\"]\\)\"\>"}]], "Message", "MSG",
+ 
+ CellChangeTimes->{3.623804496079994*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 620},
+WindowMargins->{{Automatic, 182}, {-75, Automatic}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 440, 12, 46, "Input"],
+Cell[1001, 34, 330, 8, 31, "Input"],
+Cell[1334, 44, 208, 4, 28, "Input"],
+Cell[CellGroupData[{
+Cell[1567, 52, 266, 5, 28, "Input"],
+Cell[1836, 59, 125, 2, 28, "Output"]
+}, Open  ]],
+Cell[1976, 64, 263, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2264, 74, 269, 7, 28, "Input"],
+Cell[2536, 83, 339, 7, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2912, 95, 228, 4, 35, "Input"],
+Cell[3143, 101, 101, 1, 28, "Output"]
+}, Open  ]],
+Cell[3259, 105, 188, 3, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3472, 112, 272, 7, 28, "Input"],
+Cell[3747, 121, 98, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3882, 127, 279, 5, 28, "Input"],
+Cell[4164, 134, 193, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4394, 142, 330, 7, 28, "Input"],
+Cell[4727, 151, 149, 2, 28, "Output"]
+}, Open  ]],
+Cell[4891, 156, 96, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[5012, 161, 437, 9, 28, "Input"],
+Cell[5452, 172, 816, 15, 129, "Output"]
+}, Open  ]],
+Cell[6283, 190, 200, 5, 28, "Input"],
+Cell[6486, 197, 2060, 32, 408, "Input"],
+Cell[8549, 231, 161, 3, 28, "Input"],
+Cell[8713, 236, 211, 5, 28, "Input"],
+Cell[8927, 243, 140, 2, 28, "Input"],
+Cell[9070, 247, 328, 9, 28, "Input"],
+Cell[9401, 258, 350, 8, 28, "Input"],
+Cell[9754, 268, 328, 9, 28, "Input"],
+Cell[10085, 279, 183, 4, 28, "Input"],
+Cell[10271, 285, 878, 23, 80, "Input"],
+Cell[11152, 310, 371, 11, 28, "Input"],
+Cell[11526, 323, 155, 3, 28, "Input"],
+Cell[CellGroupData[{
+Cell[11706, 330, 264, 7, 28, "Input"],
+Cell[11973, 339, 658, 13, 41, "Message"],
+Cell[12634, 354, 655, 13, 41, "Message"],
+Cell[13292, 369, 673, 14, 41, "Message"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
