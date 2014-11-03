@@ -1,0 +1,402 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     18097,        401]
+NotebookOptionsPosition[     16857,        353]
+NotebookOutlinePosition[     17245,        370]
+CellTagsIndexPosition[     17202,        367]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "@", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ParentDirectory", "[", "]"}], ",", "\"\<std.wl\>\""}], "}"}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.623753815042117*^9, 3.623753842186067*^9}, {
+  3.623803272231571*^9, 3.6238032810303087`*^9}, {3.623804576325735*^9, 
+  3.62380458576786*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"orig", "=", 
+    RowBox[{
+    "Import", "@", 
+     "\"\<\:7814\:7a76\:793e\:3000\:65b0\:548c\:82f1\:5927\:8f9e\:5178\:3000\
+\:7b2c\:ff15\:724800 copy2.txt\>\""}]}], ";"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.623753772186912*^9, 3.623753807851564*^9}, {
+   3.6237538549869204`*^9, 3.623753894171702*^9}, {3.623830614598127*^9, 
+   3.623830618004972*^9}, 3.623831190118867*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "orig", "=", 
+    "\"\<[ID=00:\:672c\:6587] start=1A56C(107884), blocks=52128\n\n\n\:3053\
+\:306e\:30c7\:30a3\:30b9\:30af\:306b\:3064\:3044\:3066\n\nEPWING \:7248 \
+\:65b0\:548c\:82f1\:5927\:8f9e\:5178 \:7b2c 5 \:7248\n(C) 2004 \:682a\:5f0f\
+\:4f1a\:793e\:7814\:7a76\:793e\n\n\:300e\:65b0\:548c\:82f1\:5927\:8f9e\:5178\
+\:300f\n\:3000(1918\:ff11, 1931\:ff12, 1954\:ff13, 1974\:ff14, 2003\:ff15)\n\n\
+\:3000\:3053\:306e\:30c7\:30a3\:30b9\:30af\:306b\:53ce\:9332\:3055\:308c\:3066\
+\:3044\:308b\:5185\:5bb9\:306f, \:300e\:65b0\:548c\:82f1\:5927\:8f9e\:5178\
+\:300f\:7b2c 5 \:7248(\:898b\:51fa\:3057\:8a9e\:ff65\:8907\:5408\:8a9e\:7d04 \
+23 \:4e07, \:7528\:4f8b\:7d04 25 \:4e07)\:306b\:898b\:51fa\:3057\:8a9e\:ff65\
+\:8907\:5408\:8a9e\:7d04 2000 \
+\:3092\:8ffd\:52a0\:3057\:305f\:306e\:3092\:306f\:3058\:3081\:3068\:3059\:308b\
+\:82e5\:5e72\:306e\:6539\:8a02\:3092\:884c\:306a\:3063\:305f\:3082\:306e\:306b\
+\:306a\:3063\:3066\:3044\:307e\:3059.\n\:3000\:8a18\:8ff0\:306f\:6539\:884c\
+\:3092\:591a\:304f\:3057\:3066\:8aad\:307f\:3084\:3059\:304f\:3059\:308b\:306a\
+\:3069\:3057\:305f\:307b\:304b\:306f\:66f8\:7c4d\:306b\:6e96\:3058\:3066\:3044\
+\:307e\:3059\:304c, \:898b\:51fa\:3057\:8a9e\:306e\:308f\:304d\:306b[zB667]\
+\:3068\:3057\:3066\:898b\:51fa\:3057\:8a9e\:306e\:30ed\:30fc\:30de\:5b57\:8868\
+\:8a18\:3092\:4ed8\:8a18\:3057\:3066\:3044\:307e\:3059.\n\n1. \:691c\:7d22\
+\:65b9\:6cd5\n1.1 \:5358\:8a9e\:691c\:7d22 (\:5b8c\:5168\:4e00\:81f4/\:524d\
+\:65b9\:4e00\:81f4/\:5f8c\:65b9\:4e00\:81f4)\n\:5358\:8a9e\:691c\:7d22\:3067\
+\:306f\:6b21\:306e\:3082\:306e\:304c\:691c\:7d22\:5bfe\:8c61\:3068\:306a\:308a\
+\:307e\:3059.\n\:6050\:59bb\:4f1a\:3000a Henpecked Husbands Club.\n\:6050\
+\:59bb\:75c5\:3000fear of one's wife.\n\:304d\:3087\:3046\:3055\:3044\:ff14\
+\:3010\:5883\:88c1\:3011 [zB667](ky[hA238]sai)\n\
+\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\:7e01\:306e\:690d\:3048\
+\:8fbc\:307f\:3015 border planting; bordering.\n\
+\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 [zB667](ky[hA238]zai)\n\
+teaching materials; educational materials; \:3014\:8996\:8074\:899a\:6559\
+\:80b2\:7528\:306e\:3015 teaching aids.\n\
+[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\:3066\:4f7f\
+\:3046\:3000use an English paper [zB23D]for teaching [as teaching material, \
+in class].\n[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
+[zB23D]materials [aids].\n\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\
+\:3015 expenses for [zB23D]teaching [educational] materials; \:3014\:5b66\
+\:751f\:306e\:3015 a fee for [zB23D]teaching [educational] materials.\n\:304e\
+\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 [zB667](gy[hA238]sai)\n\
+[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; interindustrial; \
+cross-industry; multi-industry.\n\
+\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) [zB23D]cross-industry \
+[multi-industry] business.\n\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\
+\:884c\:8ca1\:653f\:3011 [zB667](gy[hA238]zaisei)\n\:3014\:884c\:653f\:3068\
+\:8ca1\:653f\:3015 administration and finance (s).\n[zB66B]\:884c\:8ca1\:653f\
+\:6539\:9769\:3000administrative and financial reforms.\n\:304d\:3087\:3046\
+\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 [zB667](ky[hA238]saku)\na very \
+[zB23D]bad [poor] crop [harvest]; a crop failure.\n[zB65E]\:51f6\:4f5c\:306b\
+\:3042\:3046\:3000suffer a very bad crop.\n[zB65E]\:51f6\:4f5c\:306e\:5e74\
+\:3000a [zB23D]lean [very bad, very poor] year \:300afor the rice crop\:300b\n\
+\:ff65\:51f6\:4f5c\:306e\:305f\:3081\:3000owing to a crop failure.\>\""}], 
+   ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"orig", "=", 
+     RowBox[{"compressNewline", "@", "orig"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"lines", "=", 
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"orig", ",", "\"\<\\n\>\""}], "]"}]}], ";"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"orig", "=", 
+     RowBox[{"\"\<\\n\>\"", "<>", "orig", "<>", "\"\<\\n\>\""}]}], ";"}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.6237863177341843`*^9, 3.623786340540893*^9}, {
+   3.623805069177807*^9, 3.623805070207014*^9}, 3.6238126467350082`*^9, {
+   3.623820078907139*^9, 3.623820157963297*^9}, {3.623821557624044*^9, 
+   3.623821575015403*^9}, 3.623828899981215*^9, 3.623831197366975*^9, 
+   3.62383135662431*^9, {3.623831938899049*^9, 3.623831940894884*^9}, {
+   3.623832028411337*^9, 3.623832030184023*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"orig", "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.62383157206507*^9, 3.62383159721706*^9}}],
+
+Cell["\<\
+\"[ID=00:\:672c\:6587] start=1A56C(107884), blocks=52128\\n\:3053\:306e\:30c7\
+\:30a3\:30b9\:30af\:306b\:3064\:3044\:3066\\nEPWING \:7248 \:65b0\:548c\:82f1\
+\:5927\:8f9e\:5178 \:7b2c 5 \:7248\\n(C) 2004 \\
+\:682a\:5f0f\:4f1a\:793e\:7814\:7a76\:793e\\n\:300e\:65b0\:548c\:82f1\:5927\
+\:8f9e\:5178\:300f\\n\:3000(1918\:ff11, 1931\:ff12, 1954\:ff13, 1974\:ff14, \
+2003\:ff15)\\n\:3000\:3053\:306e\:30c7\:30a3\:30b9\:30af\:306b\:53ce\:9332\
+\:3055\:308c\:3066\:3044\:308b\:5185\:5bb9\:306f, \:300e\:65b0\:548c\:82f1\
+\:5927\:8f9e\:5178\:300f\:7b2c 5 \\
+\:7248(\:898b\:51fa\:3057\:8a9e\:ff65\:8907\:5408\:8a9e\:7d04 23 \:4e07, \
+\:7528\:4f8b\:7d04 25 \:4e07)\:306b\:898b\:51fa\:3057\:8a9e\:ff65\:8907\:5408\
+\:8a9e\:7d04 2000 \\
+\:3092\:8ffd\:52a0\:3057\:305f\:306e\:3092\:306f\:3058\:3081\:3068\:3059\:308b\
+\:82e5\:5e72\:306e\:6539\:8a02\:3092\:884c\:306a\:3063\:305f\:3082\:306e\:306b\
+\:306a\:3063\:3066\:3044\:307e\:3059.\\n\:3000\:8a18\:8ff0\:306f\:6539\:884c\
+\:3092\:591a\:304f\:3057\:3066\:8aad\:307f\:3084\:3059\:304f\:3059\:308b\:306a\
+\:3069\:3057\:305f\:307b\:304b\:306f\:66f8\:7c4d\:306b\:6e96\:3058\:3066\:3044\
+\:307e\:3059\:304c, \\
+\:898b\:51fa\:3057\:8a9e\:306e\:308f\:304d\:306b[zB667]\:3068\:3057\:3066\
+\:898b\:51fa\:3057\:8a9e\:306e\:30ed\:30fc\:30de\:5b57\:8868\:8a18\:3092\:4ed8\
+\:8a18\:3057\:3066\:3044\:307e\:3059.\\n1. \:691c\:7d22\:65b9\:6cd5\\n1.1 \
+\:5358\:8a9e\:691c\:7d22 (\:5b8c\:5168\:4e00\:81f4/\:524d\:65b9\:4e00\:81f4/\
+\:5f8c\:65b9\:4e00\:81f4)\:6050\:59bb\:4f1a\:3000a Henpecked Husbands \\
+Club.\\n\:6050\:59bb\:75c5\:3000fear of one's \
+wife.\\n\:304d\:3087\:3046\:3055\:3044\:ff14\:3010\:5883\:88c1\:3011 \
+[zB667](ky[hA238]sai)\\n\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\
+\:7e01\:306e\:690d\:3048\:8fbc\:307f\:3015 border planting; \\
+bordering.\\n\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 \
+[zB667](ky[hA238]zai)\\nteaching materials; educational materials; \:3014\
+\:8996\:8074\:899a\:6559\:80b2\:7528\:306e\:3015 \\
+teaching aids.\\n[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\
+\:3066\:4f7f\:3046\:3000use an English paper [zB23D]for teaching [as teaching \
+material, \\
+in class].\\n[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
+[zB23D]materials [aids].\\n\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\
+\:3015 expenses for \\
+[zB23D]teaching [educational] materials; \:3014\:5b66\:751f\:306e\:3015 a fee \
+for [zB23D]teaching [educational] \\
+materials.\\n\:304e\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 \
+[zB667](gy[hA238]sai)\\n[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; \
+interindustrial; \\
+cross-industry; \
+multi-industry.\\n\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) \
+[zB23D]cross-industry [multi-industry] \\
+business.\\n\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\:884c\:8ca1\:653f\
+\:3011 [zB667](gy[hA238]zaisei)\\n\:3014\:884c\:653f\:3068\:8ca1\:653f\:3015 \
+administration and \\
+finance(s).\\n[zB66B]\:884c\:8ca1\:653f\:6539\:9769\:3000administrative and \
+financial reforms.\\n\:304d\:3087\:3046\:3055\:304f\:ff11\:3010\:51f6\:4f5c\
+\:3011 \\
+[zB667](ky[hA238]saku)\\na very [zB23D]bad [poor] crop [harvest]; a crop \\
+failure.\\n[zB65E]\:51f6\:4f5c\:306b\:3042\:3046\:3000suffer a very bad crop.\
+\\n[zB65E]\:51f6\:4f5c\:306e\:5e74\:3000a [zB23D]lean [very bad, very poor] \
+\\
+year \:300afor the rice crop\:300b\\n\:ff65\:51f6\:4f5c\:306e\:305f\:3081\
+\:3000owing to a crop failure.\"\
+\>", "Output",
+ CellChangeTimes->{
+  3.623831552033399*^9, {3.623831589655327*^9, 3.6238315982472277`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"checkString", "[", "orig", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"orig", "=", 
+   RowBox[{"compressNewline", "@", "orig"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lines", "=", 
+   RowBox[{"StringSplit", "[", 
+    RowBox[{"orig", ",", "\"\<\\n\>\""}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.623828914513595*^9, 3.623828927970274*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.623828932920683*^9, 3.623829114451767*^9, {3.623830223818357*^9, 
+   3.6238302320814753`*^9}, 3.623830674973599*^9, 3.623831206598813*^9, 
+   3.6238313693104267`*^9, 3.623832086062128*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"zb667FreeQ", "[", "s_", "]"}], ":=", 
+  RowBox[{"StringFreeQ", "[", 
+   RowBox[{"s", ",", "\"\<[zB667]\>\""}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zb667ExistQ", "[", "s_", "]"}], ":=", 
+  RowBox[{"Not", "@", 
+   RowBox[{"zb667FreeQ", "[", "s", "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.623812777695631*^9, 3.623812814365011*^9}, {
+   3.623813085370802*^9, 3.623813157976058*^9}, 3.623813561169796*^9, {
+   3.623813757810623*^9, 3.623813782831766*^9}, {3.623814314935091*^9, 
+   3.623814326626482*^9}, {3.62381592786355*^9, 3.623815928854933*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"linesCleaned", "=", 
+  RowBox[{"dropLeft", "[", 
+   RowBox[{"lines", ",", "zb667FreeQ"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.623822141633073*^9, 3.6238222179079447`*^9}, 
+   3.623824312198071*^9, {3.623824696592722*^9, 3.623824726752043*^9}, 
+   3.6238281923583097`*^9, 3.623832094979658*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"\:3000\:8a18\:8ff0\:306f\:6539\:884c\:3092\:591a\:304f\:3057\
+\:3066\:8aad\:307f\:3084\:3059\:304f\:3059\:308b\:306a\:3069\:3057\:305f\:307b\
+\:304b\:306f\:66f8\:7c4d\:306b\:6e96\:3058\:3066\:3044\:307e\:3059\:304c, \
+\:898b\:51fa\:3057\:8a9e\:306e\:308f\:304d\:306b[zB667]\:3068\:3057\:3066\
+\:898b\:51fa\:3057\:8a9e\:306e\:30ed\:30fc\:30de\:5b57\:8868\:8a18\:3092\:4ed8\
+\:8a18\:3057\:3066\:3044\:307e\:3059.\"\>", 
+   ",", "\<\"1. \:691c\:7d22\:65b9\:6cd5\"\>", 
+   ",", "\<\"1.1 \:5358\:8a9e\:691c\:7d22 (\:5b8c\:5168\:4e00\:81f4/\:524d\
+\:65b9\:4e00\:81f4/\:5f8c\:65b9\:4e00\:81f4)\"\>", 
+   ",", "\<\"\:5358\:8a9e\:691c\:7d22\:3067\:306f\:6b21\:306e\:3082\:306e\
+\:304c\:691c\:7d22\:5bfe\:8c61\:3068\:306a\:308a\:307e\:3059.\"\>", 
+   ",", "\<\"\:6050\:59bb\:4f1a\:3000a Henpecked Husbands Club.\"\>", 
+   ",", "\<\"\:6050\:59bb\:75c5\:3000fear of one's wife.\"\>", 
+   ",", "\<\"\:304d\:3087\:3046\:3055\:3044\:ff14\:3010\:5883\:88c1\:3011 \
+[zB667](ky[hA238]sai)\"\>", 
+   ",", "\<\"\:3014\:82b1\:58c7\:ff65\:9053\:8def\:306a\:3069\:306e\:7e01\
+\:306e\:690d\:3048\:8fbc\:307f\:3015 border planting; bordering.\"\>", 
+   ",", "\<\"\:304d\:3087\:3046\:3056\:3044\:3010\:6559\:6750\:3011 \
+[zB667](ky[hA238]zai)\"\>", 
+   ",", "\<\"teaching materials; educational materials; \:3014\:8996\:8074\
+\:899a\:6559\:80b2\:7528\:306e\:3015 teaching aids.\"\>", 
+   ",", "\<\"[zB65E]\:82f1\:5b57\:65b0\:805e\:3092\:6559\:6750\:3068\:3057\
+\:3066\:4f7f\:3046\:3000use an English paper [zB23D]for teaching [as teaching \
+material, in class].\"\>", 
+   ",", "\<\"[zB66B]\:6559\:6750\:7814\:7a76\:3000a study of teaching \
+[zB23D]materials [aids].\"\>", 
+   ",", "\<\"\:6559\:6750\:8cbb\:3000\:3014\:6559\:5e2b\:306e\:3015 expenses \
+for [zB23D]teaching [educational] materials; \:3014\:5b66\:751f\:306e\:3015 a \
+fee for [zB23D]teaching [educational] materials.\"\>", 
+   ",", "\<\"\:304e\:3087\:3046\:3055\:3044\:3010\:696d\:969b\:3011 \
+[zB667](gy[hA238]sai)\"\>", 
+   ",", "\<\"[zB66B]\:696d\:969b\:7684\:306a\:3000interindustry; \
+interindustrial; cross-industry; multi-industry.\"\>", 
+   ",", "\<\"\:696d\:969b\:30d3\:30b8\:30cd\:30b9\:3000(a) \
+[zB23D]cross-industry [multi-industry] business.\"\>", 
+   ",", "\<\"\:304e\:3087\:3046\:3056\:3044\:305b\:3044\:3010\:884c\:8ca1\
+\:653f\:3011 [zB667](gy[hA238]zaisei)\"\>", 
+   ",", "\<\"\:3014\:884c\:653f\:3068\:8ca1\:653f\:3015 administration and \
+finance (s).\"\>", 
+   ",", "\<\"[zB66B]\:884c\:8ca1\:653f\:6539\:9769\:3000administrative and \
+financial reforms.\"\>", 
+   ",", "\<\"\:304d\:3087\:3046\:3055\:304f\:ff11\:3010\:51f6\:4f5c\:3011 \
+[zB667](ky[hA238]saku)\"\>", 
+   ",", "\<\"a very [zB23D]bad [poor] crop [harvest]; a crop failure.\"\>", 
+   ",", "\<\"[zB65E]\:51f6\:4f5c\:306b\:3042\:3046\:3000suffer a very bad \
+crop.\"\>", 
+   ",", "\<\"[zB65E]\:51f6\:4f5c\:306e\:5e74\:3000a [zB23D]lean [very bad, \
+very poor] year \:300afor the rice crop\:300b\"\>", 
+   ",", "\<\"\:ff65\:51f6\:4f5c\:306e\:305f\:3081\:3000owing to a crop \
+failure.\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.623832096238655*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<out.txt\>\"", ",", "linesCleaned"}], "]"}]], "Input",
+ CellChangeTimes->{3.62383089860748*^9, 3.623830971342629*^9}],
+
+Cell[BoxData["\<\"out.txt\"\>"], "Output",
+ CellChangeTimes->{
+  3.623830909319869*^9, 3.623830983281979*^9, 3.62383121539678*^9, {
+   3.623831252734853*^9, 3.623831267850275*^9}, 3.6238313693553743`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"linesItem", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"linesCleaned", "/.", 
+      RowBox[{
+       RowBox[{"x_String", "?", 
+        RowBox[{"(", "zb667ExistQ", ")"}]}], "\[RuleDelayed]", 
+       RowBox[{"Sequence", "[", 
+        RowBox[{"3", ",", "x"}], "]"}]}]}], "//", 
+     RowBox[{
+      RowBox[{"SplitBy", "[", 
+       RowBox[{"#", ",", "StringQ"}], "]"}], "&"}]}], "//", 
+    RowBox[{
+     RowBox[{"#", "/.", 
+      RowBox[{
+       RowBox[{"{", "3", "}"}], "\[Rule]", 
+       RowBox[{"Sequence", "[", "]"}]}]}], "&"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.623824798325569*^9, 3.623824883808959*^9}, {
+  3.623825039431015*^9, 3.623825041345293*^9}, {3.623826526502511*^9, 
+  3.623826551241084*^9}, {3.623826592794075*^9, 3.6238266414317627`*^9}, {
+  3.623826678601925*^9, 3.623826693294773*^9}, {3.623826859125186*^9, 
+  3.6238268687446623`*^9}, {3.6238269158379993`*^9, 3.6238269966762953`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"items", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Riffle", "[", 
+       RowBox[{"#", ",", "\"\<\\n\>\""}], "]"}], "&"}], "/@", "linesItem"}], "//", 
+    RowBox[{
+     RowBox[{"StringJoin", "/@", "#"}], "&"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.623827702797905*^9, 3.623827764574959*^9}, {
+  3.6238278294996967`*^9, 3.623827856847168*^9}, {3.623828143221464*^9, 
+  3.623828168827469*^9}, {3.623830648838716*^9, 3.623830649430183*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<out.txt\>\"", ",", "items"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6238285040951643`*^9, 3.623828513637748*^9}, {
+  3.6238286114860163`*^9, 3.623828612523138*^9}, {3.623828663668651*^9, 
+  3.623828688435215*^9}}],
+
+Cell[BoxData["\<\"out.txt\"\>"], "Output",
+ CellChangeTimes->{
+  3.623828689935601*^9, 3.6238291145803747`*^9, {3.623830223940282*^9, 
+   3.623830232193556*^9}, 3.6238306837846327`*^9, 3.6238313694185257`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "[", "\"\<out.txt\>\"", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.623830244237512*^9, 3.623830257241169*^9}}]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, 250}, {Automatic, 35}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 505, 13, 57, "Input"],
+Cell[908, 28, 432, 10, 38, "Input"],
+Cell[1343, 40, 4488, 73, 954, "Input"],
+Cell[CellGroupData[{
+Cell[5856, 117, 125, 2, 36, "Input"],
+Cell[5984, 121, 3551, 58, 350, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9572, 184, 396, 9, 78, "Input"],
+Cell[9971, 195, 244, 4, 35, "Output"]
+}, Open  ]],
+Cell[10230, 202, 602, 12, 57, "Input"],
+Cell[CellGroupData[{
+Cell[10857, 218, 322, 6, 36, "Input"],
+Cell[11182, 226, 3116, 52, 320, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14335, 283, 170, 3, 36, "Input"],
+Cell[14508, 288, 204, 3, 35, "Output"]
+}, Open  ]],
+Cell[14727, 294, 945, 23, 36, "Input"],
+Cell[15675, 319, 494, 12, 36, "Input"],
+Cell[CellGroupData[{
+Cell[16194, 335, 268, 5, 36, "Input"],
+Cell[16465, 342, 209, 3, 35, "Output"]
+}, Open  ]],
+Cell[16689, 348, 164, 3, 36, "Input"]
+}
+]
+*)
+
