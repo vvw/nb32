@@ -1,0 +1,20 @@
+/usr/bin/gcc -o "/root/addtwo/out" -m64 -fPIC -O2  \
+-I"/usr/local/Wolfram/Mathematica/10.0/SystemFiles/IncludeFiles/C" \
+-I"/usr/local/Wolfram/Mathematica/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions" \
+"/root/addtwo/addtwo.c" \
+"/root/addtwo/addtwotm.c"  \
+-L"/usr/local/Wolfram/Mathematica/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions" \
+-L"/usr/local/Wolfram/Mathematica/10.0/SystemFiles/Libraries/Linux-x86-64" \
+-l"ML64i4" -lm -lpthread -lrt -lstdc++ -ldl -luuid 2>&1
+
+
+
+cp /usr/local/Wolfram/Mathematica/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions/libML64i4.so .
+export LD_LIBRARY_PATH=./
+./out
+Create link: 65535
+
+in mma:
+    link=Install["65535",LinkMode->Connect]
+    ?AddTwo
+    AddTwo[1,2]
