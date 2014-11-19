@@ -62,6 +62,12 @@ showHorizonLine[i_]:=Module[{w,h},
 ]
 
 
+splitNMPart[i_,nRow_,mCol_]:=Module[{width,hight},
+	{width,hight}=ImageDimensions[i];
+	ImagePartition[i,{width/nRow,hight/mCol}]
+]
+
+
 End[ ];
 
 
