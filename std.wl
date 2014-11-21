@@ -68,6 +68,12 @@ splitNMPart[i_,nRow_,mCol_]:=Module[{width,hight},
 ]
 
 
+(*Radians in Degree out*)
+degree[r_]:=Degree/Pi 180 r
+(*Degree in Radians out*)
+radians [d_]:=1/180 Pi d
+
+
 End[ ];
 
 
