@@ -51,15 +51,17 @@ imageScaled[i_, ntimes_]:=ImageResize[i, Scaled[ntimes]];
 
 
 
-showHorizonLine[i_]:=Module[{w,h},
+showVerticalLineDynamic[i_]:=Module[{w,h},
 	{w,h}=ImageDimensions@i;
 	DynamicModule[{pt={0,0},hh=h},{LocatorPane[Dynamic[pt],Dynamic[Show[i,Graphics[{Red,Line[{{pt[[1]],0},{pt[[1]],hh}}]}]]]],Dynamic[pt]}]
 ]
 
-showHorizonLine[i_]:=Module[{w,h},
-	{w,h}=ImageDimensions@i;
-	DynamicModule[{pt={0,0},hh=h},{LocatorPane[Dynamic[pt],Dynamic[Show[i,Graphics[{Red,Line[{{pt[[1]],0},{pt[[1]],hh}}]}]]]],Dynamic[pt]}]
+showHorizonLineDynamic[i_]:=Module[{w,h},
+{w,h}=ImageDimensions@i;
+DynamicModule[{pt={0,0},hh=h,ww=w},{LocatorPane[Dynamic[pt],Dynamic[Show[i,Graphics[{Red,Line[{{0,pt[[2]]},{ww,pt[[2]]}}]}]]]],Dynamic[pt]}]
 ]
+
+
 
 
 splitNMPart[i_,nRow_,mCol_]:=Module[{width,hight},
@@ -72,6 +74,14 @@ splitNMPart[i_,nRow_,mCol_]:=Module[{width,hight},
 degree[r_]:=Degree/Pi 180 r
 (*Degree in Radians out*)
 radians [d_]:=1/180 Pi d
+
+
+(*extract white rectangle, black background needs*)
+imageTakeRectangle[i_]:=Module[{corners,w,h},
+	corners=i//ComponentMeasurements[#,"MinimalBoundingBox"]&//#[[1]][[2]]&;
+	{w,h}=ImageDimensions[i];
+	ImageTake[i,{h-corners[[1]][[2]],h-corners[[2]][[2]]},{corners[[2]][[1]],corners[[3]][[1]]}]
+]
 
 
 End[ ];
