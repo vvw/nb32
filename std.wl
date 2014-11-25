@@ -94,6 +94,42 @@ imageTakeRectangle2[i_]:=Module[{largestComponent,mask,dim,bdim},
 ]
 
 
+adaptiveThreshold[i_]:=Module[{white,whiteAdjusted},
+	(*{white=Closing[i,DiskMatrix[7]],whiteAdjusted=Image[ImageData[i]/ImageData[white]*0.85],Binarize[whiteAdjusted]}*)
+	white=Closing[i,DiskMatrix[7]];
+	whiteAdjusted=Image[ImageData[i]/ImageData[white]*0.85];
+	whiteAdjusted
+	(*Binarize[whiteAdjusted]*)
+]
+
+
+imageCorp[i_]:=ImagePad[i,-1*BorderDimensions[i]];
+borderDimensionsLeftRight[i_]:=BorderDimensions@i//{#[[1]],{0,0}}&;
+imageCorpLeftRight[i_]:=ImagePad[i,-borderDimensionsLeftRight[i]];
+
+
+horizonLinesImage[i_]:=MorphologicalTransform[i, # /.\!\(\*
+TagBox[
+RowBox[{"(", "", GridBox[{
+{"0", "0", "0"},
+{"1", "1", "1"},
+{"1", "1", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}}], "", ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\)-> 1 &]//DeleteBorderComponents
+verticalLinesImage[i_]:=MorphologicalTransform[i, # /.\!\(\*
+TagBox[
+RowBox[{"(", "", GridBox[{
+{"0", "1", "1"},
+{"0", "1", "1"},
+{"0", "1", "1"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}},
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}}], "", ")"}],
+Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\)-> 1 &]//DeleteBorderComponents
+
+
 systemClipboard[]:=ToExpression@Cases[NotebookGet[ClipboardNotebook[]],BoxData[_],Infinity]
 
 
