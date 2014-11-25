@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    150767,       2552]
-NotebookOptionsPosition[    150402,       2536]
-NotebookOutlinePosition[    150744,       2551]
-CellTagsIndexPosition[    150701,       2548]
+NotebookDataLength[    161989,       2834]
+NotebookOptionsPosition[    161255,       2809]
+NotebookOutlinePosition[    161597,       2824]
+CellTagsIndexPosition[    161554,       2821]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -79,6 +79,40 @@ Cell[BoxData[{
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{"imageCrop", "[", "i_", "]"}], ":=", 
+  RowBox[{"ImagePad", "[", 
+   RowBox[{"i", ",", 
+    RowBox[{
+     RowBox[{"-", "1"}], "*", 
+     RowBox[{"BorderDimensions", "[", "i", "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.6258884677621555`*^9, {3.625888499791988*^9, 3.6258885012410707`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"splitNMPart", "[", 
+   RowBox[{"i_", ",", "nRow_", ",", "mCol_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"width", ",", "hight"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"width", ",", "hight"}], "}"}], "=", 
+      RowBox[{"ImageDimensions", "[", "i", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImagePartition", "[", 
+      RowBox[{"i", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"width", "/", "nRow"}], ",", 
+         RowBox[{"hight", "/", "mCol"}]}], "}"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{3.625349726096201*^9}],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"imageSelect", "[", "irectangle_", "]"}], ":=", 
   RowBox[{"Module", "[", 
    RowBox[{
@@ -131,15 +165,25 @@ Cell[BoxData[
        RowBox[{
        "14.87747871852392`", ",", "1065.9532335053427`", ",", 
         "1697.087610020922`"}], "}"}], "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"ImageTake", "[", 
-      RowBox[{"i", ",", 
-       RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
         RowBox[{
-         RowBox[{"h", "-", 
-          RowBox[{"tript", "[", 
-           RowBox[{"[", "2", "]"}], "]"}]}], ",", 
-         RowBox[{"tript", "[", 
-          RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "]"}]}]}], 
+         RowBox[{
+          RowBox[{"ImageTake", "[", 
+           RowBox[{"i", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"h", "-", 
+               RowBox[{"tript", "[", 
+                RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+              RowBox[{"tript", "[", 
+               RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], "]"}], "//", 
+          "Binarize"}], "//", "ColorNegate"}], "//", 
+        "DeleteBorderComponents"}], "//", 
+       RowBox[{
+        RowBox[{"DeleteSmallComponents", "[", 
+         RowBox[{"#", ",", "17"}], "]"}], "&"}]}], "//", "imageCrop"}]}]}], 
    "\[IndentingNewLine]", "]"}]}]], "Input",
  CellChangeTimes->{{3.62586791805478*^9, 3.625867942168159*^9}, {
    3.625868685915699*^9, 3.6258686883928404`*^9}, {3.6258687695684834`*^9, 
@@ -155,7 +199,8 @@ Cell[BoxData[
    3.6258767965305996`*^9}, {3.625883678441222*^9, 3.6258837286700954`*^9}, {
    3.6258837636420956`*^9, 3.625883851428117*^9}, {3.625886870219782*^9, 
    3.6258869327103558`*^9}, {3.62588700008521*^9, 3.625887013394971*^9}, {
-   3.6258872758019795`*^9, 3.6258872762490053`*^9}}],
+   3.6258872758019795`*^9, 3.6258872762490053`*^9}, 3.6258883539466457`*^9, {
+   3.625888472775442*^9, 3.625888506448368*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -2531,8 +2576,236 @@ HwVHiyuB65Xzzjsv+6RaqILxLpCVBcY8H+/mOy6j0fj/AcwJ4q8=\
    3.625876119456873*^9}],
 
 Cell[BoxData[
- RowBox[{"imageSelect", "[", "i", "]"}]], "Input",
- CellChangeTimes->{{3.625868698582423*^9, 3.62586870534381*^9}}]
+ RowBox[{"iselect", "=", 
+  RowBox[{
+   RowBox[{"imageSelect", "[", "i", "]"}], "//", 
+   RowBox[{
+    RowBox[{"ImageResize", "[", 
+     RowBox[{"#", ",", "1024"}], "]"}], "&"}]}]}]], "Input",
+ CellChangeTimes->{{3.625868698582423*^9, 3.62586870534381*^9}, {
+  3.6258885807896204`*^9, 3.6258885818956842`*^9}, {3.6258893415781355`*^9, 
+  3.62588935966617*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"w", ",", "h"}], "}"}], "=", 
+  RowBox[{"ImageDimensions", "[", "iselect", "]"}]}]], "Input",
+ CellChangeTimes->{{3.625888651898688*^9, 3.625888671100786*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cards", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ImagePartition", "[", 
+      RowBox[{"iselect", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"w", "/", "4"}], ",", 
+         RowBox[{"h", "/", "4"}]}], "}"}]}], "]"}], "//", 
+     RowBox[{
+      RowBox[{"#", "/.", 
+       RowBox[{"x_Image", "\[RuleDelayed]", 
+        RowBox[{"DeleteSmallComponents", "[", 
+         RowBox[{"x", ",", "21"}], "]"}]}]}], "&"}]}], "//", 
+    RowBox[{
+     RowBox[{"#", "/.", 
+      RowBox[{"x_Image", "\[RuleDelayed]", 
+       RowBox[{"imageCrop", "[", "x", "]"}]}]}], "&"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6258886099442883`*^9, 3.625888621225933*^9}, 
+   3.6258886974722943`*^9}],
+
+Cell[BoxData[
+ RowBox[{"cards", "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.625888700110445*^9, 3.625888703602645*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cards2", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"splitNMPart", "[", 
+         RowBox[{"#", ",", "5", ",", "5"}], "]"}], "//", "Rest"}], ")"}], 
+      "&"}], ",", "cards", ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{3.625889025196039*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{"MatrixForm", ",", "cards2", ",", 
+    RowBox[{"{", "2", "}"}]}], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.6258890414839706`*^9, 3.62588904462615*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"reconizeCards", "[", "cards_", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "maxArea", ",", "maxAreaMatrix", ",", "bools2abcds", ",", "selectQ", ",",
+       "selectMatrixs", ",", "selectBoolMatrix", ",", "boolMatrix", ",", 
+      "numberBoolMatrix", ",", "blmtri"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"maxArea", "[", "i_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"ComponentMeasurements", "[", 
+        RowBox[{"i", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Shape\>\"", ",", "\"\<Area\>\""}], "}"}], ",", 
+         RowBox[{"CornerNeighbors", "->", "False"}]}], "]"}], "//", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"#", "\[Equal]", 
+           RowBox[{"{", "}"}]}], ",", "0", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "//", 
+               RowBox[{
+                RowBox[{"SortBy", "[", 
+                 RowBox[{"#", ",", 
+                  RowBox[{
+                   RowBox[{"#", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"2", ",", "2"}], "]"}], "]"}], "&"}]}], "]"}], 
+                "&"}]}], "//", "Reverse"}], "//", "First"}], "//", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "&"}]}], "//", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "&"}]}]}], "]"}], "&"}]}]}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"selectQ", "[", "area_", "]"}], ":=", 
+      RowBox[{"area", ">", "150"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"bools2abcds", "[", "bools_", "]"}], ":=", 
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"abcd", "=", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<A\>\"", ",", "\"\<B\>\"", ",", "\"\<C\>\"", ",", 
+            "\"\<D\>\""}], "}"}]}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"MapIndexed", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"#1", "==", "True"}], ",", 
+              RowBox[{"abcd", "[", 
+               RowBox[{"[", 
+                RowBox[{"#2", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], ",", "Null"}], 
+             "]"}], "&"}], ",", "bools"}], "]"}], "//", 
+         RowBox[{
+          RowBox[{"#", "/.", 
+           RowBox[{"Null", "->", 
+            RowBox[{"Sequence", "[", "]"}]}]}], "&"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"selectMatrixs", "=", "cards"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"maxAreaMatrix", "=", 
+      RowBox[{"selectMatrixs", "/.", 
+       RowBox[{"x_Image", "\[RuleDelayed]", 
+        RowBox[{"maxArea", "@", "x"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"selectBoolMatrix", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"selectQ", ",", "maxAreaMatrix", ",", 
+        RowBox[{"{", "4", "}"}]}], "]"}]}], ";", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"//", 
+        RowBox[{
+         RowBox[{"Map", "[", 
+          RowBox[{"MatrixForm", ",", "#", ",", 
+           RowBox[{"{", "2", "}"}]}], "]"}], "&"}]}], "//", "MatrixForm"}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"boolMatrix", "=", 
+      RowBox[{"selectBoolMatrix", "//", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"Transpose", ",", "#", ",", 
+          RowBox[{"{", "2", "}"}]}], "]"}], "&"}]}]}], ";", 
+     RowBox[{"(*", 
+      RowBox[{"//", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"MatrixForm", ",", "#", ",", 
+          RowBox[{"{", "2", "}"}]}], "]"}], "&"}]}], "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"blmtri", "=", 
+      RowBox[{"boolMatrix", "//", 
+       RowBox[{
+        RowBox[{"Flatten", "[", 
+         RowBox[{"#", ",", "2"}], "]"}], "&"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{"bools2abcds", ",", "blmtri"}], "]"}], "//", 
+       RowBox[{
+        RowBox[{"MapIndexed", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"#2", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "->", "#1"}], "&"}], ",", "#"}], 
+         "]"}], "&"}]}], "//", "TableForm"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6240499878548946`*^9, 3.624049990270033*^9}, {
+   3.624050052781608*^9, 3.6240501933136463`*^9}, {3.6240502337099566`*^9, 
+   3.6240502562012434`*^9}, {3.6240503632813673`*^9, 3.624050373672962*^9}, {
+   3.6240504049597516`*^9, 3.624050417730482*^9}, {3.624050723759986*^9, 
+   3.6240507435781193`*^9}, {3.624050783888425*^9, 3.624050790165784*^9}, {
+   3.6240508909695497`*^9, 3.6240509401093607`*^9}, {3.6240509804336667`*^9, 
+   3.624051021765031*^9}, {3.6240517303865614`*^9, 3.624051755655007*^9}, {
+   3.624589732677555*^9, 3.6245897414980597`*^9}, {3.624589807459832*^9, 
+   3.6245898271679597`*^9}, {3.6245898997141094`*^9, 
+   3.6245899126268477`*^9}, {3.6245899647828307`*^9, 3.624590054756977*^9}, {
+   3.6245902410646334`*^9, 3.6245902414166536`*^9}, {3.6253677899123917`*^9, 
+   3.6253677982958717`*^9}, {3.6253678352179832`*^9, 3.625367864642666*^9}, {
+   3.62536807923594*^9, 3.6253681164530687`*^9}, {3.6253681697581177`*^9, 
+   3.6253681809637585`*^9}, {3.6253684847001314`*^9, 3.625368485580182*^9}, {
+   3.6253685200121512`*^9, 3.625368564117674*^9}, {3.6253686166666794`*^9, 
+   3.6253686480614753`*^9}, {3.625368801235236*^9, 3.6253688360392265`*^9}, {
+   3.6253690172505913`*^9, 3.6253690190106926`*^9}, {3.6253696154798083`*^9, 
+   3.6253696181569614`*^9}, {3.625369739661911*^9, 3.6253697411189947`*^9}, {
+   3.6253698956238317`*^9, 3.6253699049343643`*^9}, {3.6253699818487635`*^9, 
+   3.625370075399114*^9}, {3.625370150818428*^9, 3.6253702350842476`*^9}, {
+   3.6253702678581223`*^9, 3.6253702691721973`*^9}, {3.625370305031248*^9, 
+   3.625370326576481*^9}, {3.6253703701179714`*^9, 3.625370372426103*^9}, {
+   3.625370419713808*^9, 3.6253704278362722`*^9}, {3.625371590479772*^9, 
+   3.625371629486003*^9}, {3.6253716595987253`*^9, 3.625371683401087*^9}, {
+   3.6253717262825394`*^9, 3.6253717364941235`*^9}, 3.625372037993368*^9, {
+   3.625372098133808*^9, 3.6253721623934836`*^9}, {3.6253722677895117`*^9, 
+   3.6253722830313835`*^9}, {3.625372354530473*^9, 3.6253723982319727`*^9}, {
+   3.6253724538791556`*^9, 3.6253724761874313`*^9}, {3.6253725156696897`*^9, 
+   3.625372547818528*^9}, {3.625372621296731*^9, 3.6253726254509687`*^9}, {
+   3.6253730643540726`*^9, 3.6253731133788767`*^9}, {3.6253732656715875`*^9, 
+   3.6253733409038906`*^9}, {3.6253734265047865`*^9, 
+   3.6253734268828077`*^9}, {3.625373465637025*^9, 3.625373475810607*^9}, {
+   3.6253735121036825`*^9, 3.6253735468376694`*^9}, {3.625373605121003*^9, 
+   3.6253736419561095`*^9}, {3.625373714463257*^9, 3.625373726598951*^9}, {
+   3.625373789784565*^9, 3.625373798703075*^9}, {3.6253738726703053`*^9, 
+   3.625373876484524*^9}, {3.6253777552733607`*^9, 3.6253778210354133`*^9}, {
+   3.625442677050332*^9, 3.625442681080563*^9}}],
+
+Cell[BoxData[
+ RowBox[{"reconizeCards", "[", "cards2", "]"}]], "Input",
+ CellChangeTimes->{{3.625889256937294*^9, 3.6258892571723075`*^9}, 
+   3.6258892925943336`*^9}]
 },
 WindowSize->{1440, 818},
 WindowMargins->{{-4, Automatic}, {Automatic, -4}},
@@ -2551,9 +2824,18 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 2172, 57, 107, "Input"],
-Cell[2733, 79, 3273, 78, 192, "Input"],
-Cell[6009, 159, 144257, 2371, 86, "Input"],
-Cell[150269, 2532, 129, 2, 31, "Input"]
+Cell[2733, 79, 333, 9, 31, "Input"],
+Cell[3069, 90, 730, 21, 92, "Input"],
+Cell[3802, 113, 3711, 89, 192, "Input"],
+Cell[7516, 204, 144257, 2371, 86, "Input"],
+Cell[151776, 2577, 374, 9, 31, "Input"],
+Cell[152153, 2588, 210, 5, 31, "Input"],
+Cell[152366, 2595, 727, 21, 31, "Input"],
+Cell[153096, 2618, 129, 2, 31, "Input"],
+Cell[153228, 2622, 381, 12, 31, "Input"],
+Cell[153612, 2636, 229, 5, 31, "Input"],
+Cell[153844, 2643, 7237, 159, 272, "Input"],
+Cell[161084, 2804, 167, 3, 31, "Input"]
 }
 ]
 *)
