@@ -90,14 +90,11 @@ imageTakeRectangle2[i_]:=Module[{largestComponent,mask,dim,bdim},
 	mask=i//Binarize//ColorNegate//largestComponent//FillingTransform;
 	dim=ImageDimensions[i];(*{3307,1814}*)
 	bdim=BorderDimensions[mask];(*{{554,522},{24,82}}*)(*{{left,right},{bottom,top}}*)
-	ImageTake[mask,{bdim[[2,2]],dim[[2]]-bdim[[2,1]]},{bdim[[1]][[1]],dim[[1]]-bdim[[1]][[2]]}]
+	ImageTake[i,{bdim[[2,2]],dim[[2]]-bdim[[2,1]]},{bdim[[1]][[1]],dim[[1]]-bdim[[1]][[2]]}]
 ]
 
 
 systemClipboard[]:=ToExpression@Cases[NotebookGet[ClipboardNotebook[]],BoxData[_],Infinity]
-
-
-
 
 
 End[ ];
