@@ -93,6 +93,17 @@ imageTakeRectangle2[i_]:=Module[{largestComponent,mask,dim,bdim},
 	ImageTake[i,{bdim[[2,2]],dim[[2]]-bdim[[2,1]]},{bdim[[1]][[1]],dim[[1]]-bdim[[1]][[2]]}]
 ]
 
+imageTakeRectangle3[i_]:=Module[{largestComponent,mask,thred,dim,bdim},
+	largestComponent[iBinColorNeg_]:=With[{components=ComponentMeasurements[iBinColorNeg,{"ConvexArea","Mask"}][[All,2]]},
+		Image[SortBy[components,First][[-1,2]],"Bit"]
+	];
+	dim=ImageDimensions[i];
+	thred=dim[[1]]/33;
+	mask=i//Binarize//ColorNegate//DeleteSmallComponents[#,thred]&//DeleteBorderComponents;(*//DeleteSmallComponents[#,thred]&*)
+	bdim=BorderDimensions[mask];(*largestComponent//FillingTransform*)
+	ImageTake[i,{bdim[[2,2]],dim[[2]]-bdim[[2,1]]},{bdim[[1]][[1]],dim[[1]]-bdim[[1]][[2]]}]
+]
+
 
 adaptiveThreshold[i_]:=Module[{white,whiteAdjusted},
 	(*{white=Closing[i,DiskMatrix[7]],whiteAdjusted=Image[ImageData[i]/ImageData[white]*0.85],Binarize[whiteAdjusted]}*)
@@ -110,23 +121,23 @@ imageCorpLeftRight[i_]:=ImagePad[i,-borderDimensionsLeftRight[i]];
 
 horizonLinesImage[i_]:=MorphologicalTransform[i, # /.\!\(\*
 TagBox[
-RowBox[{"(", "", GridBox[{
+RowBox[{"(", GridBox[{
 {"0", "0", "0"},
 {"1", "1", "1"},
 {"1", "1", "1"}
 },
 GridBoxAlignment->{"Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}},
-GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}}], "", ")"}],
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}}], ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\)-> 1 &]//DeleteBorderComponents
 verticalLinesImage[i_]:=MorphologicalTransform[i, # /.\!\(\*
 TagBox[
-RowBox[{"(", "", GridBox[{
+RowBox[{"(", GridBox[{
 {"0", "1", "1"},
 {"0", "1", "1"},
 {"0", "1", "1"}
 },
 GridBoxAlignment->{"Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}},
-GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}}], "", ")"}],
+GridBoxSpacings->{"Columns" -> {Offset[0.27999999999999997`], {Offset[0.7]}, Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {Offset[0.2], {Offset[0.4]}, Offset[0.2]}, "RowsIndexed" -> {}, "Items" -> {}, "ItemsIndexed" -> {}}], ")"}],
 Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\)-> 1 &]//DeleteBorderComponents
 
 
