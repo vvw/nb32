@@ -10,14 +10,53 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3192,         95]
-NotebookOptionsPosition[      2873,         80]
-NotebookOutlinePosition[      3219,         95]
-CellTagsIndexPosition[      3176,         92]
+NotebookDataLength[      5666,        167]
+NotebookOptionsPosition[      5194,        147]
+NotebookOutlinePosition[      5542,        162]
+CellTagsIndexPosition[      5499,        159]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"adaptiveThreshold", "[", "i_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"white", ",", "whiteAdjusted"}], "}"}], ",", "\n", "\t", 
+    RowBox[{"(*", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"white", "=", 
+        RowBox[{"Closing", "[", 
+         RowBox[{"i", ",", 
+          RowBox[{"DiskMatrix", "[", "7", "]"}]}], "]"}]}], ",", 
+       RowBox[{"whiteAdjusted", "=", 
+        RowBox[{"Image", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"ImageData", "[", "i", "]"}], "/", 
+           RowBox[{"ImageData", "[", "white", "]"}]}], "*", "0.85"}], "]"}]}],
+        ",", 
+       RowBox[{"Binarize", "[", "whiteAdjusted", "]"}]}], "}"}], "*)"}], "\n",
+     "\t", 
+    RowBox[{
+     RowBox[{"white", "=", 
+      RowBox[{"Closing", "[", 
+       RowBox[{"i", ",", 
+        RowBox[{"DiskMatrix", "[", "7", "]"}]}], "]"}]}], ";", "\n", "\t", 
+     RowBox[{"whiteAdjusted", "=", 
+      RowBox[{"Image", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ImageData", "[", "i", "]"}], "/", 
+         RowBox[{"ImageData", "[", "white", "]"}]}], "*", "0.85"}], "]"}]}], 
+     ";", "\n", "\t", "whiteAdjusted"}]}], "\n", "\t", 
+   RowBox[{"(*", 
+    RowBox[{"Binarize", "[", "whiteAdjusted", "]"}], "*)"}], "\n", 
+   "]"}]}]], "Input"],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"clipboard", "[", "]"}], ":=", 
@@ -56,30 +95,58 @@ Cell[BoxData[
      RowBox[{"i", "=", 
       RowBox[{
        RowBox[{
-        RowBox[{"img", "//", "Binarize"}], "//", "ColorNegate"}], "//", 
-       RowBox[{
-        RowBox[{"ImageResize", "[", 
-         RowBox[{"#", ",", 
-          RowBox[{"Scaled", "[", "2", "]"}]}], "]"}], "&"}]}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"TextRecognize", "[", 
-      RowBox[{"i", ",", 
-       RowBox[{"Language", "\[Rule]", "\"\<Japanese\>\""}]}], "]"}]}]}], 
+        RowBox[{
+         RowBox[{"img", "//", "adaptiveThreshold"}], "//", 
+         RowBox[{
+          RowBox[{"ImageResize", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{"Scaled", "[", "10", "]"}]}], "]"}], "&"}]}], "//", 
+        "Binarize"}], "//", "ColorNegate"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"SetDirectory", "@", 
+      RowBox[{"NotebookDirectory", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Export", "[", 
+      RowBox[{"\"\<E:/Tesseract-OCR/0.jpg\>\"", ",", "i"}], "]"}]}]}], 
+   RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"TextRecognize", "[", 
+     RowBox[{"i", ",", 
+      RowBox[{"Language", "\[Rule]", "\"\<Japanese\>\""}]}], "]"}], "*)"}], 
    "\[IndentingNewLine]", "]"}]}]], "Input",
- CellChangeTimes->{{3.6259078413471737`*^9, 3.625907901219598*^9}, {
-  3.6259079792270594`*^9, 3.625908021493477*^9}, {3.625908100836015*^9, 
-  3.625908103383161*^9}, {3.6259082415800657`*^9, 3.6259082606021533`*^9}, {
-  3.625908818813627*^9, 3.6259088237190495`*^9}, {3.6259094523970003`*^9, 
-  3.625909456009207*^9}, {3.6259096467311153`*^9, 3.625909650707343*^9}, {
-  3.625963111441001*^9, 3.625963118461402*^9}, {3.625974816703503*^9, 
-  3.6259748204657183`*^9}}],
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQzSOjfeEe82vHT2zLr4NoIZf0hyB6wqn1z0D04gOz
+PoDo205vwPSzfiOm+0D6ustkFhBtzRnlBaJLmL6DaastPTNBdI43wywQ7ZN6
+fSOI7lsUtglEr5N5d+YnkD53+NxZEC3ZLNbyH0hrPe8D02kSB5g5WV47VqeY
+8YHofR47S0G0nXNhGYheEMVVDaL/uC6uAcvLhs4C0UUJHnNAdFtp3HIQnc/z
+biWIZr9jux1Eu3jmguk/nxfuBdFqtuz7QHROofVhEL3o4UowveznnQ8gWuX6
+kS8gOtgig5ULSDMsluIF0efEQ6RB9PK6IjANAI7MkBg=
+  "]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"reconize", "[", "]"}]], "Input",
- CellChangeTimes->{{3.6259079053788357`*^9, 3.625907907603963*^9}}]
+ CellChangeTimes->{{3.6259079053788357`*^9, 3.625907907603963*^9}}],
+
+Cell[BoxData["\<\"E:/Tesseract-OCR/0.jpg\"\>"], "Output",
+ CellChangeTimes->{{3.6259954975471897`*^9, 3.625995516046248*^9}, 
+   3.6259955498331804`*^9, 3.6259956023411837`*^9, {3.6259957151196346`*^9, 
+   3.6259957239351387`*^9}, 3.62599577501406*^9, {3.6259958101780715`*^9, 
+   3.625995817689501*^9}, {3.6259963406264114`*^9, 3.6259963471517844`*^9}, 
+   3.625996514165337*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"tesseract", ".", "exe"}], " ", 
+    RowBox[{"jp", ".", "jpg"}], " ", "0"}], " ", "-", 
+   RowBox[{"l", " ", "jpn"}], "-", 
+   RowBox[{"psm", " ", "7"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.625995328736534*^9, 3.625995345569497*^9}}]
 },
 WindowSize->{1440, 705},
-WindowMargins->{{9, Automatic}, {23, Automatic}},
+WindowMargins->{{113, Automatic}, {29, Automatic}},
 FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
@@ -94,9 +161,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 927, 23, 92, "Input"],
-Cell[1488, 45, 1254, 29, 112, "Input"],
-Cell[2745, 76, 124, 2, 31, "Input"]
+Cell[558, 20, 1328, 37, 152, "Input"],
+Cell[1889, 59, 927, 23, 92, "Input"],
+Cell[2819, 84, 1520, 37, 152, "Input"],
+Cell[CellGroupData[{
+Cell[4364, 125, 124, 2, 31, "Input"],
+Cell[4491, 129, 380, 5, 31, "Output"]
+}, Open  ]],
+Cell[4886, 137, 304, 8, 31, "Input"]
 }
 ]
 *)
