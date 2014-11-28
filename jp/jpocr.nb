@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     48971,        952]
-NotebookOptionsPosition[     47740,        906]
-NotebookOutlinePosition[     48088,        921]
-CellTagsIndexPosition[     48045,        918]
+NotebookDataLength[     53504,       1094]
+NotebookOptionsPosition[     51431,       1019]
+NotebookOutlinePosition[     51786,       1035]
+CellTagsIndexPosition[     51743,       1032]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -902,11 +902,125 @@ kw01/f57vV0D6/qWWe3iEERJvhzSXwn9vx4kTbJJbR3uym3D1v5UAGa5P/T1
   ImageSizeRaw->{379, 26},
   PlotRange->{{0, 379}, {0, 26}}]], "Output",
  CellChangeTimes->{{3.626058369761462*^9, 3.6260583783749547`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Import", "@", "\"\</Users/vvw/Documents/gh/nb32/jp/0.jpg\>\""}], "//", 
+  RowBox[{
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\</Users/vvw/Documents/gh/nb32/jp/0.pgm\>\"", ",", "#"}], 
+    "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.626165954337812*^9, 3.626165997956229*^9}, {
+  3.626166031316635*^9, 3.626166072994697*^9}}],
+
+Cell[BoxData["\<\"/Users/vvw/Documents/gh/nb32/jp/0.pgm\"\>"], "Output",
+ CellChangeTimes->{3.626165989252666*^9, 3.626166034048347*^9, 
+  3.626166074183567*^9}]
+}, Open  ]],
+
+Cell[BoxData["RunProcess"], "Input",
+ CellChangeTimes->{{3.6261667829799767`*^9, 3.626166787625194*^9}}],
+
+Cell[BoxData["Run"], "Input",
+ CellChangeTimes->{{3.626166796261853*^9, 3.626166798067073*^9}}],
+
+Cell[BoxData[
+ RowBox[{"commandstring", "=", 
+  RowBox[{
+   RowBox[{"First", "[", "$CommandLine", "]"}], "<>", 
+   "\"\< -noprompt -run \
+\\\"Put[Factorial[20],ToFileName[$TemporaryDirectory,ToString[temp1]]];Quit[]\
+\\\"\>\""}]}]], "Input",
+ CellChangeTimes->{{3.6261669596459627`*^9, 3.62616695964706*^9}}],
+
+Cell[BoxData["\"\</Applications/Mathematica.app/Contents/MacOS/MathKernel \
+-noprompt -run \\\"Put[Factorial[20],\[CCedilla]];Quit[]\\\"\>\""], "Input",
+ CellChangeTimes->{{3.626167007527833*^9, 3.6261670075369577`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToFileName", "[", 
+  RowBox[{"$TemporaryDirectory", ",", 
+   RowBox[{"ToString", "[", "temp1", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.626167038059819*^9, 3.626167038060761*^9}}],
+
+Cell[BoxData["\<\"/var/folders/29/n7mtjn9s08zcbk1lm5y867480000gn/T/temp1\"\>"]\
+, "Output",
+ CellChangeTimes->{3.626167040747932*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["temp1"], "Input"],
+
+Cell[BoxData["temp1"], "Output",
+ CellChangeTimes->{3.626167058991942*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RunProcess", "[", 
+  RowBox[{
+  "$SystemShell", ",", "All", ",", 
+   "\"\<echo example line 1\necho example line 2\nexit\n\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.62616721162512*^9, 3.6261672116260643`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", 
+    "\[Rule]", "\<\"example line 1\\nexample line 2\\n\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.626167214330225*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$SystemShell"], "Input"],
+
+Cell[BoxData["\<\"/bin/sh\"\>"], "Output",
+ CellChangeTimes->{3.626167242707097*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RunProcess", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\</opt/nhocr/bin/nhocr\>\"", ",", "\"\<-line\>\"", ",", "\"\<-o\>\"", 
+    ",", "\"\</Users/vvw/Documents/gh/nb32/jp/outxxxx\>\"", ",", 
+    "\"\</Users/vvw/Documents/gh/nb32/jp/0.pgm\>\""}], "}"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.6261673894758663`*^9, 3.626167393981248*^9}, {
+   3.6261674271131496`*^9, 3.626167477215391*^9}, 3.626167518268941*^9, {
+   3.6261675602823353`*^9, 3.6261676954031982`*^9}, {3.626167851778298*^9, 
+   3.6261678942129507`*^9}, {3.62616794208313*^9, 3.6261680457366457`*^9}, {
+   3.6261681565330553`*^9, 3.626168191931926*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", "\[Rule]", "\<\"\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.626168130974058*^9, {3.626168161358857*^9, 3.6261681931590977`*^9}}]
 }, Open  ]]
 },
-WindowSize->{1440, 705},
-WindowMargins->{{177, Automatic}, {18, Automatic}},
-FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+WindowSize->{1013, 711},
+WindowMargins->{{157, Automatic}, {3, Automatic}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -920,39 +1034,67 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1328, 37, 152, "Input"],
-Cell[1889, 59, 927, 23, 92, "Input"],
-Cell[2819, 84, 2413, 48, 152, "Input"],
+Cell[558, 20, 1328, 37, 148, "Input"],
+Cell[1889, 59, 927, 23, 80, "Input"],
+Cell[2819, 84, 2413, 48, 131, "Input"],
 Cell[CellGroupData[{
-Cell[5257, 136, 124, 2, 31, "Input"],
-Cell[5384, 140, 481, 6, 31, "Output"]
+Cell[5257, 136, 124, 2, 28, "Input"],
+Cell[5384, 140, 481, 6, 28, "Output"]
 }, Open  ]],
-Cell[5880, 149, 304, 8, 31, "Input"],
+Cell[5880, 149, 304, 8, 28, "Input"],
 Cell[CellGroupData[{
-Cell[6209, 161, 155, 2, 31, "Input"],
-Cell[6367, 165, 590, 14, 32, "Output"]
+Cell[6209, 161, 155, 2, 28, "Input"],
+Cell[6367, 165, 590, 14, 31, "Output"]
 }, Open  ]],
-Cell[6972, 182, 176, 3, 31, "Input"],
+Cell[6972, 182, 176, 3, 28, "Input"],
 Cell[7151, 187, 2327, 43, 41, "Input"],
 Cell[CellGroupData[{
-Cell[9503, 234, 2452, 45, 31, "Input"],
-Cell[11958, 281, 99, 1, 31, "Output"]
+Cell[9503, 234, 2452, 45, 28, "Input"],
+Cell[11958, 281, 99, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12094, 287, 150, 2, 31, "Input"],
+Cell[12094, 287, 150, 2, 28, "Input"],
 Cell[12247, 291, 19402, 322, 41, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31686, 618, 154, 2, 31, "Input"],
+Cell[31686, 618, 154, 2, 28, "Input"],
 Cell[31843, 622, 7481, 126, 41, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39361, 753, 289, 7, 31, "Input"],
-Cell[39653, 762, 102, 1, 31, "Output"]
+Cell[39361, 753, 289, 7, 28, "Input"],
+Cell[39653, 762, 102, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39792, 768, 153, 2, 31, "Input"],
-Cell[39948, 772, 7776, 131, 73, "Output"]
+Cell[39792, 768, 153, 2, 28, "Input"],
+Cell[39948, 772, 7776, 131, 41, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47761, 908, 363, 8, 28, "Input"],
+Cell[48127, 918, 161, 2, 28, "Output"]
+}, Open  ]],
+Cell[48303, 923, 104, 1, 28, "Input"],
+Cell[48410, 926, 95, 1, 28, "Input"],
+Cell[48508, 929, 308, 7, 63, "Input"],
+Cell[48819, 938, 220, 2, 28, InheritFromParent],
+Cell[CellGroupData[{
+Cell[49064, 944, 210, 4, 28, "Input"],
+Cell[49277, 950, 133, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49447, 957, 31, 0, 28, "Input"],
+Cell[49481, 959, 74, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49592, 965, 241, 6, 80, "Input"],
+Cell[49836, 973, 362, 8, 63, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50235, 986, 38, 0, 28, "Input"],
+Cell[50276, 988, 84, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50397, 994, 641, 12, 46, "Input"],
+Cell[51041, 1008, 374, 8, 28, "Output"]
 }, Open  ]]
 }
 ]
