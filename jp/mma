@@ -1,0 +1,3 @@
+#!/Applications/Mathematica.app/Contents/MacOS/MathematicaScript -script
+pgm=$ScriptCommandLine[[2]];
+RunProcess[{"/opt/nhocr/bin/nhocr","-line","-o","./out",pgm}]

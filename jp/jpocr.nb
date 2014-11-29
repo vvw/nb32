@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     53504,       1094]
-NotebookOptionsPosition[     51431,       1019]
-NotebookOutlinePosition[     51786,       1035]
-CellTagsIndexPosition[     51743,       1032]
+NotebookDataLength[     55112,       1142]
+NotebookOptionsPosition[     52821,       1059]
+NotebookOutlinePosition[     53176,       1075]
+CellTagsIndexPosition[     53133,       1072]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1004,7 +1004,8 @@ Cell[BoxData[
    3.6261674271131496`*^9, 3.626167477215391*^9}, 3.626167518268941*^9, {
    3.6261675602823353`*^9, 3.6261676954031982`*^9}, {3.626167851778298*^9, 
    3.6261678942129507`*^9}, {3.62616794208313*^9, 3.6261680457366457`*^9}, {
-   3.6261681565330553`*^9, 3.626168191931926*^9}}],
+   3.6261681565330553`*^9, 3.626168191931926*^9}, {3.626219818271343*^9, 
+   3.6262198357046127`*^9}}],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
@@ -1014,7 +1015,46 @@ Cell[BoxData[
    RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
   "\[RightAssociation]"}]], "Output",
  CellChangeTimes->{
-  3.626168130974058*^9, {3.626168161358857*^9, 3.6261681931590977`*^9}}]
+  3.626168130974058*^9, {3.626168161358857*^9, 3.6261681931590977`*^9}, {
+   3.626219821452963*^9, 3.626219838197075*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RunProcess", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\</opt/nhocr/bin/nhocr\>\"", ",", "\"\<-line\>\"", ",", "\"\<-o\>\"", 
+    ",", "\"\</Users/vvw/Documents/gh/nb32/jp/out.txt\>\"", ",", 
+    "\"\</Users/vvw/Documents/gh/nb32/jp/0.pgm\>\""}], "}"}], "]"}]], "Input",\
+
+ CellChangeTimes->{
+  3.626219861330491*^9, {3.6262201680190983`*^9, 3.6262201806179447`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", "\[Rule]", "\<\"\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.626219863305668*^9, 3.6262199449958982`*^9, {3.626220007538001*^9, 
+   3.626220037467689*^9}, 3.6262201830720787`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "@", 
+  "\"\</Users/vvw/Documents/gh/nb32/jp/out.txt\>\""}]], "Input",
+ CellChangeTimes->{{3.6262201978949347`*^9, 3.626220219214532*^9}}],
+
+Cell[BoxData["\<\"\:306e\:3069\:308c\:304b\:3068\:3044\:3046\:30cb\:3068\:306a\
+\:306e\:3067\:3001 \:76bfnveft\:3092\:61a7\:3063\:3066png\:304b\:3089\:96e2\
+\:3002\"\>"], "Output",
+ CellChangeTimes->{3.6262202213410883`*^9}]
 }, Open  ]]
 },
 WindowSize->{1013, 711},
@@ -1075,7 +1115,7 @@ Cell[48127, 918, 161, 2, 28, "Output"]
 Cell[48303, 923, 104, 1, 28, "Input"],
 Cell[48410, 926, 95, 1, 28, "Input"],
 Cell[48508, 929, 308, 7, 63, "Input"],
-Cell[48819, 938, 220, 2, 28, InheritFromParent],
+Cell[48819, 938, 220, 2, 28, "Input"],
 Cell[CellGroupData[{
 Cell[49064, 944, 210, 4, 28, "Input"],
 Cell[49277, 950, 133, 2, 28, "Output"]
@@ -1093,8 +1133,16 @@ Cell[50235, 986, 38, 0, 28, "Input"],
 Cell[50276, 988, 84, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[50397, 994, 641, 12, 46, "Input"],
-Cell[51041, 1008, 374, 8, 28, "Output"]
+Cell[50397, 994, 693, 13, 46, "Input"],
+Cell[51093, 1009, 424, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51554, 1023, 389, 9, 46, "Input"],
+Cell[51946, 1034, 424, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52407, 1048, 171, 3, 28, "Input"],
+Cell[52581, 1053, 224, 3, 31, "Output"]
 }, Open  ]]
 }
 ]
