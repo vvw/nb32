@@ -1,0 +1,491 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18928,        482]
+NotebookOptionsPosition[     17554,        437]
+NotebookOutlinePosition[     17908,        453]
+CellTagsIndexPosition[     17865,        450]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"adaptiveThreshold", "[", "i_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"white", ",", "whiteAdjusted"}], "}"}], ",", "\n", "\t", 
+    RowBox[{"(*", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"white", "=", 
+        RowBox[{"Closing", "[", 
+         RowBox[{"i", ",", 
+          RowBox[{"DiskMatrix", "[", "7", "]"}]}], "]"}]}], ",", 
+       RowBox[{"whiteAdjusted", "=", 
+        RowBox[{"Image", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"ImageData", "[", "i", "]"}], "/", 
+           RowBox[{"ImageData", "[", "white", "]"}]}], "*", "0.85"}], "]"}]}],
+        ",", 
+       RowBox[{"Binarize", "[", "whiteAdjusted", "]"}]}], "}"}], "*)"}], "\n",
+     "\t", 
+    RowBox[{
+     RowBox[{"white", "=", 
+      RowBox[{"Closing", "[", 
+       RowBox[{"i", ",", 
+        RowBox[{"DiskMatrix", "[", "7", "]"}]}], "]"}]}], ";", "\n", "\t", 
+     RowBox[{"whiteAdjusted", "=", 
+      RowBox[{"Image", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ImageData", "[", "i", "]"}], "/", 
+         RowBox[{"ImageData", "[", "white", "]"}]}], "*", "0.85"}], "]"}]}], 
+     ";", "\n", "\t", 
+     RowBox[{"(*", "whiteAdjusted", "*)"}], "\n", "\t", 
+     RowBox[{"Binarize", "[", "whiteAdjusted", "]"}]}]}], "\n", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.626330901405718*^9, 3.626330909247855*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"reconize", "[", "img_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "i", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"i", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"img", "//", "adaptiveThreshold"}], "//", 
+       RowBox[{
+        RowBox[{"ImageResize", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"Scaled", "[", "10", "]"}]}], "]"}], "&"}]}], "//", 
+      "Binarize"}]}]}], 
+   RowBox[{"(*", 
+    RowBox[{"//", "ColorNegate"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"SetDirectory", "@", 
+      RowBox[{"NotebookDirectory", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Export", "[", 
+      RowBox[{"\"\<E:/Tesseract-OCR/0.pgm\>\"", ",", "i"}], "]"}]}], "*)"}], 
+   RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"TextRecognize", "[", 
+     RowBox[{"i", ",", 
+      RowBox[{"Language", "\[Rule]", "\"\<Japanese\>\""}]}], "]"}], "*)"}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6259078413471737`*^9, 3.625907901219598*^9}, {
+   3.6259079792270594`*^9, 3.625908021493477*^9}, {3.625908100836015*^9, 
+   3.625908103383161*^9}, {3.6259082415800657`*^9, 3.6259082606021533`*^9}, {
+   3.625908818813627*^9, 3.6259088237190495`*^9}, {3.6259094523970003`*^9, 
+   3.625909456009207*^9}, {3.6259096467311153`*^9, 3.625909650707343*^9}, {
+   3.625963111441001*^9, 3.625963118461402*^9}, {3.625974816703503*^9, 
+   3.6259748204657183`*^9}, {3.6259942700029783`*^9, 
+   3.6259943536997657`*^9}, {3.6259951817901297`*^9, 
+   3.6259951875394583`*^9}, {3.6259952243235626`*^9, 3.625995237102293*^9}, {
+   3.6259954746598806`*^9, 3.625995490261773*^9}, {3.625995578951846*^9, 
+   3.625995599439018*^9}, {3.625995705933109*^9, 3.6259957074151936`*^9}, {
+   3.6259957570610332`*^9, 3.6259957602262144`*^9}, {3.6259958018575954`*^9, 
+   3.625995805308793*^9}, {3.6259961669054747`*^9, 3.6259961981512623`*^9}, {
+   3.6259963312568755`*^9, 3.6259963928323975`*^9}, {3.625996506627906*^9, 
+   3.6259965075779605`*^9}, {3.626038586813101*^9, 3.626038589388248*^9}, 
+   3.6260387021987004`*^9, {3.626039005325038*^9, 3.626039005639056*^9}, {
+   3.626039879589043*^9, 3.6260398803220854`*^9}, {3.6260399749124956`*^9, 
+   3.626040000122937*^9}, {3.62623999557434*^9, 3.6262400133930283`*^9}, {
+   3.6262400545102377`*^9, 3.6262400595263453`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"reconize", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6259079053788357`*^9, 3.625907907603963*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Import", "[", 
+   RowBox[{
+   "\"\<!cd /Users/vvw/Documents/gh/nb32/jp &&\n cat pa.png | \
+/usr/local/bin/tesseract stdin stdout -l jpn -psm 7 2>&1\>\"", ",", 
+    "\"\<Text\>\""}], "]"}], "//", 
+  RowBox[{
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"#", ",", 
+     RowBox[{"\"\< \>\"", "\[Rule]", "\"\<\>\""}]}], "]"}], "&"}]}]], "Input",\
+
+ CellChangeTimes->{
+  3.626330130747097*^9, {3.626330710837051*^9, 3.6263307146341457`*^9}, 
+   3.6263377926064777`*^9}],
+
+Cell[BoxData["\<\"WarninginpixReadMemPng:work-around:writingtoatempfile\\n\
+\:306e\:3069\:308c\:304b\:3068\:3044\:3046\:3053\:3068\:306a\:306e\:3067`C\
+\:3007nVe\:67f1\:3092\:4f7f\:3064\:3066png\:304b\:3089\:5909\:63db\:3002\\n\"\
+\>"], "Output",
+ CellChangeTimes->{
+  3.6263301429064627`*^9, {3.626330181148525*^9, 3.6263302075733213`*^9}, 
+   3.62633071782353*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Import", "[", 
+   RowBox[{
+   "\"\<!cd /Users/vvw/Documents/gh/nb32/jp && ./pasteimg >pa.png\>\"", ",", 
+    "\"\<Text\>\""}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6263373927406597`*^9, 3.626337418981791*^9}, {
+   3.62633748830477*^9, 3.626337528944914*^9}, {3.626337599048478*^9, 
+   3.626337638785985*^9}, {3.626337721031642*^9, 3.626337745324925*^9}, 
+   3.6263378172350407`*^9, 3.626337913213853*^9, {3.6263379910541687`*^9, 
+   3.626337993042116*^9}, {3.6263380404871683`*^9, 3.62633807010054*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetDirectory", "@", 
+     RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\<!cd /Users/vvw/Documents/gh/nb32/jp && ./pasteimg >pa.png\>\"", 
+      ",", "\"\<Text\>\""}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<pa.png\>\"", "]"}], "//", 
+       "adaptiveThreshold"}], "//", 
+      RowBox[{
+       RowBox[{"ImageResize", "[", 
+        RowBox[{"#", ",", "2048"}], "]"}], "&"}]}], "//", 
+     RowBox[{
+      RowBox[{"Export", "[", 
+       RowBox[{"\"\<1.png\>\"", ",", "#"}], "]"}], "&"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Import", "[", "\"\<1.png\>\"", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\<!cd /Users/vvw/Documents/gh/nb32/jp &&\n cat 1.png | \
+/usr/local/bin/tesseract stdin stdout -l jpn -psm 7 2>&1\>\"", ",", 
+      "\"\<Text\>\""}], "]"}], "//", 
+    RowBox[{
+     RowBox[{"StringReplace", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"\"\< \>\"", "\[Rule]", "\"\<\>\""}]}], "]"}], 
+     "&"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6263307869093533`*^9, 3.626330859514269*^9}, {
+  3.626330922226633*^9, 3.626331028810431*^9}, {3.626337315109112*^9, 
+  3.626337380374114*^9}, {3.6263380884756117`*^9, 3.6263380896096373`*^9}, {
+  3.626338669949044*^9, 3.626338682445631*^9}}],
+
+Cell[BoxData["\<\"WarninginpixReadMemPng:work-around:writingtoatempfile\\n\
+\:306e\:3069\:308c\:304b\:3068\:3044\:3046\:3053\:3068\:306a\:306e\:3067\:3001\
+C\:3002nve\:67f1\:3092\:4f7f\:3064\:3066png\:304b\:3089\:5909\:63db\:3002\\n\"\
+\>"], "Output",
+ CellChangeTimes->{{3.626330844473699*^9, 3.626330867986616*^9}, 
+   3.62633091600463*^9, 3.626330950870386*^9, {3.626330996217347*^9, 
+   3.626331030830213*^9}, {3.62633724231991*^9, 3.626337245576695*^9}, {
+   3.626338093526908*^9, 3.6263381361102953`*^9}, {3.626338225237173*^9, 
+   3.6263382278973618`*^9}, {3.626338601954788*^9, 3.62633861008456*^9}, {
+   3.626338688933117*^9, 3.626338747926835*^9}, 3.6263388181652*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "@", "\"\<E:/Tesseract-OCR/hello.pgm\>\""}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.626039498274233*^9, 3.6260395083548098`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "[", "\"\<E:/Tesseract-OCR/hi.pgm\>\"", "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.626040192100918*^9, 3.626040195268099*^9}},
+ NumberMarks->False],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJztWktu1EwQNo8FZ2DHUeAIYTHrRIItUkBCgR0bH2WO4qP4GMEej7vr3VUe
+RyFDfRK/Jh53db1f83+4+3bz9XXXdd/fTf+5uf358f7+9uHz2+mPTw8/vty9
+mT68n/79ftV18+fHRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikbgS
+jMdD1w/PzUUiMWPou3/NGyeWEEdDfziO/LVIHE0kRRqXUfVi1nHnZcAJP5/T
+m/te/d+hqWvqXtSDXyKcITPrJuheVsohqt5AHZ0FMAwCzTWdmj6LKcefRCKv
+egI5QO5Echwf16yzW+ZxJ5yq9/a9fhtdGyzPDueba0g4sejSvYW4lIrzaaRr
+etat0+XgKXFAwhoBbC415TxR19J2FrFluLgzki2jS9jisyY4QEaPK5eNEE3D
+bV4emGJ0Uan+FsubqomWmOfX8wZ39sxK1bm4++IA6I8wykKdDmAE5QhVJppJ
+xmNP7qoGmQkUThVx6UXKiFZp22pT+DZMRPxnnwHHV0WFrHzihjwM26hSulwc
+4Gn1LuR+gIWFPd4uzk8AJ/BPif4i8ELm1x/k6TwMTD1LL+zc4ah6Pseh2Dxr
+ioIkl+cDj2ZvyAT67FMM04TD6K4E1ZTbvA36LxdD9FbQQQiqXpMdKCwLTdHK
+lHHjVcbU2VHd3iSJI0R3cCDT0OTz0VI4YmKDjZZLmX/HxcBt1HA8lvETJYfy
+12JQ+FeVCB9ZnsPaCO7CZPQS2hKrNIbG7CA4kD+IqJ6F28t5pEtVUaJCSa72
+hozT6uUw73AIhep+6xfzhLN2O45Erjo2ZgQBmk6nX01NWcVPiMdJAafdHt1V
++/dsO2ScFp/SRTKDW2yEwvuski05R+zD2UPcgClbRfANd1tKiDRESsIRxlIc
+nzP5w6EkHBDEwsfVZlLLqfm5PaewoVdWh/0N1EU0ZIp0MGZ59wxTHRup2NoG
+Wq60QKf3XesOVHY4L5SAXq6ppLzzUUoUEgfKLm9i2iVHDStfyO3wQ5hLS6K+
+G9snl42E1zbK5Ms3amuGE0U5h7xWbjjoHULCQRWtBBRZ9CzRGetwGHTlNRyK
+cY3Tiqwopl5KxR8ydcoAzzG5ZQXL6RIx6fi7jrvn8aoqOLBf5ZEqVVNvxB76
+/uBIOPgK/A4NJd/tZn/iGt5FLwq0B24+pWZeTDgRG2m0N2HXhLN+B7hTfbyZ
+cAqRmkhkiaEult8jEZMej1DV2dLzkyScQMgIGw9+pl4iAfXWZIaDzY2uBAzU
+OTV82efGYIdDqg1oA3vYIeo3UroeufCGKbpi1GLAn2+cfILKgm0t5jq3jcLs
+NrkU/dUcqfRR6PTlADOA9mOoo8NZX1s3Cc2EU9YtQe1sH9KZeB5FMVFRAYuE
+jJbPmRudiPZSeyENOOeuRoWvr5eyCznqshOcGuUOh1fD9YwZq24vAXU0HHRq
+APj3OtFYp7uFvmc2C9gIfrVLyhkgO2ulQA9xQJgJZxUQ8ExJKXsMzfthq9/u
+cEpyd6umDg4ybD2TydqpqJIYAQdwKeUOGUMmkrNqRgb6l+SSN7Hy3kvT3Pk7
+OiXKZd5vKs4avagobRwt/uK3D9b/6WQy3KgWMnjTEYl1PGCUIseLjc9G9IzI
+SWwtXiUnmwBJAXbCEbkGmkVJTHJstmgNzUNkbtDPVpZ8Lb3xA8bS0nFqpqJG
+eATngUjIKIJZthc8jUoktWz493PQB/l2C7oU4qi3ab7dAvH2HQp5I9dso+fm
+s77tZcG2kUSbBO847Czxc0EsA2wDsq44xSweDloJq575qHK5ki+ej4GSDEIg
+g5UD5voHFw82PO+k2cTVYK9FT0LDtoTD9sBPaSY768JvYe1S2uu9C3cikQhg
+c4cDG7dsEhKJRCKRSCQSiUQi8fgXE1dgrA==
+     "], {{0, 26}, {379, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   BaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{379, 26},
+   PlotRange->{{0, 379}, {0, 26}}], "*)"}]], "Input",
+ CellChangeTimes->{3.6260421691850004`*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<E:/Tesseract-OCR/0.jpg\>\"", ",", 
+    GraphicsBox[
+     TagBox[RasterBox[CompressedData["
+1:eJztWktu1EwQNo8FZ2DHUeAIYTHrRIItUkBCgR0bH2WO4qP4GMEej7vr3VUe
+RyFDfRK/Jh53db1f83+4+3bz9XXXdd/fTf+5uf358f7+9uHz2+mPTw8/vty9
+mT68n/79ftV18+fHRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikbgS
+jMdD1w/PzUUiMWPou3/NGyeWEEdDfziO/LVIHE0kRRqXUfVi1nHnZcAJP5/T
+m/te/d+hqWvqXtSDXyKcITPrJuheVsohqt5AHZ0FMAwCzTWdmj6LKcefRCKv
+egI5QO5Echwf16yzW+ZxJ5yq9/a9fhtdGyzPDueba0g4sejSvYW4lIrzaaRr
+etat0+XgKXFAwhoBbC415TxR19J2FrFluLgzki2jS9jisyY4QEaPK5eNEE3D
+bV4emGJ0Uan+FsubqomWmOfX8wZ39sxK1bm4++IA6I8wykKdDmAE5QhVJppJ
+xmNP7qoGmQkUThVx6UXKiFZp22pT+DZMRPxnnwHHV0WFrHzihjwM26hSulwc
+4Gn1LuR+gIWFPd4uzk8AJ/BPif4i8ELm1x/k6TwMTD1LL+zc4ah6Pseh2Dxr
+ioIkl+cDj2ZvyAT67FMM04TD6K4E1ZTbvA36LxdD9FbQQQiqXpMdKCwLTdHK
+lHHjVcbU2VHd3iSJI0R3cCDT0OTz0VI4YmKDjZZLmX/HxcBt1HA8lvETJYfy
+12JQ+FeVCB9ZnsPaCO7CZPQS2hKrNIbG7CA4kD+IqJ6F28t5pEtVUaJCSa72
+hozT6uUw73AIhep+6xfzhLN2O45Erjo2ZgQBmk6nX01NWcVPiMdJAafdHt1V
++/dsO2ScFp/SRTKDW2yEwvuski05R+zD2UPcgClbRfANd1tKiDRESsIRxlIc
+nzP5w6EkHBDEwsfVZlLLqfm5PaewoVdWh/0N1EU0ZIp0MGZ59wxTHRup2NoG
+Wq60QKf3XesOVHY4L5SAXq6ppLzzUUoUEgfKLm9i2iVHDStfyO3wQ5hLS6K+
+G9snl42E1zbK5Ms3amuGE0U5h7xWbjjoHULCQRWtBBRZ9CzRGetwGHTlNRyK
+cY3Tiqwopl5KxR8ydcoAzzG5ZQXL6RIx6fi7jrvn8aoqOLBf5ZEqVVNvxB76
+/uBIOPgK/A4NJd/tZn/iGt5FLwq0B24+pWZeTDgRG2m0N2HXhLN+B7hTfbyZ
+cAqRmkhkiaEult8jEZMej1DV2dLzkyScQMgIGw9+pl4iAfXWZIaDzY2uBAzU
+OTV82efGYIdDqg1oA3vYIeo3UroeufCGKbpi1GLAn2+cfILKgm0t5jq3jcLs
+NrkU/dUcqfRR6PTlADOA9mOoo8NZX1s3Cc2EU9YtQe1sH9KZeB5FMVFRAYuE
+jJbPmRudiPZSeyENOOeuRoWvr5eyCznqshOcGuUOh1fD9YwZq24vAXU0HHRq
+APj3OtFYp7uFvmc2C9gIfrVLyhkgO2ulQA9xQJgJZxUQ8ExJKXsMzfthq9/u
+cEpyd6umDg4ybD2TydqpqJIYAQdwKeUOGUMmkrNqRgb6l+SSN7Hy3kvT3Pk7
+OiXKZd5vKs4avagobRwt/uK3D9b/6WQy3KgWMnjTEYl1PGCUIseLjc9G9IzI
+SWwtXiUnmwBJAXbCEbkGmkVJTHJstmgNzUNkbtDPVpZ8Lb3xA8bS0nFqpqJG
+eATngUjIKIJZthc8jUoktWz493PQB/l2C7oU4qi3ab7dAvH2HQp5I9dso+fm
+s77tZcG2kUSbBO847Czxc0EsA2wDsq44xSweDloJq575qHK5ki+ej4GSDEIg
+g5UD5voHFw82PO+k2cTVYK9FT0LDtoTD9sBPaSY768JvYe1S2uu9C3cikQhg
+c4cDG7dsEhKJRCKRSCQSiUQi8fgXE1dgrA==
+       "], {{0, 26}, {379, 0}}, {0, 255},
+       
+       ColorFunction->RGBColor],
+      BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+      Selectable->False],
+     BaseStyle->"ImageGraphics",
+     ImageSize->Automatic,
+     ImageSizeRaw->{379, 26},
+     PlotRange->{{0, 379}, {0, 26}}]}], "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.626042199230719*^9, 3.62604220851125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "@", "\"\<E:/Tesseract-OCR/0.jpg\>\""}], "*)"}]], "Input",\
+
+ CellChangeTimes->{{3.6260422172227483`*^9, 3.62604221969989*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "@", "\"\<E:/Tesseract-OCR/test.pgm\>\""}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.626058155780223*^9, 3.6260581642497077`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"Import", "@", "\"\<E:/Tesseract-OCR/0.jpg\>\""}], "//", 
+   RowBox[{
+    RowBox[{"Export", "[", 
+     RowBox[{"\"\<E:/Tesseract-OCR/test2.pgm\>\"", ",", "#"}], "]"}], "&"}]}],
+   "*)"}]], "Input",
+ CellChangeTimes->{{3.626058291693997*^9, 3.6260583442230015`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "@", "\"\<E:/Tesseract-OCR/test2.pgm\>\""}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.626058363904127*^9, 3.626058377692916*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"Import", "@", "\"\</Users/vvw/Documents/gh/nb32/jp/0.jpg\>\""}], "//", 
+   RowBox[{
+    RowBox[{"Export", "[", 
+     RowBox[{"\"\</Users/vvw/Documents/gh/nb32/jp/0.pgm\>\"", ",", "#"}], 
+     "]"}], "&"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.626165954337812*^9, 3.626165997956229*^9}, {
+  3.626166031316635*^9, 3.626166072994697*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "RunProcess", "*)"}]], "Input",
+ CellChangeTimes->{{3.6261667829799767`*^9, 3.626166787625194*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "Run", "*)"}]], "Input",
+ CellChangeTimes->{{3.626166796261853*^9, 3.626166798067073*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"commandstring", "=", 
+   RowBox[{
+    RowBox[{"First", "[", "$CommandLine", "]"}], "<>", 
+    "\"\< -noprompt -run \
+\\\"Put[Factorial[20],ToFileName[$TemporaryDirectory,ToString[temp1]]];Quit[]\
+\\\"\>\""}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6261669596459627`*^9, 3.62616695964706*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  "\"\</Applications/Mathematica.app/Contents/MacOS/MathKernel -noprompt -run \
+\\\"Put[Factorial[20],\[CCedilla]];Quit[]\\\"\>\"", "*)"}]], "Input",
+ CellChangeTimes->{{3.626167007527833*^9, 3.6261670075369577`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"ToFileName", "[", 
+   RowBox[{"$TemporaryDirectory", ",", 
+    RowBox[{"ToString", "[", "temp1", "]"}]}], "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.626167038059819*^9, 3.626167038060761*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "temp1", "*)"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"RunProcess", "[", 
+   RowBox[{
+   "$SystemShell", ",", "All", ",", 
+    "\"\<echo example line 1\necho example line 2\nexit\n\>\""}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.62616721162512*^9, 3.6261672116260643`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "$SystemShell", "*)"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"RunProcess", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\</opt/nhocr/bin/nhocr\>\"", ",", "\"\<-line\>\"", ",", "\"\<-o\>\"", 
+     ",", "\"\</Users/vvw/Documents/gh/nb32/jp/outxxxx\>\"", ",", 
+     "\"\</Users/vvw/Documents/gh/nb32/jp/0.pgm\>\""}], "}"}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6261673894758663`*^9, 3.626167393981248*^9}, {
+   3.6261674271131496`*^9, 3.626167477215391*^9}, 3.626167518268941*^9, {
+   3.6261675602823353`*^9, 3.6261676954031982`*^9}, {3.626167851778298*^9, 
+   3.6261678942129507`*^9}, {3.62616794208313*^9, 3.6261680457366457`*^9}, {
+   3.6261681565330553`*^9, 3.626168191931926*^9}, {3.626219818271343*^9, 
+   3.6262198357046127`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"RunProcess", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\</opt/nhocr/bin/nhocr\>\"", ",", "\"\<-line\>\"", ",", "\"\<-o\>\"", 
+     ",", "\"\</Users/vvw/Documents/gh/nb32/jp/out.txt\>\"", ",", 
+     "\"\</Users/vvw/Documents/gh/nb32/jp/0.pgm\>\""}], "}"}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{
+  3.626219861330491*^9, {3.6262201680190983`*^9, 3.6262201806179447`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Import", "@", "\"\</Users/vvw/Documents/gh/nb32/jp/out.txt\>\""}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6262201978949347`*^9, 3.626220219214532*^9}}]
+},
+WindowSize->{1013, 711},
+WindowMargins->{{Automatic, 98}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1397, 38, 148, "Input"],
+Cell[1958, 60, 2406, 47, 114, "Input"],
+Cell[4367, 109, 124, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[4516, 115, 500, 14, 63, "Input"],
+Cell[5019, 131, 366, 6, 64, "Output"]
+}, Open  ]],
+Cell[5400, 140, 547, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[5972, 154, 1538, 42, 131, "Input"],
+Cell[7513, 198, 678, 9, 64, "Output"]
+}, Open  ]],
+Cell[8206, 210, 183, 4, 28, "Input"],
+Cell[8392, 216, 204, 5, 28, "Input"],
+Cell[8599, 223, 2361, 44, 28, "Input"],
+Cell[10963, 269, 2496, 47, 28, "Input"],
+Cell[13462, 318, 177, 4, 28, "Input"],
+Cell[13642, 324, 182, 4, 28, "Input"],
+Cell[13827, 330, 317, 8, 28, "Input"],
+Cell[14147, 340, 181, 4, 28, "Input"],
+Cell[14331, 346, 393, 9, 28, "Input"],
+Cell[14727, 357, 128, 2, 28, "Input"],
+Cell[14858, 361, 119, 2, 28, "Input"],
+Cell[14980, 365, 336, 8, 63, "Input"],
+Cell[15319, 375, 247, 4, 28, "Input"],
+Cell[15569, 381, 237, 5, 28, "Input"],
+Cell[15809, 388, 55, 1, 28, "Input"],
+Cell[15867, 391, 269, 7, 80, "Input"],
+Cell[16139, 400, 62, 1, 28, "Input"],
+Cell[16204, 403, 724, 14, 46, "Input"],
+Cell[16931, 419, 420, 10, 46, "Input"],
+Cell[17354, 431, 196, 4, 28, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
