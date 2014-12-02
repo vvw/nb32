@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     34108,        926]
-NotebookOptionsPosition[     33341,        900]
-NotebookOutlinePosition[     33687,        915]
-CellTagsIndexPosition[     33644,        912]
+NotebookDataLength[     35758,        956]
+NotebookOptionsPosition[     34989,        930]
+NotebookOutlinePosition[     35336,        945]
+CellTagsIndexPosition[     35293,        942]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -667,7 +667,7 @@ Cell[BoxData[{
           "//", "ColorNegate"}], "//", "DeleteBorderComponents"}], "//", 
         RowBox[{
          RowBox[{"DeleteSmallComponents", "[", 
-          RowBox[{"#", ",", "17"}], "]"}], "&"}]}], "//", 
+          RowBox[{"#", ",", "5"}], "]"}], "&"}]}], "//", 
        RowBox[{
         RowBox[{"#", "/.", 
          RowBox[{"x_Image", "\[RuleDelayed]", 
@@ -709,13 +709,16 @@ Cell[BoxData[{
          RowBox[{"splitNMPart", "[", 
           RowBox[{"#", ",", "5", ",", "4"}], "]"}], "&"}], ",", "cardss", ",", 
         RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"reconizeCards", "[", "cards2", "]"}]}]}], "\[IndentingNewLine]",
-    "]"}]}], "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"cards", ",", "cardss", ",", "cards2"}], "}"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"rcnzCrds", "[", "imgname_", "]"}], ":=", 
   RowBox[{"Module", "[", 
    RowBox[{
-    RowBox[{"{", "distorfree", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"distorfree", ",", "cards", ",", "cardss", ",", "cards2"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"SetDirectory", "@", 
       RowBox[{"NotebookDirectory", "[", "]"}]}], ";", "\[IndentingNewLine]", 
@@ -723,13 +726,34 @@ Cell[BoxData[{
       RowBox[{"distortionFree", "@", 
        RowBox[{"Import", "[", "imgname", "]"}]}]}], ";", 
      "\[IndentingNewLine]", 
-     RowBox[{"reconize", "[", "distorfree", "]"}]}]}], "\[IndentingNewLine]", 
-   "]"}]}]}], "Input",
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"cards", ",", "cardss", ",", "cards2"}], "}"}], "=", 
+      RowBox[{"reconize", "[", "distorfree", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"cards", "//", "MatrixForm"}], ",", 
+       RowBox[{"cardss", "//", "MatrixForm"}], ",", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"MatrixForm", ",", "cards2", ",", 
+          RowBox[{"{", "2", "}"}]}], "]"}], "//", "MatrixForm"}], ",", 
+       RowBox[{"reconizeCards", "[", "cards2", "]"}], ",", "distorfree"}], 
+      "}"}]}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
  CellChangeTimes->{{3.6264749939874153`*^9, 3.626475055335924*^9}, {
-  3.6264751234778214`*^9, 3.6264751933628187`*^9}, {3.6264753867938824`*^9, 
-  3.6264753952073636`*^9}, {3.6264755923206377`*^9, 3.6264755927046595`*^9}, {
-  3.626476440079127*^9, 3.626476440847171*^9}, {3.626476520021699*^9, 
-  3.6264765251319914`*^9}, {3.626476950364313*^9, 3.6264769590008073`*^9}}],
+   3.6264751234778214`*^9, 3.6264751933628187`*^9}, {3.6264753867938824`*^9, 
+   3.6264753952073636`*^9}, {3.6264755923206377`*^9, 
+   3.6264755927046595`*^9}, {3.626476440079127*^9, 3.626476440847171*^9}, {
+   3.626476520021699*^9, 3.6264765251319914`*^9}, {3.626476950364313*^9, 
+   3.6264769590008073`*^9}, {3.6264781864870157`*^9, 
+   3.6264782120464773`*^9}, {3.626478772069509*^9, 3.6264788413434715`*^9}, 
+   3.626479000573579*^9, {3.6264791609897537`*^9, 3.6264791896023903`*^9}, {
+   3.626479249825835*^9, 3.6264792522439737`*^9}, {3.6264793423181252`*^9, 
+   3.626479346217348*^9}, {3.6264795030993214`*^9, 3.6264795044173965`*^9}, 
+   3.6264795868961143`*^9, {3.6264796948382883`*^9, 3.626479712976326*^9}, {
+   3.6264797771819983`*^9, 3.626479781315234*^9}, {3.626479997346591*^9, 
+   3.626480007444168*^9}, {3.6264801291581297`*^9, 3.6264801339244027`*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -747,7 +771,7 @@ Cell[BoxData[{
    3.6264732219560604`*^9}, {3.626473360917009*^9, 3.6264733613160315`*^9}, {
    3.6264735032421494`*^9, 3.6264735046452293`*^9}, {3.626475312414628*^9, 
    3.6264753131546707`*^9}, {3.62647583415347*^9, 3.6264758344424863`*^9}, 
-   3.626477077955611*^9}],
+   3.626477077955611*^9, {3.6264774149928885`*^9, 3.626477427696615*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -757,9 +781,15 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"rcnzCrds", "[", "\"\<2014_12/IMG_1789.JPG\>\"", "]"}], "//", 
+  RowBox[{"rcnzCrds", "[", "\"\<2014_12/IMG_1794.JPG\>\"", "]"}], "//", 
   "AbsoluteTiming"}]], "Input",
- CellChangeTimes->{{3.6264771897780075`*^9, 3.626477224846013*^9}}],
+ CellChangeTimes->{{3.6264771897780075`*^9, 3.626477224846013*^9}, {
+  3.626477430625783*^9, 3.6264774317028446`*^9}, {3.6264774829837775`*^9, 
+  3.626477483681817*^9}, {3.6264775340396976`*^9, 3.626477534746738*^9}, {
+  3.6264775890968466`*^9, 3.6264775899628963`*^9}, {3.626478138731284*^9, 
+  3.6264781398883505`*^9}, {3.6264784607137003`*^9, 3.626478460964715*^9}, {
+  3.626480312949642*^9, 3.6264803144057255`*^9}, {3.626480736671878*^9, 
+  3.6264807368958907`*^9}}],
 
 Cell[BoxData[
  RowBox[{"(*", 
@@ -899,7 +929,7 @@ Cell[BoxData[
    3.6264744199865837`*^9, {3.626474452100421*^9, 3.626474473551648*^9}}]
 },
 WindowSize->{1440, 818},
-WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
 StyleDefinitions->"Default.nb"
 ]
@@ -916,18 +946,18 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 9276, 233, 472, "Input"],
 Cell[9837, 255, 13593, 369, 811, "Input"],
-Cell[23433, 626, 4169, 105, 372, "Input"],
-Cell[27605, 733, 850, 16, 52, "Input"],
-Cell[28458, 751, 201, 4, 31, "Input"],
-Cell[28662, 757, 196, 4, 31, "Input"],
-Cell[28861, 763, 923, 25, 52, "Input"],
-Cell[29787, 790, 743, 22, 52, "Input"],
-Cell[30533, 814, 409, 11, 31, "Input"],
-Cell[30945, 827, 471, 12, 31, "Input"],
-Cell[31419, 841, 157, 3, 31, "Input"],
-Cell[31579, 846, 802, 22, 92, "Input"],
-Cell[32384, 870, 142, 3, 31, "Input"],
-Cell[32529, 875, 808, 23, 31, "Input"]
+Cell[23433, 626, 5365, 129, 392, "Input"],
+Cell[28801, 757, 898, 16, 52, "Input"],
+Cell[29702, 775, 201, 4, 31, "Input"],
+Cell[29906, 781, 600, 10, 31, "Input"],
+Cell[30509, 793, 923, 25, 52, "Input"],
+Cell[31435, 820, 743, 22, 52, "Input"],
+Cell[32181, 844, 409, 11, 31, "Input"],
+Cell[32593, 857, 471, 12, 31, "Input"],
+Cell[33067, 871, 157, 3, 31, "Input"],
+Cell[33227, 876, 802, 22, 92, "Input"],
+Cell[34032, 900, 142, 3, 31, "Input"],
+Cell[34177, 905, 808, 23, 31, "Input"]
 }
 ]
 *)
