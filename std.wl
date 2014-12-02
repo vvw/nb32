@@ -144,6 +144,11 @@ Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\)-> 1 &]//DeleteBorderComponents
 systemClipboard[]:=ToExpression@Cases[NotebookGet[ClipboardNotebook[]],BoxData[_],Infinity]
 
 
+filename[fullpath_]:=Module[{},
+	FileNameSplit[fullpath]//Last//StringSplit[#,"."]&//Most//First
+]
+
+
 End[ ];
 
 
