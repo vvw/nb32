@@ -160,6 +160,18 @@ vArgOkQ[i_]:=Module[{vlines},
 	vlines=verticalLines@i;
 	argAbs@vlines//Abs[#-90 Degree]<0.01&/@#&//And@@#&
 ]
+showDistorRatio[irectangle_]:=Module[{ihoriz,ivertical,hlines,vlines,hargs,vargs},
+	ihoriz=horizonLinesImage[irectangle];
+	ivertical=verticalLinesImage[irectangle];
+	hlines=ImageLines[ihoriz,MaxFeatures->1];
+	vlines=ImageLines[ivertical,MaxFeatures->1];
+	hargs=argAbs[hlines];
+	vargs=argAbs[vlines];
+	{
+		{hargs,Show[irectangle,Graphics[{Thick,Red,Line/@hlines}]]},
+		{vargs,Show[irectangle,Graphics[{Thick,Red,Line/@vlines}]]}
+	}
+]
 
 
 End[ ];
