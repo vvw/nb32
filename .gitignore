@@ -36,3 +36,16 @@ Icon
 .Trashes
 
 ocr3/myTextRecognize.nb
+
+# images
+*.jpg
+*.bmp
+*.png
+*.pgm
+
+# text
+*.txt
+
+
+
+
