@@ -149,6 +149,19 @@ filename[fullpath_]:=Module[{},
 ]
 
 
+degree[r_]:=Degree/Pi 180 r
+radians [d_]:=1/180 Pi d
+argAbs[lines_]:=Map[#[[2]]-#[[1]]&,lines]//Arg[Complex@@#]&/@#&//Abs/@#&
+hArgOkQ[i_]:=Module[{hlines},
+	hlines=horizonLines@i;
+	argAbs@hlines//#<0.01&/@#&//And@@#&
+]
+vArgOkQ[i_]:=Module[{vlines},
+	vlines=verticalLines@i;
+	argAbs@vlines//Abs[#-90 Degree]<0.01&/@#&//And@@#&
+]
+
+
 End[ ];
 
 
