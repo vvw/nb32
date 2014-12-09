@@ -174,6 +174,14 @@ showDistorRatio[irectangle_]:=Module[{ihoriz,ivertical,hlines,vlines,hargs,vargs
 ]
 
 
+thinDarkFree[i_]:=Module[{thinDark},
+	(*Extract thin,dark features:*)
+	thinDark=BottomHatTransform[i, DiskMatrix[2]];
+	(*Add the result to the original image to remove those thin features:*)
+	ImageAdd[i,thinDark]
+]
+
+
 End[ ];
 
 
